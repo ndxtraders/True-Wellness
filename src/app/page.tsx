@@ -10,27 +10,27 @@ import { contact, disclosures, integrations, site } from '@/lib/site'
  */
 const audiences = [
   {
-    href: '/programs/children',
+    href: '/classes',
     label: 'My child',
     note: 'Yoga, movement, and mindfulness for kids, mostly outdoors.',
   },
   {
-    href: '/programs/teens',
+    href: '/classes',
     label: 'My teenager',
     note: 'Small circles for teens, built to be a place rather than a lecture.',
   },
   {
-    href: '/programs/adults',
+    href: '/classes',
     label: 'Myself',
     note: 'One-to-one somatic movement, acupressure, and quiet walks.',
   },
   {
-    href: '/programs/caregivers-elders',
+    href: '/classes',
     label: 'Someone I care for',
     note: 'Sessions for elders and the people looking after them.',
   },
   {
-    href: '/programs/schools',
+    href: '/classes',
     label: 'My school or group',
     note: 'Enrichment classes, homeschool co-ops, and custom programs.',
   },
@@ -54,10 +54,10 @@ export default function HomePage() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
-                href="/programs"
+                href="/classes"
                 className="rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
               >
-                Find a program
+                See the classes
               </Link>
               <Link
                 href="/about"
@@ -85,7 +85,7 @@ export default function HomePage() {
           </h2>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((a) => (
-              <li key={a.href}>
+              <li key={a.label}>
                 <Link
                   href={a.href}
                   className="group flex h-full flex-col rounded-[--radius-card] border border-line bg-surface p-7 transition-colors duration-200 hover:border-plum"
@@ -165,13 +165,13 @@ export default function HomePage() {
               <h3 className="text-h4 font-semibold text-ink">Sponsor a child</h3>
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 A monthly sponsorship puts a Tuolumne County child in nature-based wellness classes.
-                Small groups, outdoors, every week.
+                Small groups, outdoors, every week. Levels are being finalised.
               </p>
               <Link
-                href="/childrens-center/sponsor"
+                href="/childrens-center"
                 className="mt-6 self-start rounded-pill border border-line-strong px-6 py-3 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
               >
-                See sponsorship levels
+                Support the build
               </Link>
             </div>
           </div>

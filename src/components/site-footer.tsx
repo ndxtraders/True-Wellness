@@ -24,10 +24,9 @@ export function SiteFooter() {
             </h2>
             <ul className="mt-4 space-y-2.5 text-small">
               {[
-                { href: '/programs', label: 'Programs' },
+                { href: '/classes', label: 'Classes' },
                 { href: '/approach', label: 'Our Approach' },
                 { href: '/childrens-center', label: "Children's Center" },
-                { href: '/childrens-center/sponsor', label: 'Become a Sponsor' },
                 { href: '/about', label: 'About Boclaire' },
                 { href: '/contact', label: 'Contact' },
               ].map((l) => (

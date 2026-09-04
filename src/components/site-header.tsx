@@ -11,7 +11,7 @@ import { integrations } from '@/lib/site'
  * only has to carry the five destinations someone might want from any page.
  */
 const links = [
-  { href: '/programs', label: 'Programs' },
+  { href: '/classes', label: 'Classes' },
   { href: '/approach', label: 'Our Approach' },
   { href: '/childrens-center', label: "Children's Center" },
   { href: '/about', label: 'About' },

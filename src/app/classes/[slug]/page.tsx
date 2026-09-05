@@ -31,7 +31,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <Link
             href="/classes"
             className="text-small font-medium text-ink-muted transition-colors hover:text-plum"
@@ -57,7 +57,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
               </div>
             </div>
 
-            <aside className="rounded-[--radius-card] border border-line bg-surface p-8">
+            <aside className="rounded-(--radius-card) border border-line bg-surface p-8">
               <ClassArt art={c.art} className="mx-auto mb-6 h-48 w-auto" />
               {typeof c.price === 'number' ? (
                 <>
@@ -93,7 +93,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-[--spacing-section] md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-(--spacing-section) md:grid-cols-2">
           <div>
             <h2 className="text-h3 text-ink">What happens</h2>
             <ul className="mt-6 space-y-3">
@@ -130,7 +130,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <p className="max-w-2xl text-caption leading-relaxed text-ink-muted">
             {disclosures.services}
           </p>

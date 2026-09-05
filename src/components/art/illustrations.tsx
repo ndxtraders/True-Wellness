@@ -69,13 +69,36 @@ function svgProps(title?: string) {
  * oak-studded rolling hills, water at the base, a big sky. Wide aspect so it
  * can run full-bleed as a band.
  */
-export function HillsSun({ className, title }: ArtProps) {
+export function HillsSun({
+  className,
+  title,
+  compact = false,
+}: ArtProps & {
+  /**
+   * Crops most of the empty sky. At full width the 1200x420 box renders about
+   * 500px tall, which on a 13" laptop pushes the whole hero below the fold.
+   * Compact keeps the ridges and moves the sun down so it is not clipped by
+   * the new top edge.
+   */
+  compact?: boolean
+}) {
   return (
-    <svg viewBox="0 0 1200 420" className={className} {...svgProps(title)}>
+    <svg
+      viewBox={compact ? '0 140 1200 280' : '0 0 1200 420'}
+      className={className}
+      {...svgProps(title)}
+    >
       {/* sky stays the page ground: nothing drawn */}
 
       {/* sun */}
-      <circle cx="852" cy="150" r="62" className="fill-clay" opacity="0.5" filter="url(#twm-grain)" />
+      <circle
+        cx="852"
+        cy={compact ? 214 : 150}
+        r="62"
+        className="fill-clay"
+        opacity="0.5"
+        filter="url(#twm-grain)"
+      />
 
       {/* farthest ridge */}
       <path

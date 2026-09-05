@@ -20,7 +20,7 @@ export default function SponsorPage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-10">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-10">
           <Link
             href="/childrens-center"
             className="text-small font-medium text-ink-muted transition-colors hover:text-plum"
@@ -72,7 +72,7 @@ export default function SponsorPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="max-w-2xl">
             <h2 className="text-h2 text-ink">The Healing Journey sponsorship levels</h2>
             <p className="mt-5 text-body-lg text-ink-muted">
@@ -87,7 +87,7 @@ export default function SponsorPage() {
               .map((t) => (
                 <li
                   key={t.slug}
-                  className="flex flex-col rounded-[--radius-card] border border-line bg-surface p-8"
+                  className="flex flex-col rounded-(--radius-card) border border-line bg-surface p-8"
                 >
                   <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
                     {t.label}
@@ -99,7 +99,7 @@ export default function SponsorPage() {
                     </span>
                     <span className="text-small text-ink-muted">per month</span>
                   </p>
-                  <p className="mt-4 border-y border-line py-4 text-small text-ink">
+                  <p className="mt-5 border-y border-line py-6 text-small text-ink">
                     Sponsors {t.children} {t.children === 1 ? 'child' : 'children'}, {t.hours} hours
                     of wellness education a month.
                   </p>
@@ -147,7 +147,7 @@ export default function SponsorPage() {
         .filter((t) => t.featured)
         .map((t) => (
           <section key={t.slug} className="bg-sage">
-            <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-16">
+            <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
               <div className="grid gap-10 md:grid-cols-2 md:items-start">
                 <div>
                   <span className="inline-block rounded-pill border border-plum px-4 py-1.5 text-caption font-medium text-plum">
@@ -209,7 +209,7 @@ export default function SponsorPage() {
         ))}
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="max-w-2xl">
             <h2 className="text-h3 text-ink">Rather give once?</h2>
             <p className="mt-5 text-ink-muted">

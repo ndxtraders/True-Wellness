@@ -14,7 +14,7 @@ export default function ChildrensCenterPage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <h1 className="max-w-3xl text-h1 text-ink">The Children&rsquo;s Wellness Center</h1>
           <div className="mt-6 max-w-2xl space-y-5 text-body-lg text-ink-muted">
             <p>
@@ -55,14 +55,14 @@ export default function ChildrensCenterPage() {
             priority={false}
           />
         </figure>
-        <figcaption className="mx-auto max-w-6xl px-5 py-4 text-caption text-ink-muted">
+        <figcaption className="mx-auto max-w-6xl px-5 py-6 text-caption text-ink-muted">
           The garden the centre is being built around. Placeholder image while the space is under
           construction.
         </figcaption>
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="mb-12 flex max-w-3xl items-start gap-6">
             <Sprig className="hidden h-24 w-auto shrink-0 sm:block" />
             <div>
@@ -75,7 +75,7 @@ export default function ChildrensCenterPage() {
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="flex flex-col rounded-[--radius-card] border border-line bg-surface p-8">
+            <div className="flex flex-col rounded-(--radius-card) border border-line bg-surface p-8">
               <h2 className="text-h4 font-semibold text-ink">Make a donation</h2>
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 Donations go toward the garden build, class materials, and free classes for local
@@ -91,7 +91,7 @@ export default function ChildrensCenterPage() {
               </a>
             </div>
 
-            <div className="flex flex-col rounded-[--radius-card] border border-line bg-surface p-8">
+            <div className="flex flex-col rounded-(--radius-card) border border-line bg-surface p-8">
               <h2 className="text-h4 font-semibold text-ink">Sponsor a child</h2>
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 A monthly sponsorship puts a Tuolumne County child in nature-based wellness

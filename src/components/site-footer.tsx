@@ -4,7 +4,7 @@ import { contact, disclosures, integrations, site } from '@/lib/site'
 
 export function SiteFooter() {
   return (
-    <footer className="mt-[--spacing-section] border-t border-line bg-surface">
+    <footer className="mt-(--spacing-section) border-t border-line bg-surface">
       <div className="mx-auto max-w-6xl px-5 py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>

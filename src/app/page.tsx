@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { pillars } from '@/content/pillars'
 import { contact, disclosures, integrations, site } from '@/lib/site'
@@ -61,34 +62,71 @@ export default function HomePage() {
     <>
       {/* ---------------------------------------------------------------- */}
       {/* 1. Hero. Landscape at full bleed, headline sitting in the sky.    */}
+      {/*    Sized to clear the fold on a 13" MacBook Air (812px of viewport */}
+      {/*    after browser chrome), so the hero does not use the standard    */}
+      {/*    section rhythm and the landscape runs in its compact crop.      */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-10">
-          <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-            {site.locality} · {site.county}, {site.regionName}
-          </p>
-          <h1 className="mt-5 max-w-3xl text-mega text-ink">Move, breathe, and be outside.</h1>
-          <p className="mt-7 max-w-xl text-body-lg text-ink-muted">
-            True Wellness Movement teaches yoga, somatic movement, and mindfulness to children,
-            families, caregivers, and elders. Small groups, mostly outdoors, at a pace that suits
-            the person in front of us.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              href="/classes"
-              className="rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
-            >
-              See the classes
-            </Link>
-            <Link
-              href="/about"
-              className="rounded-pill border border-line-strong px-7 py-3.5 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
-            >
-              Meet Boclaire
-            </Link>
+        <div className="mx-auto max-w-6xl px-5 pt-10 pb-8">
+          {/*
+            Two real grid columns rather than absolute positioning, so the text
+            can never run under the painting at any width. The painting takes
+            the smaller column but still lands around 420px wide at 1440, which
+            is large enough to read as a portrait rather than a thumbnail.
+          */}
+          <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+            <div>
+              <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+                {site.locality} · {site.county}, {site.regionName}
+              </p>
+              <h1 className="mt-4 text-display text-ink">Move, breathe, and be outside.</h1>
+              <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
+                Yoga, somatic movement, and mindfulness for children, families, caregivers, and
+                elders. Small groups, mostly outdoors, at a pace that suits the person in front of
+                us.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/classes"
+                  className="rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+                >
+                  See the classes
+                </Link>
+                <Link
+                  href="/about"
+                  className="rounded-pill border border-line-strong px-7 py-3.5 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
+                >
+                  Meet Boclaire
+                </Link>
+              </div>
+            </div>
+
+            {/*
+              Image-first on small screens, but capped: at full width it ate
+              370px of an 812px phone viewport and pushed the headline and both
+              CTAs below the fold. The brand's own test is whether a busy parent
+              gets it in one pass on a phone.
+            */}
+            <figure className="order-first mx-auto w-full max-w-[17rem] sm:max-w-sm lg:order-none lg:max-w-none">
+              <Image
+                src="/images/boclaire-painting.jpg"
+                alt="A painted portrait of Boclaire, eyes closed, hands together at the throat."
+                width={1080}
+                height={807}
+                priority
+                sizes="(max-width: 1024px) 90vw, 42vw"
+                className="w-full rounded-(--radius-card) border border-line"
+              />
+              {/*
+                No caption here. The landscape band rides up over the bottom of
+                this column, and small grey type sitting on the lilac ridge read
+                as an accident. The alt text carries it for screen readers and
+                /about states plainly that it is a painting rather than a photo.
+              */}
+            </figure>
           </div>
         </div>
-        <HillsSun className="-mt-16 block w-full sm:-mt-28 lg:-mt-40" />
+        <HillsSun compact className="-mt-8 block w-full sm:-mt-20 lg:-mt-32" />
       </section>
 
       {/* ---------------------------------------------------------------- */}
@@ -96,7 +134,7 @@ export default function HomePage() {
       {/*    Master context 12 favours an opening that makes you pause.     */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="mx-auto flex max-w-3xl items-start gap-8">
             <SeedHead className="mt-2 hidden h-16 w-16 shrink-0 sm:block" />
             <div>
@@ -119,7 +157,7 @@ export default function HomePage() {
       {/* 3. Audience routing. The most important module on the page.       */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line" aria-labelledby="who">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <h2 id="who" className="text-h2 text-ink">
             Who are you here for?
           </h2>
@@ -128,12 +166,12 @@ export default function HomePage() {
               <li key={label}>
                 <Link
                   href={href}
-                  className="group flex h-full flex-col overflow-hidden rounded-[--radius-card] border border-line bg-surface transition-colors duration-200 hover:border-plum"
+                  className="group flex h-full flex-col overflow-hidden rounded-(--radius-card) border border-line bg-surface transition-colors duration-200 hover:border-plum"
                 >
-                  <span className="flex justify-center bg-bg pt-5">
+                  <span className="flex justify-center bg-bg pt-8">
                     <Art className="h-36 w-auto" />
                   </span>
-                  <span className="flex flex-1 flex-col border-t border-line p-7">
+                  <span className="flex flex-1 flex-col border-t border-line p-8">
                     <span className="font-display text-h4 font-semibold text-ink transition-colors group-hover:text-plum">
                       {label}
                     </span>
@@ -151,7 +189,7 @@ export default function HomePage() {
       {/*    Ink is 8.42:1 here and plum 5.53:1, so both clear AA for body.  */}
       {/* ---------------------------------------------------------------- */}
       <section className="bg-sage" aria-labelledby="approach">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-16">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
           <div className="max-w-2xl">
             <h2 id="approach" className="text-h2 text-ink">
               How we think about this
@@ -185,7 +223,7 @@ export default function HomePage() {
       {/* 5. The human moment. Where the page stops being a brochure.       */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-[--spacing-section] lg:grid-cols-[1fr_1.1fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-(--spacing-section) lg:grid-cols-[1fr_1.1fr]">
           <FigurePair className="mx-auto w-full max-w-md" />
           <figure>
             <blockquote className="font-display text-h3 leading-tight text-ink">
@@ -216,7 +254,7 @@ export default function HomePage() {
       {/*    twelve children and a 3:1 ratio persuade harder than adjectives*/}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line bg-surface" aria-labelledby="center">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
             <div className="max-w-2xl">
               <h2 id="center" className="text-h2 text-ink">
@@ -246,7 +284,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
-            <div className="flex flex-col rounded-[--radius-card] border border-line bg-bg p-8">
+            <div className="flex flex-col rounded-(--radius-card) border border-line bg-bg p-8">
               <h3 className="text-h4 font-semibold text-ink">Make a donation</h3>
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 Donations go toward the garden build, class materials, and free classes for local
@@ -262,7 +300,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="flex flex-col rounded-[--radius-card] border border-line bg-bg p-8">
+            <div className="flex flex-col rounded-(--radius-card) border border-line bg-bg p-8">
               <h3 className="text-h4 font-semibold text-ink">Sponsor a child</h3>
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 A monthly sponsorship puts a Tuolumne County child in nature-based wellness classes.
@@ -286,7 +324,7 @@ export default function HomePage() {
       {/* 7. Contact.                                                       */}
       {/* ---------------------------------------------------------------- */}
       <section aria-labelledby="contact">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="max-w-2xl">
             <h2 id="contact" className="text-h2 text-ink">
               Questions about a class?

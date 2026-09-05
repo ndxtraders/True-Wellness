@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-10">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-10">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
               <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
@@ -32,11 +32,11 @@ export default function ContactPage() {
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
             <a
               href={`mailto:${contact.email}`}
-              className="rounded-[--radius-card] border border-line bg-surface p-7 transition-colors hover:border-plum"
+              className="rounded-(--radius-card) border border-line bg-surface p-8 transition-colors hover:border-plum"
             >
               <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
                 Email
@@ -45,7 +45,7 @@ export default function ContactPage() {
             </a>
             <a
               href={contact.phoneHref}
-              className="rounded-[--radius-card] border border-line bg-surface p-7 transition-colors hover:border-plum"
+              className="rounded-(--radius-card) border border-line bg-surface p-8 transition-colors hover:border-plum"
             >
               <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
                 Phone
@@ -62,7 +62,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-surface">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="flex max-w-3xl items-start gap-6">
             <Sprig className="hidden h-24 w-auto shrink-0 sm:block" />
             <div>

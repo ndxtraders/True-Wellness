@@ -68,7 +68,7 @@ export default function AboutPage() {
     <>
       {/* Hero. The painting stays: it is the only likeness that exists. */}
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-[--spacing-section] lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-(--spacing-section) lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <figure className="order-2 lg:order-1">
             <Image
               src="/images/boclaire-painting.jpg"
@@ -77,7 +77,7 @@ export default function AboutPage() {
               height={807}
               priority
               sizes="(max-width: 1024px) 100vw, 45vw"
-              className="w-full rounded-[--radius-card] border border-line"
+              className="w-full rounded-(--radius-card) border border-line"
             />
             <figcaption className="mt-3 text-caption text-ink-muted">
               A painted portrait of Boclaire.
@@ -113,7 +113,7 @@ export default function AboutPage() {
       {/* Screening first, on the coloured field, because it is the thing a
           parent actually needs before any of the philosophy matters. */}
       <section className="bg-sage">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-16">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
             <FigureSeated className="h-40 w-auto shrink-0" />
             <div className="max-w-2xl">
@@ -143,7 +143,7 @@ export default function AboutPage() {
 
       {/* Training, and the separate list of things she has done. */}
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-6xl gap-14 px-5 py-[--spacing-section] md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-14 px-5 py-(--spacing-section) md:grid-cols-2">
           <div>
             <div className="flex items-start gap-5">
               <Sprig className="hidden h-28 w-auto shrink-0 sm:block" />
@@ -199,7 +199,7 @@ export default function AboutPage() {
 
       {/* Master context 34: do not make Boclaire sound perfect. */}
       <section className="border-b border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="mx-auto flex max-w-3xl items-start gap-8">
             <SeedHead className="mt-2 hidden h-16 w-16 shrink-0 sm:block" />
             <div>
@@ -216,7 +216,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="max-w-2xl">
             <h2 className="text-h3 text-ink">Come and see</h2>
             <p className="mt-5 text-ink-muted">

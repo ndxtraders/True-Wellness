@@ -70,13 +70,13 @@ const statusStyles: Record<string, string> = {
 function ClassCard({ c }: { c: ClassOffering }) {
   const status = statusOf(c)
   return (
-    <li className="flex flex-col overflow-hidden rounded-[--radius-card] border border-line bg-surface">
+    <li className="flex flex-col overflow-hidden rounded-(--radius-card) border border-line bg-surface">
       {/* The illustration is the card, not an accessory to it. */}
-      <div className="flex items-end justify-center bg-bg pt-6">
+      <div className="flex items-end justify-center bg-bg pt-8">
         <ClassArt art={c.art} className="h-44 w-auto" />
       </div>
 
-      <div className="flex flex-1 flex-col border-t border-line p-7">
+      <div className="flex flex-1 flex-col border-t border-line p-8">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
           <span
             className={`inline-block rounded-pill border px-3 py-1 text-caption font-medium ${statusStyles[status]}`}
@@ -144,7 +144,7 @@ export default function ClassesPage() {
     <>
       {/* Hero. Full-bleed landscape rather than a text block in a box. */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-12">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-12">
           <div className="max-w-2xl">
             <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
               Classes
@@ -184,7 +184,7 @@ export default function ClassesPage() {
           className={`border-b border-line ${i % 2 === 1 ? 'bg-surface' : ''}`}
           aria-labelledby={`group-${g.key}`}
         >
-          <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+          <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
             <div className="max-w-2xl">
               <h2 id={`group-${g.key}`} className="text-h2 text-ink">
                 {g.heading}
@@ -201,7 +201,7 @@ export default function ClassesPage() {
       ))}
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <p className="max-w-2xl text-caption leading-relaxed text-ink-muted">
             {disclosures.services}
           </p>

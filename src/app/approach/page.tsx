@@ -14,7 +14,7 @@ export default function ApproachPage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-10">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-10">
           <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
             Our approach
           </p>
@@ -34,7 +34,7 @@ export default function ApproachPage() {
         without changing how they sell.
       */}
       <section className="bg-sage">
-        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-16">
+        <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
           <div className="mx-auto flex max-w-3xl items-start gap-8">
             <SeedHead className="mt-2 hidden h-16 w-16 shrink-0 sm:block" />
             <div>
@@ -58,18 +58,18 @@ export default function ApproachPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p) => (
               <li key={p.key}>
                 <Link
                   href={`/approach/${p.key}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-[--radius-card] border border-line bg-surface transition-colors duration-200 hover:border-plum"
+                  className="group flex h-full flex-col overflow-hidden rounded-(--radius-card) border border-line bg-surface transition-colors duration-200 hover:border-plum"
                 >
-                  <span className="flex justify-center bg-bg pt-6">
+                  <span className="flex justify-center bg-bg pt-8">
                     <PillarArt pillar={p.key} className="h-36 w-auto" />
                   </span>
-                  <span className="flex flex-1 flex-col border-t border-line p-7">
+                  <span className="flex flex-1 flex-col border-t border-line p-8">
                     <span className="font-display text-h4 font-semibold text-ink transition-colors group-hover:text-plum">
                       {p.name}
                     </span>

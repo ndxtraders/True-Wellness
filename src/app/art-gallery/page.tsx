@@ -24,7 +24,7 @@ export default function Gallery() {
       <h2 className="mt-12 text-h3">Figures</h2>
       <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {figures.map(([n, el]) => (
-          <div key={n} className="rounded-[--radius-card] border border-line bg-surface p-4">
+          <div key={n} className="rounded-(--radius-card) border border-line bg-surface p-6">
             {el}
             <p className="mt-2 text-caption text-ink-muted">{n}</p>
           </div>
@@ -33,9 +33,9 @@ export default function Gallery() {
 
       <h2 className="mt-12 text-h3">Botanical</h2>
       <div className="mt-4 grid gap-6 sm:grid-cols-3">
-        <div className="rounded-[--radius-card] border border-line bg-surface p-6"><Sprig className="mx-auto h-56" /><p className="mt-2 text-caption text-ink-muted">Sprig</p></div>
-        <div className="rounded-[--radius-card] border border-line bg-surface p-6"><BeeBloom className="w-full" /><p className="mt-2 text-caption text-ink-muted">BeeBloom</p></div>
-        <div className="rounded-[--radius-card] border border-line bg-surface p-6"><SeedHead className="mx-auto h-40" /><p className="mt-2 text-caption text-ink-muted">SeedHead</p></div>
+        <div className="rounded-(--radius-card) border border-line bg-surface p-6"><Sprig className="mx-auto h-56" /><p className="mt-2 text-caption text-ink-muted">Sprig</p></div>
+        <div className="rounded-(--radius-card) border border-line bg-surface p-6"><BeeBloom className="w-full" /><p className="mt-2 text-caption text-ink-muted">BeeBloom</p></div>
+        <div className="rounded-(--radius-card) border border-line bg-surface p-6"><SeedHead className="mx-auto h-40" /><p className="mt-2 text-caption text-ink-muted">SeedHead</p></div>
       </div>
 
       <h2 className="mt-12 text-h3">On a sage field</h2>

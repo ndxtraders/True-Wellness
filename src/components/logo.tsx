@@ -3,7 +3,7 @@
  *
  * The logo is a single ink on paper, so rather than shipping a light version and
  * a dark version, the artwork drives `mask-image` and takes its color from
- * `currentColor`. One asset, both themes, and it recolors anywhere it's placed.
+ * `currentColor`. One asset, and it recolors anywhere it's placed.
  *
  * Source artwork is Boclaire's supplied PNG, keyed to alpha and trimmed.
  */

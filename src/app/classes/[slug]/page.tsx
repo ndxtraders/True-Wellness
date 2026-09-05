@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { classes, classBySlug } from '@/content/classes'
+import { classes, classBySlug, statusOf } from '@/content/classes'
 import { pillarByKey } from '@/content/pillars'
 import { WaitlistButton } from '@/components/waitlist-button'
+import { ClassArt } from '@/components/art/for-class'
+import { statusLabels } from '@/content/types'
 import { disclosures } from '@/lib/site'
 
 export function generateStaticParams() {
@@ -44,6 +46,10 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
                 {c.faithBased ? ' · Faith-based' : ''}
               </p>
               <h1 className="mt-4 text-h1 text-ink">{c.name}</h1>
+              {c.nameKo && <p className="mt-2 text-body-lg text-ink-muted">{c.nameKo}</p>}
+              <p className="mt-5 inline-block rounded-pill border border-line-strong px-4 py-1.5 text-caption font-medium text-ink-muted">
+                {statusLabels[statusOf(c)]}
+              </p>
               <div className="mt-6 max-w-xl space-y-5 text-body-lg text-ink-muted">
                 {c.body.map((p) => (
                   <p key={p}>{p}</p>
@@ -52,14 +58,29 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
             </div>
 
             <aside className="rounded-[--radius-card] border border-line bg-surface p-8">
-              <p className="flex items-baseline gap-2">
-                <span className="font-display text-h2 font-semibold text-plum">${c.price}</span>
-                <span className="text-small text-ink-muted">per {c.priceUnit}</span>
-              </p>
-              {!c.priceConfirmed && (
-                <p className="mt-3 text-caption text-ink-muted">
-                  Placeholder pricing while the schedule is being set. The real number will be
-                  confirmed before anyone is asked to pay anything.
+              <ClassArt art={c.art} className="mx-auto mb-6 h-48 w-auto" />
+              {typeof c.price === 'number' ? (
+                <>
+                  <p className="flex items-baseline gap-2">
+                    <span className="font-display text-h2 font-semibold text-plum">${c.price}</span>
+                    <span className="text-small text-ink-muted">per {c.priceUnit}</span>
+                  </p>
+                  {!c.priceConfirmed && (
+                    <p className="mt-3 text-caption text-ink-muted">
+                      Placeholder pricing while the schedule is being set. The real number will be
+                      confirmed before anyone is asked to pay anything.
+                    </p>
+                  )}
+                </>
+              ) : (
+                <p className="text-small text-ink-muted">
+                  No price is set for this yet. Rather than publish a number that might be wrong,
+                  there isn&rsquo;t one here until Boclaire confirms it.
+                </p>
+              )}
+              {(c.duration || c.format) && (
+                <p className="mt-5 border-t border-line pt-5 text-small text-ink-muted">
+                  {[c.duration, c.format].filter(Boolean).join(' · ')}
                 </p>
               )}
               <WaitlistButton className="mt-7" name={c.name} />

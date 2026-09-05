@@ -9,3 +9,7 @@ build/
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Working docs live in ~/Desktop/True Wellness Movement, which is the canonical
+# copy. A duplicate here drifts out of date the moment either one is edited.
+PRD-*.md

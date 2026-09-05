@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import { disclosures, integrations } from '@/lib/site'
+import { Sprig } from '@/components/art/illustrations'
 
 export const metadata: Metadata = {
   title: "Children's Wellness Center",
@@ -27,8 +30,50 @@ export default function ChildrensCenterPage() {
         </div>
       </section>
 
+      {/*
+        The herb garden image, per Rev, appears on this page and nowhere else.
+
+        Three things are true about this file and all three are deliberate:
+        1. It is 9.1 MB and it is a PNG wearing a .jpg extension (2752x1536
+           RGBA). Next's image optimiser re-encodes it for delivery, so the
+           bytes that reach a visitor are far smaller, but the source is still
+           the heaviest asset in the repo by two orders of magnitude.
+        2. It carries a Google Gemini AI watermark baked into the pixels,
+           bottom right. `object-cover` with the framing below keeps it out of
+           the visible crop; it is not removed, only cropped away.
+        3. Rev has said he will edit it. Until he does, treat this slot as
+           holding a placeholder rather than a finished asset.
+      */}
+      <section className="border-b border-line">
+        <figure className="relative aspect-[21/9] w-full overflow-hidden">
+          <Image
+            src="/images/heavenly-herb-garden.jpg"
+            alt="An herb garden of the kind the Children's Wellness Center is being built around."
+            fill
+            sizes="100vw"
+            className="object-cover object-[50%_38%]"
+            priority={false}
+          />
+        </figure>
+        <figcaption className="mx-auto max-w-6xl px-5 py-4 text-caption text-ink-muted">
+          The garden the centre is being built around. Placeholder image while the space is under
+          construction.
+        </figcaption>
+      </section>
+
       <section>
         <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+          <div className="mb-12 flex max-w-3xl items-start gap-6">
+            <Sprig className="hidden h-24 w-auto shrink-0 sm:block" />
+            <div>
+              <h2 className="text-h3 text-ink">What a sponsorship actually buys</h2>
+              <p className="mt-4 text-ink-muted">
+                A full monthly sponsorship runs the programme for twelve children: two classes a
+                week each, up to two hours a session, in groups of about three to one. Mornings and
+                afternoons, Monday through Thursday.
+              </p>
+            </div>
+          </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="flex flex-col rounded-[--radius-card] border border-line bg-surface p-8">
               <h2 className="text-h4 font-semibold text-ink">Make a donation</h2>
@@ -49,18 +94,16 @@ export default function ChildrensCenterPage() {
             <div className="flex flex-col rounded-[--radius-card] border border-line bg-surface p-8">
               <h2 className="text-h4 font-semibold text-ink">Sponsor a child</h2>
               <p className="mt-3 flex-1 text-small text-ink-muted">
-                A monthly sponsorship puts a Tuolumne County child in nature-based wellness classes.
-                Small groups, outdoors, every week. Sponsorship levels are being finalised — email
-                to be first to hear.
+                A monthly sponsorship puts a Tuolumne County child in nature-based wellness
+                classes. Small groups, outdoors, every week. Four levels, from one child to the
+                whole programme, set up as a recurring donation you control.
               </p>
-              <a
-                href={integrations.donorbox.campaignUrl}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/childrens-center/sponsor"
                 className="mt-6 self-start rounded-pill border border-line-strong px-6 py-3 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
               >
                 Support the build
-              </a>
+              </Link>
             </div>
           </div>
 

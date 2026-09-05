@@ -14,7 +14,16 @@ import { contact } from '@/lib/site'
  *
  * Swap `href` for the MailerLite form when it exists. Nothing else changes.
  */
-export function WaitlistButton({ className: cls = '', name }: { className?: string; name: string }) {
+export function WaitlistButton({
+  className: cls = '',
+  name,
+  compact = false,
+}: {
+  className?: string
+  name: string
+  /** Card context: smaller control, no secondary copy-email action. */
+  compact?: boolean
+}) {
   const [copied, setCopied] = useState(false)
   const subject = encodeURIComponent(`Waitlist: ${name}`)
   const body = encodeURIComponent(
@@ -25,10 +34,13 @@ export function WaitlistButton({ className: cls = '', name }: { className?: stri
     <div className={`flex flex-wrap items-center gap-3 ${cls}`}>
       <a
         href={`mailto:${contact.email}?subject=${subject}&body=${body}`}
-        className="rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+        className={`rounded-pill bg-plum font-semibold text-bg transition-opacity duration-200 hover:opacity-90 ${
+          compact ? 'px-5 py-2.5 text-small' : 'px-7 py-3.5'
+        }`}
       >
         Join the waitlist
       </a>
+      {!compact && (
       <button
         type="button"
         onClick={() => {
@@ -44,6 +56,7 @@ export function WaitlistButton({ className: cls = '', name }: { className?: stri
       >
         {copied ? 'Email address copied' : 'Or copy her email address'}
       </button>
+      )}
     </div>
   )
 }

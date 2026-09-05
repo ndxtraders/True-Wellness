@@ -10,11 +10,24 @@
  * every class routes to a waitlist until the MailerLite forms exist.
  */
 
-import type { AudienceKey, PillarKey } from './types'
+import type { AudienceKey, OfferingStatus, PillarKey } from './types'
+
+/** Which illustration heads the card and the detail page. */
+export type ArtKey =
+  | 'seated'
+  | 'pair'
+  | 'walking'
+  | 'tree'
+  | 'elder'
+  | 'bee'
+  | 'sprig'
+  | 'hands'
 
 export interface ClassOffering {
   slug: string
   name: string
+  /** Fixed Korean name, where one exists. Never substituted. Master context 29. */
+  nameKo?: string
   audience: AudienceKey
   audienceLabel: string
   pillars: PillarKey[]
@@ -26,17 +39,39 @@ export interface ClassOffering {
   whatHappens: string[]
   /** Stated limits. Published, not buried. */
   honestNote: string
-  price: number
-  priceUnit: 'session' | 'month'
+  /** Omitted where no price exists yet. An invented price is worse than none. */
+  price?: number
+  priceUnit?: 'session' | 'month'
   /** True only where the number is confirmed. Drives the placeholder notice. */
-  priceConfirmed: boolean
+  priceConfirmed?: boolean
   /** Faith-based sessions are labeled so families opt in knowingly. */
   faithBased?: boolean
+  /** Defaults to 'waitlist'. Nothing on this site is bookable yet. */
+  status?: OfferingStatus
+  /** How it runs: cadence, group size, where. */
+  format?: string
+  duration?: string
+  /** Which illustration represents it. */
+  art?: ArtKey
+  /**
+   * Where the copy came from. Session one built the catalogue from the old
+   * website and missed nine programs Boclaire has actually named, so provenance
+   * is now tracked rather than assumed.
+   */
+  source?: 'old-site' | 'boclaire-flyer' | 'master-context'
+  /** Internal only. Never rendered. */
+  verifyNote?: string
+}
+
+/** Nothing is bookable yet, so an unset status means waitlist. */
+export function statusOf(c: ClassOffering): OfferingStatus {
+  return c.status ?? 'waitlist'
 }
 
 export const classes: ClassOffering[] = [
   {
     slug: 'natures-sensory-gym',
+    art: 'sprig',
     name: "Nature's Sensory Gym",
     audience: 'children',
     audienceLabel: 'Children',
@@ -60,6 +95,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'meditative-wellness-walk',
+    art: 'walking',
     name: 'Meditative Wellness Walk',
     audience: 'adults',
     audienceLabel: 'Adults',
@@ -83,6 +119,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'mindful-movement-workout',
+    art: 'tree',
     name: 'Mindful Movement Workout',
     audience: 'adults',
     audienceLabel: 'Adults',
@@ -106,6 +143,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'body-prayer-session',
+    art: 'seated',
     name: 'Body Prayer Session',
     audience: 'adults',
     audienceLabel: 'Adults',
@@ -130,6 +168,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'kids-birthday-hike-party',
+    art: 'walking',
     name: "Kids' Birthday Hike Party",
     audience: 'events',
     audienceLabel: 'Children · Events',
@@ -153,6 +192,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'adult-birthday-hike-party',
+    art: 'bee',
     name: 'Adult Birthday Hike Party',
     audience: 'events',
     audienceLabel: 'Adults · Events',
@@ -175,6 +215,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'rv-wellness-retreat',
+    art: 'sprig',
     name: 'RV Wellness Retreat',
     audience: 'events',
     audienceLabel: 'Adults · Retreat',
@@ -198,6 +239,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'childrens-bible-study',
+    art: 'pair',
     name: "Children's Bible Study",
     audience: 'children',
     audienceLabel: 'Children',
@@ -221,6 +263,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'teen-girls-bible-circle',
+    art: 'seated',
     name: 'Teen Girls Bible Circle',
     audience: 'teens',
     audienceLabel: 'Teen girls',
@@ -245,6 +288,7 @@ export const classes: ClassOffering[] = [
   },
   {
     slug: 'acupressure-therapy',
+    art: 'hands',
     name: 'Acupressure Therapy',
     audience: 'adults',
     audienceLabel: 'Adults · One-to-one',
@@ -266,6 +310,145 @@ export const classes: ClassOffering[] = [
     priceUnit: 'session',
     priceConfirmed: true,
   },
+  /* ----------------------------------------------------------------------
+   * The four below come from Boclaire's own class-description documents
+   * (Desktop/True Wellness Movement/Class descriptions). They are programs she
+   * has written up herself, and none of them existed on this site before.
+   *
+   * Her flyer copy states outcomes directly ("Improve memory and
+   * concentration", "reduce brain fog"). Master context 15, 44 and 9 do not
+   * permit that on a published page, and they are her own standards. The
+   * activity lists below are hers verbatim; the outcome language is reframed
+   * as what a session is built to support, with the limit stated. Nothing was
+   * dropped, only re-registered.
+   * -------------------------------------------------------------------- */
+  {
+    slug: 'brain-wellness-for-elders',
+    name: 'Brain Wellness Support for Elders',
+    nameKo: '두뇌 건강 지원 세션',
+    audience: 'caregivers-elders',
+    audienceLabel: 'Elders and caregivers',
+    pillars: ['whole-person-thinking', 'mindful-meditation'],
+    status: 'by-request',
+    art: 'elder',
+    source: 'boclaire-flyer',
+    duration: '40 minutes',
+    format: 'One to one. Travel to your location is available.',
+    summary: 'Individual sessions at your own pace, built around memory, focus, and staying mentally active.',
+    body: [
+      'A personalised forty-minute session, one to one. Boclaire travels to you where that makes it easier, which for a lot of families is the difference between this happening and not happening.',
+      'Each session is put together around the person in front of her rather than a fixed curriculum. Some of it is gentle movement, some of it is breath and acupressure, and some of it is straightforward cognitive exercise.',
+    ],
+    whatHappens: [
+      'Neuro exercises',
+      'Mindfulness practice for mental clarity',
+      'Breathwork and acupressure points for stress',
+      'Gentle movement, connecting brain and body',
+      'Cognitive exercises chosen for you rather than off a list',
+      'Simple eye exercises',
+    ],
+    price: 167,
+    priceUnit: 'session',
+    priceConfirmed: false,
+    honestNote:
+      'These sessions are wellness education. They are built to support memory, focus, confidence and staying mentally active, and whether they do that for any particular person varies. They are not treatment for dementia, Alzheimer\u2019s disease, or any neurological condition, and nothing here is offered as prevention or cure.',
+    verifyNote:
+      'Master context section 9 notes there has previously been only one spot available. Confirm capacity. PRICE: $167 is Rev standing placeholder; master context 37 sets no price at all for a forty-minute elder session.',
+  },
+  {
+    slug: 'mindful-teen-circle',
+    name: 'Mindful Teen Circle',
+    audience: 'teens',
+    audienceLabel: 'Teens',
+    pillars: ['whole-person-thinking', 'somatic-movement', 'health-meals'],
+    status: 'in-development',
+    art: 'seated',
+    source: 'boclaire-flyer',
+    format: 'Small group',
+    summary: 'A group for teens on body image, mindful eating, cycle care, and the practical side of looking after yourself.',
+    body: [
+      'A supportive group for teens working out a healthy relationship with their bodies, with food, and with their own emotional weather.',
+      'It runs on mindfulness, open discussion, gentle movement and practical tools. The point is that a teenager leaves with things she can actually use, and with the sense that her body is hers to look after rather than something to fix.',
+    ],
+    whatHappens: [
+      'Body image and self-esteem, without shame',
+      'Mindful eating, and listening to hunger and fullness',
+      'Nutrition without dieting',
+      'Menstrual-cycle self-care: body changes, hygiene, rest, managing PMS naturally',
+      'Acupressure points traditionally used for cramps, bloating, headaches and low mood',
+      'Gentle yoga, stretching and movement',
+      'Breathing, relaxation and guided meditation',
+      'Journalling, creative work and group discussion',
+    ],
+    price: 167,
+    priceUnit: 'month',
+    priceConfirmed: false,
+    honestNote:
+      'All of this is educational. It encourages healthy habits and self-care, and it is not medical advice, nutritional therapy, or treatment for an eating disorder or any menstrual condition. There is no dieting, no calorie counting, and no body standards in this room.',
+    verifyNote: 'No schedule, age range or group size established. Confirm all three. PRICE: $167/month is Rev standing placeholder, unverified.',
+  },
+  {
+    slug: 'private-somatic-flow',
+    name: 'Private Somatic Flow',
+    audience: 'adults',
+    audienceLabel: 'Adults',
+    pillars: ['somatic-movement', 'returning-to-balance'],
+    status: 'by-request',
+    art: 'seated',
+    source: 'boclaire-flyer',
+    format: 'One to one, by appointment',
+    summary: 'A personalised movement session where you learn to read what your body is telling you and answer it.',
+    body: [
+      'What if movement was not about telling your body what to do? What if it was a conversation?',
+      'Private Somatic Flow is a personalised session where you slow down, notice what your body is communicating, and respond on purpose. Sometimes that means moving. Sometimes it means breath. Sometimes an acupressure point. Sometimes it means stopping and listening.',
+      'The goal is that you become your own guide. Boclaire\u2019s job is not to tell you what works for everyone. It is to help you become a better observer of your own body, so that eventually you do not need somebody standing next to you telling you what to feel.',
+    ],
+    whatHappens: [
+      'Noticing where you hold tension',
+      'Watching how your breathing changes',
+      'Finding which movements bring ease',
+      'Working with acupressure points and how they land for you',
+      'Learning when to move, when to pause, and when to rest',
+    ],
+    price: 167,
+    priceUnit: 'session',
+    priceConfirmed: false,
+    honestNote:
+      'There is no perfect pose here, no pushing through, and no one-size-fits-all formula. This is wellness education and body awareness work, not physiotherapy, not treatment for an injury, and not a substitute for care you are already receiving.',
+    verifyNote: 'PRICE: $167 is Rev standing placeholder. Master context 37 lists a $75 single session historically, which is the likelier real number. Confirm.',
+  },
+  {
+    slug: 'wellness-walk',
+    name: 'Wellness Walk',
+    audience: 'schools',
+    audienceLabel: 'Schools and homeschool co-ops',
+    pillars: ['somatic-movement', 'mindful-meditation'],
+    status: 'by-request',
+    art: 'walking',
+    source: 'boclaire-flyer',
+    format: 'Weekly, by grade band. Runs as PE and social enrichment.',
+    summary: 'A guided mindful walk for students, combining movement outdoors with breath, balance, and simple acupressure.',
+    body: [
+      'A walking class that builds physical fitness and a calmer, more focused head at the same time. Each session centres on a guided mindful walk, where students practise being properly present: looking at what is actually around them, listening to it, and matching breath to movement.',
+      'Around the walk sit age-appropriate movement, breathing, brain exercises and simple acupressure. Activities are adapted to each student\u2019s age and developmental stage and to whatever the outdoors is doing that day.',
+      'Over a term students build balance, coordination, flexibility, strength, posture and endurance, and the class deliberately makes room for curiosity, teamwork and paying attention to other people.',
+    ],
+    whatHappens: [
+      'A guided mindful walk, outdoors',
+      'Age-appropriate movement and games',
+      'Breathing and simple brain exercises',
+      'Simple acupressure techniques',
+      'Observation of the natural world',
+    ],
+    price: 167,
+    priceUnit: 'session',
+    priceConfirmed: false,
+    honestNote:
+      'This is physical education and wellness education. It supports nervous-system regulation, body awareness and emotional well-being in the ordinary sense that moving outdoors and paying attention tend to help. It is not therapy and it is not treatment.',
+    verifyNote:
+      'Boclaire\u2019s flyer states Wednesdays for grades 1-5, Fridays for grade 6 and up with 5 spots, and describes her as an approved Granite Peak Charter School vendor. Master context section 21 forbids publishing a partnership or vendor status without current confirmation, so the school is deliberately not named on the page and the schedule is not published. Confirm both. PRICE: $167/session is the standing placeholder and the least likely of the four to be right: a school enrichment class is normally billed per term or per student to the school, not per session to a parent.',
+  }
+
 ]
 
 export const classBySlug = Object.fromEntries(classes.map((c) => [c.slug, c]))

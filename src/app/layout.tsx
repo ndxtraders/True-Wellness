@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { integrations, site } from '@/lib/site'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { ArtDefs } from '@/components/art/defs'
 import './globals.css'
 
 /**
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <ArtDefs />
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />

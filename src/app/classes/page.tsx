@@ -1,61 +1,208 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { classes } from '@/content/classes'
+import { classes, statusOf, type ClassOffering } from '@/content/classes'
+import type { AudienceKey } from '@/content/types'
+import { statusLabels } from '@/content/types'
+import { ClassArt } from '@/components/art/for-class'
+import { HillsSun, Sprig } from '@/components/art/illustrations'
+import { WaitlistButton } from '@/components/waitlist-button'
 import { disclosures } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Classes',
   description:
-    'Yoga, somatic movement, mindfulness, garden sessions, and one-to-one acupressure for children, teens, adults, and families in Tuolumne County.',
+    'Yoga, somatic movement, mindfulness, walking, garden sessions, and one-to-one acupressure for children, teens, adults, elders, and schools in Tuolumne County.',
+}
+
+/**
+ * The hub groups by who a class is for, because that is the question people
+ * actually arrive with. A flat alphabetical grid makes a parent read fourteen
+ * cards to find the two that concern them.
+ *
+ * Order is deliberate: children first, since that is the practice's centre of
+ * gravity, and schools last, since that audience arrives knowing what it wants.
+ */
+const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
+  {
+    key: 'children',
+    heading: 'For children',
+    blurb: 'Movement, mindfulness, and time outdoors, at a child’s pace rather than an adult’s.',
+  },
+  {
+    key: 'teens',
+    heading: 'For teens',
+    blurb: 'Small circles built to be a place rather than a lecture.',
+  },
+  {
+    key: 'adults',
+    heading: 'For adults',
+    blurb: 'One-to-one work: somatic movement, acupressure, and walking with attention.',
+  },
+  {
+    key: 'caregivers-elders',
+    heading: 'For elders and the people caring for them',
+    blurb: 'Personalised sessions, at your pace, with travel to you where that helps.',
+  },
+  {
+    key: 'families-parents',
+    heading: 'For families',
+    blurb: 'Sessions where the grown-up and the child are both in the room.',
+  },
+  {
+    key: 'schools',
+    heading: 'For schools and homeschool co-ops',
+    blurb: 'Enrichment and PE classes that can run at your location.',
+  },
+  {
+    key: 'events',
+    heading: 'Celebrations',
+    blurb: 'Birthdays and gatherings, outdoors.',
+  },
+]
+
+const statusStyles: Record<string, string> = {
+  enrolling: 'border-moss text-moss',
+  waitlist: 'border-line-strong text-ink-muted',
+  'by-request': 'border-clay text-clay',
+  'in-development': 'border-line-strong text-ink-muted',
+}
+
+function ClassCard({ c }: { c: ClassOffering }) {
+  const status = statusOf(c)
+  return (
+    <li className="flex flex-col overflow-hidden rounded-[--radius-card] border border-line bg-surface">
+      {/* The illustration is the card, not an accessory to it. */}
+      <div className="flex items-end justify-center bg-bg pt-6">
+        <ClassArt art={c.art} className="h-44 w-auto" />
+      </div>
+
+      <div className="flex flex-1 flex-col border-t border-line p-7">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span
+            className={`inline-block rounded-pill border px-3 py-1 text-caption font-medium ${statusStyles[status]}`}
+          >
+            {statusLabels[status]}
+          </span>
+          {c.faithBased && (
+            <span className="text-caption font-medium text-ink-muted">Faith-based</span>
+          )}
+        </div>
+
+        <h3 className="mt-4 text-h4">
+          <Link
+            href={`/classes/${c.slug}`}
+            className="font-semibold text-ink transition-colors hover:text-plum"
+          >
+            {c.name}
+          </Link>
+        </h3>
+        {c.nameKo && <p className="mt-1 text-small text-ink-muted">{c.nameKo}</p>}
+
+        <p className="mt-3 flex-1 text-small text-ink-muted">{c.summary}</p>
+
+        {(c.format || c.duration) && (
+          <p className="mt-4 text-caption text-ink-muted">
+            {[c.duration, c.format].filter(Boolean).join(' · ')}
+          </p>
+        )}
+
+        <div className="mt-6 border-t border-line pt-5">
+          {typeof c.price === 'number' ? (
+            <p className="flex items-baseline gap-2">
+              <span className="font-display text-h4 font-semibold text-plum">${c.price}</span>
+              <span className="text-caption text-ink-muted">
+                per {c.priceUnit}
+                {c.priceConfirmed ? '' : ' · placeholder'}
+              </span>
+            </p>
+          ) : (
+            <p className="text-caption text-ink-muted">Price to be confirmed.</p>
+          )}
+
+          <WaitlistButton className="mt-5" name={c.name} compact />
+          <p className="mt-3 text-caption text-ink-muted">
+            Placeholder. Joining does not book or charge you.
+          </p>
+          <Link
+            href={`/classes/${c.slug}`}
+            className="mt-4 inline-block text-small font-medium text-plum underline decoration-clay decoration-2 underline-offset-4"
+          >
+            Read about this class
+          </Link>
+        </div>
+      </div>
+    </li>
+  )
 }
 
 export default function ClassesPage() {
+  const populated = groups
+    .map((g) => ({ ...g, items: classes.filter((c) => c.audience === g.key) }))
+    .filter((g) => g.items.length > 0)
+
   return (
     <>
+      {/* Hero. Full-bleed landscape rather than a text block in a box. */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
-          <h1 className="max-w-3xl text-h1 text-ink">Classes</h1>
-          <p className="mt-6 max-w-2xl text-body-lg text-ink-muted">
-            Every class runs about forty minutes, with twenty minutes of closing practice at the
-            end. Small groups, mostly outdoors, and built around what the people in front of us can
-            actually do that day.
-          </p>
-          <p className="mt-6 max-w-2xl rounded-[--radius-card] border border-line bg-surface px-6 py-5 text-small text-ink-muted">
-            Classes are filling by waitlist while the schedule is set. Nothing is charged when you
-            join one — Boclaire will be in touch with dates before anything is booked.
-          </p>
+        <div className="mx-auto max-w-6xl px-5 pt-[--spacing-section] pb-12">
+          <div className="max-w-2xl">
+            <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+              Classes
+            </p>
+            <h1 className="mt-5 text-display text-ink">
+              What we actually do, and who it is for.
+            </h1>
+            <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
+              Small groups, mostly outdoors, built around what the people in front of us can do that
+              day. Every class below says plainly what happens in it and what it does not claim.
+            </p>
+          </div>
+        </div>
+        {/* Pulled up so the headline sits in the sky rather than above a gap. */}
+        <HillsSun className="-mt-20 block w-full sm:-mt-32 lg:-mt-44" />
+      </section>
+
+      {/* Standing note about the waitlist. Stated once, not on every card. */}
+      <section className="border-b border-line bg-surface">
+        <div className="mx-auto flex max-w-6xl items-start gap-6 px-5 py-10">
+          <Sprig className="hidden h-24 w-auto shrink-0 sm:block" />
+          <div className="max-w-2xl">
+            <h2 className="text-h4 font-semibold text-ink">Everything is on a waitlist right now</h2>
+            <p className="mt-3 text-ink-muted">
+              The schedule is still being set, so nothing here is bookable yet and nothing is
+              charged when you join a list. Boclaire will be in touch with real dates and a real
+              price before anyone is asked to pay for anything.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* Groups. Alternating ground so fourteen cards do not read as one slab. */}
+      {populated.map((g, i) => (
+        <section
+          key={g.key}
+          className={`border-b border-line ${i % 2 === 1 ? 'bg-surface' : ''}`}
+          aria-labelledby={`group-${g.key}`}
+        >
+          <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
+            <div className="max-w-2xl">
+              <h2 id={`group-${g.key}`} className="text-h2 text-ink">
+                {g.heading}
+              </h2>
+              <p className="mt-4 text-body-lg text-ink-muted">{g.blurb}</p>
+            </div>
+            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {g.items.map((c) => (
+                <ClassCard key={c.slug} c={c} />
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))}
+
       <section>
         <div className="mx-auto max-w-6xl px-5 py-[--spacing-section]">
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {classes.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/classes/${c.slug}`}
-                  className="group flex h-full flex-col rounded-[--radius-card] border border-line bg-surface p-7 transition-colors duration-200 hover:border-plum"
-                >
-                  <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-                    {c.audienceLabel}
-                  </span>
-                  <span className="mt-3 font-display text-h4 font-semibold text-ink transition-colors group-hover:text-plum">
-                    {c.name}
-                  </span>
-                  <span className="mt-3 flex-1 text-small text-ink-muted">{c.summary}</span>
-                  <span className="mt-6 flex items-baseline gap-2 border-t border-line pt-4">
-                    <span className="font-display text-h4 font-semibold text-plum">${c.price}</span>
-                    <span className="text-caption text-ink-muted">
-                      per {c.priceUnit}
-                      {c.priceConfirmed ? '' : ' · placeholder'}
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-12 max-w-2xl text-caption leading-relaxed text-ink-muted">
+          <p className="max-w-2xl text-caption leading-relaxed text-ink-muted">
             {disclosures.services}
           </p>
         </div>

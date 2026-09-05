@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { pillars } from '@/content/pillars'
 import { contact, disclosures, integrations, site } from '@/lib/site'
@@ -69,61 +68,32 @@ export default function HomePage() {
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 pt-10 pb-8">
           {/*
-            Two real grid columns rather than absolute positioning, so the text
-            can never run under the painting at any width. The painting takes
-            the smaller column but still lands around 420px wide at 1440, which
-            is large enough to read as a portrait rather than a thumbnail.
+            Single column. The painting was tried here and pulled: a realistic
+            oil portrait sitting beside a flat vector illustration system reads
+            as two different sites. It still does its job on /about, where it is
+            the subject rather than an accent.
           */}
-          <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
-            <div>
-              <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-                {site.locality} · {site.county}, {site.regionName}
-              </p>
-              <h1 className="mt-4 text-display text-ink">Move, breathe, and be outside.</h1>
-              <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
-                Yoga, somatic movement, and mindfulness for children, families, caregivers, and
-                elders. Small groups, mostly outdoors, at a pace that suits the person in front of
-                us.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/classes"
-                  className="rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
-                >
-                  See the classes
-                </Link>
-                <Link
-                  href="/about"
-                  className="rounded-pill border border-line-strong px-7 py-3.5 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
-                >
-                  Meet Boclaire
-                </Link>
-              </div>
-            </div>
-
-            {/*
-              Image-first on small screens, but capped: at full width it ate
-              370px of an 812px phone viewport and pushed the headline and both
-              CTAs below the fold. The brand's own test is whether a busy parent
-              gets it in one pass on a phone.
-            */}
-            <figure className="order-first mx-auto w-full max-w-[17rem] sm:max-w-sm lg:order-none lg:max-w-none">
-              <Image
-                src="/images/boclaire-painting.jpg"
-                alt="A painted portrait of Boclaire, eyes closed, hands together at the throat."
-                width={1080}
-                height={807}
-                priority
-                sizes="(max-width: 1024px) 90vw, 42vw"
-                className="w-full rounded-(--radius-card) border border-line"
-              />
-              {/*
-                No caption here. The landscape band rides up over the bottom of
-                this column, and small grey type sitting on the lilac ridge read
-                as an accident. The alt text carries it for screen readers and
-                /about states plainly that it is a painting rather than a photo.
-              */}
-            </figure>
+          <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+            {site.locality} · {site.county}, {site.regionName}
+          </p>
+          <h1 className="mt-4 max-w-3xl text-display text-ink">Move, breathe, and be outside.</h1>
+          <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
+            Yoga, somatic movement, and mindfulness for children, families, caregivers, and elders.
+            Small groups, mostly outdoors, at a pace that suits the person in front of us.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/classes"
+              className="rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+            >
+              See the classes
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-pill border border-line-strong px-7 py-3.5 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
+            >
+              Meet Boclaire
+            </Link>
           </div>
         </div>
         <HillsSun compact className="-mt-8 block w-full sm:-mt-20 lg:-mt-32" />

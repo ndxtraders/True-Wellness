@@ -85,10 +85,7 @@ export default function AboutPage() {
           </figure>
 
           <div className="order-1 lg:order-2">
-            <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-              Your instructor
-            </p>
-            <h1 className="mt-4 text-display text-ink">Meet Boclaire</h1>
+            <h1 className="text-display text-ink">Meet Boclaire</h1>
             <div className="mt-7 max-w-xl space-y-5 text-body-lg text-ink-muted">
               <p>
                 Boclaire is a Natural Wellness Practitioner and Educator. She teaches yoga,
@@ -154,7 +151,7 @@ export default function AboutPage() {
                     <li key={c} className="flex gap-3 text-ink-muted">
                       <span
                         aria-hidden="true"
-                        className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-clay"
+                        className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber"
                       />
                       <span>{c}</span>
                     </li>
@@ -169,7 +166,7 @@ export default function AboutPage() {
             <dl className="mt-6 space-y-5">
               {alsoTrue.map((a) => (
                 <div key={`${a.label}-${a.detail}`} className="border-t border-line pt-4">
-                  <dt className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+                  <dt className="text-caption font-medium text-ink-muted">
                     {a.label}
                   </dt>
                   <dd
@@ -180,7 +177,7 @@ export default function AboutPage() {
               ))}
             </dl>
 
-            <h3 className="mt-10 font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+            <h3 className="mt-10 text-caption font-medium text-ink-muted">
               She has facilitated
             </h3>
             <ul className="mt-4 flex flex-wrap gap-2">

@@ -29,10 +29,7 @@ export default function SponsorPage() {
           </Link>
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
             <div>
-              <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-                Choose your level
-              </p>
-              <h1 className="mt-5 max-w-2xl text-display text-ink">
+              <h1 className="max-w-2xl text-display text-ink">
                 Put a local child in wellness classes.
               </h1>
               <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
@@ -43,7 +40,7 @@ export default function SponsorPage() {
             <BeeBloom className="mx-auto w-full max-w-xs" />
           </div>
         </div>
-        <HillsSun className="-mt-10 block w-full sm:-mt-20 lg:-mt-28" />
+        <HillsSun compact className="-mt-10 block w-full sm:-mt-20 lg:-mt-28" />
       </section>
 
       {/*
@@ -89,7 +86,7 @@ export default function SponsorPage() {
                   key={t.slug}
                   className="flex flex-col rounded-(--radius-card) border border-line bg-surface p-8"
                 >
-                  <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+                  <span className="text-caption font-medium text-ink-muted">
                     {t.label}
                   </span>
                   <h3 className="mt-3 font-display text-h3 font-semibold text-ink">{t.name}</h3>
@@ -108,7 +105,7 @@ export default function SponsorPage() {
                       <li key={b} className="flex gap-3 text-small text-ink-muted">
                         <span
                           aria-hidden="true"
-                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-clay"
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber"
                         />
                         <span>{b}</span>
                       </li>
@@ -153,7 +150,7 @@ export default function SponsorPage() {
                   <span className="inline-block rounded-pill border border-plum px-4 py-1.5 text-caption font-medium text-plum">
                     Most impactful
                   </span>
-                  <span className="mt-5 block font-sans text-caption font-medium tracking-[0.06em] text-ink uppercase">
+                  <span className="mt-5 block text-caption font-medium text-ink">
                     {t.label}
                   </span>
                   <h2 className="mt-3 font-display text-mega leading-none font-semibold text-ink">

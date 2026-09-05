@@ -19,7 +19,7 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+            <h2 className="text-caption font-medium text-ink-muted">
               Explore
             </h2>
             <ul className="mt-4 space-y-2.5 text-small">
@@ -40,7 +40,7 @@ export function SiteFooter() {
           </nav>
 
           <div>
-            <h2 className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+            <h2 className="text-caption font-medium text-ink-muted">
               Get in touch
             </h2>
             <ul className="mt-4 space-y-2.5 text-small">

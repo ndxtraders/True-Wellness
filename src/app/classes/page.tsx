@@ -63,7 +63,7 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
 const statusStyles: Record<string, string> = {
   enrolling: 'border-moss text-moss',
   waitlist: 'border-line-strong text-ink-muted',
-  'by-request': 'border-clay text-clay',
+  'by-request': 'border-amber text-amber',
   'in-development': 'border-line-strong text-ink-muted',
 }
 
@@ -102,7 +102,7 @@ function ClassCard({ c }: { c: ClassOffering }) {
 
         {(c.format || c.duration) && (
           <p className="mt-4 text-caption text-ink-muted">
-            {[c.duration, c.format].filter(Boolean).join(' · ')}
+            {[c.duration, c.format].filter(Boolean).join('. ')}
           </p>
         )}
 
@@ -112,7 +112,7 @@ function ClassCard({ c }: { c: ClassOffering }) {
               <span className="font-display text-h4 font-semibold text-plum">${c.price}</span>
               <span className="text-caption text-ink-muted">
                 per {c.priceUnit}
-                {c.priceConfirmed ? '' : ' · placeholder'}
+                {c.priceConfirmed ? '' : ', placeholder'}
               </span>
             </p>
           ) : (
@@ -125,7 +125,7 @@ function ClassCard({ c }: { c: ClassOffering }) {
           </p>
           <Link
             href={`/classes/${c.slug}`}
-            className="mt-4 inline-block text-small font-medium text-plum underline decoration-clay decoration-2 underline-offset-4"
+            className="mt-4 inline-block text-small font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
           >
             Read about this class
           </Link>
@@ -146,10 +146,7 @@ export default function ClassesPage() {
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-12">
           <div className="max-w-2xl">
-            <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-              Classes
-            </p>
-            <h1 className="mt-5 text-display text-ink">
+            <h1 className="text-display text-ink">
               What we actually do, and who it is for.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
@@ -159,7 +156,7 @@ export default function ClassesPage() {
           </div>
         </div>
         {/* Pulled up so the headline sits in the sky rather than above a gap. */}
-        <HillsSun className="-mt-20 block w-full sm:-mt-32 lg:-mt-44" />
+        <HillsSun compact className="-mt-20 block w-full sm:-mt-32 lg:-mt-44" />
       </section>
 
       {/* Standing note about the waitlist. Stated once, not on every card. */}

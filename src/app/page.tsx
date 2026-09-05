@@ -73,10 +73,7 @@ export default function HomePage() {
             as two different sites. It still does its job on /about, where it is
             the subject rather than an accent.
           */}
-          <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-            {site.locality} · {site.county}, {site.regionName}
-          </p>
-          <h1 className="mt-4 max-w-3xl text-display text-ink">Move, breathe, and be outside.</h1>
+          <h1 className="max-w-3xl text-display text-ink">Move, breathe, and be outside.</h1>
           <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
             Yoga, somatic movement, and mindfulness for children, families, caregivers, and elders.
             Small groups, mostly outdoors, at a pace that suits the person in front of us.
@@ -96,7 +93,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <HillsSun compact className="-mt-8 block w-full sm:-mt-20 lg:-mt-32" />
+        <HillsSun compact withFigures className="-mt-8 block w-full sm:-mt-20 lg:-mt-32" />
       </section>
 
       {/* ---------------------------------------------------------------- */}
@@ -194,7 +191,7 @@ export default function HomePage() {
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-(--spacing-section) lg:grid-cols-[1fr_1.1fr]">
-          <FigurePair className="mx-auto w-full max-w-md" />
+          <FigurePair className="mx-auto w-full max-w-sm" />
           <figure>
             <blockquote className="font-display text-h3 leading-tight text-ink">
               &ldquo;The goal is not perfection or performance, but resilience, confidence, and
@@ -210,7 +207,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="mt-7 inline-block font-medium text-plum underline decoration-clay decoration-2 underline-offset-4"
+              className="mt-7 inline-block font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
             >
               More about Boclaire
             </Link>
@@ -223,18 +220,22 @@ export default function HomePage() {
       {/*    Carries the concrete programme numbers from master context 5;  */}
       {/*    twelve children and a 3:1 ratio persuade harder than adjectives*/}
       {/* ---------------------------------------------------------------- */}
+      {/* The peak. Master context 5's numbers are the most persuasive content
+          on this page and they were rendering at the same weight as everything
+          around them. Peak-end rule: one engineered high point, given the scale
+          and the room, with the band before it quietened to make space. */}
       <section className="border-b border-line bg-surface" aria-labelledby="center">
-        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
+        <div className="mx-auto max-w-6xl px-5 py-[calc(var(--spacing-section)*1.35)]">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
             <div className="max-w-2xl">
-              <h2 id="center" className="text-h2 text-ink">
+              <h2 id="center" className="text-display text-ink">
                 The Children&rsquo;s Wellness Center
               </h2>
               <p className="mt-5 text-body-lg text-ink-muted">
                 We are building an outdoor wellness space and herb garden in Tuolumne County, so
                 local kids have somewhere to move, plant things, and be outside every week.
               </p>
-              <dl className="mt-9 grid gap-6 sm:grid-cols-3">
+              <dl className="mt-10 grid gap-8 sm:grid-cols-3">
                 {[
                   ['12', 'children a month'],
                   ['16', 'hours each, monthly'],
@@ -243,8 +244,10 @@ export default function HomePage() {
                   <div key={label} className="border-t border-line pt-4">
                     <dt className="sr-only">{label}</dt>
                     <dd>
-                      <span className="block font-display text-h2 font-semibold text-plum">{n}</span>
-                      <span className="mt-1 block text-small text-ink-muted">{label}</span>
+                      <span className="block font-display text-mega leading-none font-semibold text-plum">
+                        {n}
+                      </span>
+                      <span className="mt-3 block text-small text-ink-muted">{label}</span>
                     </dd>
                   </div>
                 ))}
@@ -306,7 +309,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
               <a
                 href={`mailto:${contact.email}`}
-                className="font-medium text-plum underline decoration-clay decoration-2 underline-offset-4"
+                className="font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
               >
                 {contact.email}
               </a>

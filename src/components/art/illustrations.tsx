@@ -73,6 +73,7 @@ export function HillsSun({
   className,
   title,
   compact = false,
+  withFigures = false,
 }: ArtProps & {
   /**
    * Crops most of the empty sky. At full width the 1200x420 box renders about
@@ -81,22 +82,28 @@ export function HillsSun({
    * the new top edge.
    */
   compact?: boolean
+  /** Places three children on the near ridge. Hero use. */
+  withFigures?: boolean
 }) {
   return (
     <svg
-      viewBox={compact ? '0 140 1200 280' : '0 0 1200 420'}
+      viewBox={compact ? '0 120 1200 300' : '0 0 1200 420'}
       className={className}
       {...svgProps(title)}
     >
       {/* sky stays the page ground: nothing drawn */}
 
-      {/* sun */}
+      {/* Sun. Sits high and right, clear of the lilac ridge rather than half
+          sunk behind it: a sun bisected by a hill reads as a setting sun, and
+          this is a page about being outside during the day. Placed at x=930
+          where the ridge line dips, which is the only stretch of sky tall
+          enough to hold it in the compact crop. */}
       <circle
-        cx="852"
-        cy={compact ? 214 : 150}
-        r="62"
-        className="fill-clay"
-        opacity="0.5"
+        cx="930"
+        cy={compact ? 186 : 148}
+        r={compact ? 52 : 58}
+        className="fill-sun"
+        opacity="0.9"
         filter="url(#twm-grain)"
       />
 
@@ -131,6 +138,48 @@ export function HillsSun({
         <ellipse cx="742" cy="341" rx="22" ry="16" />
         <ellipse cx="1046" cy="331" rx="19" ry="14" />
       </g>
+
+      {/* Children on the near ridge.
+          The hero previously opened on empty scenery. The most characteristic
+          thing in this practice's world is children moving outdoors, so they
+          belong in the establishing shot rather than only on the cards.
+          Light fills, because the near ridge is the darkest band in the scene. */}
+      {withFigures && (
+        /* Scaled and dropped so the whole group sits inside the dark foreground
+           band. The first pass straddled the ridge line, which left each figure
+           half light-on-dark and half light-on-light: the cream ones washed out
+           from the waist up. A figure has to live in one band. */
+        <g transform="translate(187 147) scale(0.68)">
+          {/* running, arms out */}
+          <g>
+            <path d="M700 356 C 694 368 690 380 691 390" className="stroke-bg" strokeWidth="7" strokeLinecap="round" fill="none" />
+            <path d="M712 356 C 720 368 726 378 727 388" className="stroke-bg" strokeWidth="7" strokeLinecap="round" fill="none" />
+            <path d="M700 360 C 695 340 700 322 706 321 C 712 322 717 340 712 360 Z" className="fill-bg" filter="url(#twm-grain)" />
+            <path d="M700 332 C 688 336 681 342 678 350" className="stroke-bg" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <path d="M712 332 C 724 328 731 320 732 311" className="stroke-bg" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <circle cx="706" cy="308" r="10" className="fill-bg" filter="url(#twm-grain)" />
+          </g>
+
+          {/* arms lifted */}
+          <g>
+            <path d="M754 358 C 751 372 750 384 751 392" className="stroke-lilac" strokeWidth="7" strokeLinecap="round" fill="none" />
+            <path d="M766 358 C 770 372 771 384 770 392" className="stroke-lilac" strokeWidth="7" strokeLinecap="round" fill="none" />
+            <path d="M752 362 C 748 340 753 320 760 319 C 767 320 772 340 768 362 Z" className="fill-lilac" filter="url(#twm-grain)" />
+            <path d="M752 334 C 743 322 739 310 740 300" className="stroke-lilac" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <path d="M768 334 C 777 322 781 310 780 300" className="stroke-lilac" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <circle cx="760" cy="306" r="10" className="fill-lilac" filter="url(#twm-grain)" />
+          </g>
+
+          {/* crouched, looking at something on the ground */}
+          <g>
+            <path d="M806 366 C 800 376 798 386 800 392" className="stroke-bg" strokeWidth="7" strokeLinecap="round" fill="none" />
+            <path d="M818 366 C 824 376 826 384 824 391" className="stroke-bg" strokeWidth="7" strokeLinecap="round" fill="none" />
+            <path d="M804 370 C 800 354 806 340 812 340 C 818 341 822 356 818 370 Z" className="fill-bg" filter="url(#twm-grain)" />
+            <path d="M818 352 C 826 358 830 364 830 370" className="stroke-bg" strokeWidth="6" strokeLinecap="round" fill="none" />
+            <circle cx="811" cy="329" r="9" className="fill-bg" filter="url(#twm-grain)" />
+          </g>
+        </g>
+      )}
     </svg>
   )
 }
@@ -167,13 +216,13 @@ export function FigureSeated({ className, title }: ArtProps) {
       {/* torso: narrow at the shoulder, widening to the seat */}
       <path
         d="M124 274 C 115 214 126 146 160 142 C 194 146 205 214 196 274 Z"
-        className="fill-clay"
+        className="fill-amber"
         filter="url(#twm-painted)"
       />
 
       {/* arms out to the knees */}
-      <path d="M130 186 C 106 212 96 246 106 272" className="stroke-clay" strokeWidth="15" strokeLinecap="round" fill="none" />
-      <path d="M190 186 C 214 212 224 246 214 272" className="stroke-clay" strokeWidth="15" strokeLinecap="round" fill="none" />
+      <path d="M130 186 C 106 212 96 246 106 272" className="stroke-amber" strokeWidth="15" strokeLinecap="round" fill="none" />
+      <path d="M190 186 C 214 212 224 246 214 272" className="stroke-amber" strokeWidth="15" strokeLinecap="round" fill="none" />
 
       {/* hair: falls behind the shoulders, softer than the first pass */}
       <path
@@ -183,7 +232,7 @@ export function FigureSeated({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="160" cy="110" r="26" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="160" cy="110" r="26" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="160" cy="110" r="26" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
     </svg>
   )
 }
@@ -207,11 +256,11 @@ export function FigurePair({ className, title }: ArtProps) {
       />
       <path
         d="M96 276 C 88 218 98 152 132 148 C 166 152 176 218 168 276 Z"
-        className="fill-clay"
+        className="fill-amber"
         filter="url(#twm-painted)"
       />
-      <path d="M164 192 C 196 198 216 212 226 228" className="stroke-clay" strokeWidth="14" strokeLinecap="round" fill="none" />
-      <path d="M100 190 C 78 214 72 244 82 272" className="stroke-clay" strokeWidth="14" strokeLinecap="round" fill="none" />
+      <path d="M164 192 C 196 198 216 212 226 228" className="stroke-amber" strokeWidth="14" strokeLinecap="round" fill="none" />
+      <path d="M100 190 C 78 214 72 244 82 272" className="stroke-amber" strokeWidth="14" strokeLinecap="round" fill="none" />
       <path
         d="M106 122 C 100 86 116 68 132 68 C 148 68 164 86 158 122 C 164 152 156 174 145 182 C 151 156 149 132 142 122 C 136 132 128 132 122 122 C 115 132 113 156 119 182 C 108 174 100 152 106 122 Z"
         className="fill-ink"
@@ -219,7 +268,7 @@ export function FigurePair({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="132" cy="116" r="24" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="132" cy="116" r="24" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="132" cy="116" r="24" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
 
       {/* --- child, right, facing left, smaller --- */}
       <path
@@ -245,7 +294,7 @@ export function FigurePair({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="304" cy="182" r="21" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="304" cy="182" r="21" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="304" cy="182" r="21" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
     </svg>
   )
 }
@@ -283,7 +332,7 @@ export function FigureWalking({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="161" cy="78" r="24" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="161" cy="78" r="24" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="161" cy="78" r="24" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
 
       {/* --- shorter figure --- */}
       <path d="M264 232 C 252 258 246 284 246 298" className="stroke-moss" strokeWidth="17" strokeLinecap="round" fill="none" />
@@ -305,7 +354,7 @@ export function FigureWalking({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="273" cy="146" r="20" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="273" cy="146" r="20" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="273" cy="146" r="20" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
     </svg>
   )
 }
@@ -351,7 +400,7 @@ export function FigureTree({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="160" cy="114" r="22" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="160" cy="114" r="22" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="160" cy="114" r="22" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
 
       {/* one leaf at the foot: the only whimsy the set allows itself */}
       <path d="M196 300 C 210 286 228 284 236 288 C 229 301 212 307 196 300 Z" className="fill-moss" filter="url(#twm-painted)" />
@@ -382,7 +431,7 @@ export function FigureElder({ className, title }: ArtProps) {
       {/* bench: one soft block, behind the figure */}
       <path
         d="M88 232 C 88 222 96 216 108 216 L212 216 C 224 216 232 222 232 232 L232 254 C 232 262 224 266 212 266 L108 266 C 96 266 88 262 88 254 Z"
-        className="fill-clay"
+        className="fill-amber"
         opacity="0.5"
         filter="url(#twm-painted)"
       />
@@ -409,7 +458,7 @@ export function FigureElder({ className, title }: ArtProps) {
         filter="url(#twm-painted)"
       />
       <circle cx="160" cy="104" r="25" className="fill-bg" filter="url(#twm-grain)" />
-      <circle cx="160" cy="104" r="25" className="fill-clay" opacity="0.26" filter="url(#twm-grain)" />
+      <circle cx="160" cy="104" r="25" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
     </svg>
   )
 }
@@ -427,16 +476,16 @@ export function FigureHands({ className, title }: ArtProps) {
       {/* receiving forearm, running low across the frame */}
       <path
         d="M36 214 C 96 196 168 190 232 198"
-        className="stroke-clay"
+        className="stroke-amber"
         strokeWidth="34"
         strokeLinecap="round"
         fill="none"
       />
       {/* its hand, fingers suggested by three short strokes */}
-      <ellipse cx="252" cy="202" rx="26" ry="19" className="fill-clay" filter="url(#twm-grain)" />
-      <path d="M272 192 L292 186" className="stroke-clay" strokeWidth="9" strokeLinecap="round" fill="none" />
-      <path d="M274 202 L296 200" className="stroke-clay" strokeWidth="9" strokeLinecap="round" fill="none" />
-      <path d="M272 212 L292 216" className="stroke-clay" strokeWidth="9" strokeLinecap="round" fill="none" />
+      <ellipse cx="252" cy="202" rx="26" ry="19" className="fill-amber" filter="url(#twm-grain)" />
+      <path d="M272 192 L292 186" className="stroke-amber" strokeWidth="9" strokeLinecap="round" fill="none" />
+      <path d="M274 202 L296 200" className="stroke-amber" strokeWidth="9" strokeLinecap="round" fill="none" />
+      <path d="M272 212 L292 216" className="stroke-amber" strokeWidth="9" strokeLinecap="round" fill="none" />
 
       {/* working hand coming in from above */}
       <path
@@ -536,7 +585,7 @@ export function BeeBloom({ className, title }: ArtProps) {
         <ellipse cx="-4" cy="-16" rx="20" ry="10" transform="rotate(-26 -4 -16)" className="fill-bg" opacity="0.8" />
         <ellipse cx="12" cy="-14" rx="17" ry="9" transform="rotate(10 12 -14)" className="fill-bg" opacity="0.65" />
         {/* abdomen */}
-        <ellipse cx="6" cy="2" rx="24" ry="14" className="fill-clay" />
+        <ellipse cx="6" cy="2" rx="24" ry="14" className="fill-amber" />
         {/* stripes */}
         <path d="M-2 -10 C 1 -3 1 6 -2 13" className="stroke-ink" strokeWidth="5" strokeLinecap="round" fill="none" opacity="0.62" />
         <path d="M10 -11 C 13 -4 13 6 10 13" className="stroke-ink" strokeWidth="5" strokeLinecap="round" fill="none" opacity="0.62" />
@@ -551,7 +600,7 @@ export function BeeBloom({ className, title }: ArtProps) {
       {/* flight line */}
       <path
         d="M226 96 C 240 78 236 56 216 44"
-        className="stroke-clay"
+        className="stroke-amber"
         strokeWidth="3"
         strokeLinecap="round"
         strokeDasharray="2 9"
@@ -588,12 +637,12 @@ export function SeedHead({ className, title }: ArtProps) {
               y1={s.y1}
               x2={s.x2}
               y2={s.y2}
-              className="stroke-clay"
+              className="stroke-amber"
               strokeWidth="2"
               strokeLinecap="round"
               opacity="0.8"
             />
-            <circle cx={s.cx} cy={s.cy} r="4" className="fill-clay" opacity="0.55" />
+            <circle cx={s.cx} cy={s.cy} r="4" className="fill-amber" opacity="0.55" />
           </g>
         ))}
       </g>

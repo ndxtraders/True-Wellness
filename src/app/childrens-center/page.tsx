@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { disclosures, integrations } from '@/lib/site'
+import { disclosures, integrations, site } from '@/lib/site'
 import { Sprig } from '@/components/art/illustrations'
 
 export const metadata: Metadata = {
@@ -13,25 +13,10 @@ export const metadata: Metadata = {
 export default function ChildrensCenterPage() {
   return (
     <>
-      <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
-          <h1 className="max-w-3xl text-h1 text-ink">The Children&rsquo;s Wellness Center</h1>
-          <div className="mt-6 max-w-2xl space-y-5 text-body-lg text-ink-muted">
-            <p>
-              We are building an outdoor wellness space and herb garden in Tuolumne County, so local
-              kids have somewhere to move, plant things, and be outside every week.
-            </p>
-            <p>
-              Kids move differently outside. They climb, wander, notice things, and get tired in a
-              good way. Two hours a week outdoors is a reasonable thing to want for a child, and
-              most kids around here do not get it.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/*
-        The herb garden image, per Rev, appears on this page and nowhere else.
+        Hero: heading, then the image. Per Rev the garden belongs in the hero
+        rather than buried under a block of text, and the copy reads better
+        after you have seen the place it describes.
 
         Three things are true about this file and all three are deliberate:
         1. It is 9.1 MB and it is a PNG wearing a .jpg extension (2752x1536
@@ -43,8 +28,17 @@ export default function ChildrensCenterPage() {
            the visible crop; it is not removed, only cropped away.
         3. Rev has said he will edit it. Until he does, treat this slot as
            holding a placeholder rather than a finished asset.
+
+        `priority` here, unlike before: it is now the page's LCP element.
       */}
       <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 pt-12 pb-10">
+          <h1 className="max-w-3xl text-display text-ink">The Children&rsquo;s Wellness Center</h1>
+          <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
+            An outdoor wellness space and herb garden, being built in {site.locality},{' '}
+            {site.county}.
+          </p>
+        </div>
         <figure className="relative aspect-[21/9] w-full overflow-hidden">
           <Image
             src="/images/heavenly-herb-garden.jpg"
@@ -52,13 +46,29 @@ export default function ChildrensCenterPage() {
             fill
             sizes="100vw"
             className="object-cover object-[50%_38%]"
-            priority={false}
+            priority
           />
         </figure>
         <figcaption className="mx-auto max-w-6xl px-5 py-6 text-caption text-ink-muted">
           The garden the centre is being built around. Placeholder image while the space is under
           construction.
         </figcaption>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
+          <div className="max-w-2xl space-y-5 text-body-lg text-ink-muted">
+            <p>
+              We are building an outdoor wellness space and herb garden in Tuolumne County, so local
+              kids have somewhere to move, plant things, and be outside every week.
+            </p>
+            <p>
+              Kids move differently outside. They climb, wander, notice things, and get tired in a
+              good way. Two hours a week outdoors is a reasonable thing to want for a child, and
+              most kids around here do not get it.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section>

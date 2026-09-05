@@ -41,9 +41,9 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
 
           <div className="mt-8 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <div>
-              <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+              <p className="text-caption font-medium text-ink-muted">
                 {c.audienceLabel}
-                {c.faithBased ? ' · Faith-based' : ''}
+                {c.faithBased ? ', faith-based' : ''}
               </p>
               <h1 className="mt-4 text-h1 text-ink">{c.name}</h1>
               {c.nameKo && <p className="mt-2 text-body-lg text-ink-muted">{c.nameKo}</p>}
@@ -80,7 +80,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
               )}
               {(c.duration || c.format) && (
                 <p className="mt-5 border-t border-line pt-5 text-small text-ink-muted">
-                  {[c.duration, c.format].filter(Boolean).join(' · ')}
+                  {[c.duration, c.format].filter(Boolean).join('. ')}
                 </p>
               )}
               <WaitlistButton className="mt-7" name={c.name} />
@@ -99,7 +99,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
             <ul className="mt-6 space-y-3">
               {c.whatHappens.map((w) => (
                 <li key={w} className="flex gap-3 text-ink-muted">
-                  <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
+                  <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber" />
                   <span>{w}</span>
                 </li>
               ))}
@@ -110,7 +110,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
             <h2 className="text-h3 text-ink">Worth being clear about</h2>
             <p className="mt-6 text-ink-muted">{c.honestNote}</p>
 
-            <h3 className="mt-10 font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
+            <h3 className="mt-10 text-caption font-medium text-ink-muted">
               Part of
             </h3>
             <ul className="mt-4 flex flex-wrap gap-2">

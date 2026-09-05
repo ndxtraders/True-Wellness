@@ -28,6 +28,7 @@
  * and the rules below make it structurally incapable of returning to the roles
  * that broke it. Terracotta is back at its original #8C4339 (6.55:1); the
  * earlier move to #9C4A2C cost legibility and bought no useful separation.
+ * That whole line of reasoning is now moot: terracotta is gone entirely.
  *
  * Four rules hold this together:
  *   1. Sage and lilac are grounds, never figures. They never carry text, an
@@ -51,7 +52,18 @@
 
   --color-plum: #5c2e6f; /* BRAND ink — sampled from the mark. 9.40:1 */
   --color-moss: #4a6741; /* text-safe green. 5.90:1 */
-  --color-clay: #8c4339; /* terracotta, restored. 6.55:1 */
+  /* Amber, not terracotta.
+   *
+   * Cream ground + high-contrast serif + terracotta is the single most
+   * recognisable generated-page signature, and we were shipping all three.
+   * Amber is earned twice over instead: the bee in Boclaire's own "Bee Happy"
+   * photograph is amber, and the Sierra foothills are gold, which is what her
+   * Heavenly Hills frames actually show. Gold against purple is also an
+   * uncommon pairing in this market, where clay is the house default.
+   *
+   * 5.29:1 on paper, so it still carries text; 3.11:1 on the sage field, which
+   * clears the 3:1 bar for borders and large type. */
+  --color-amber: #8a5e12;
 
   /* FIELD-ONLY colors. These never carry text, an icon, or a button label.
    * Sage is the old site's green #83B14E, knocked back to 65% over the paper
@@ -63,6 +75,11 @@
    * illustrations, where nothing sits on top of it. */
   --color-sage: #adc987;
   --color-lilac: #d3a0e3; /* sampled from Bee Happy, H286 vs the mark's H282 */
+  /* The sun. FIELD-ONLY like sage and lilac, and deliberately the same hue
+   * family as --color-amber at a much higher value: the accent and the sun are
+   * one colour at two brightnesses, which is why they sit together rather than
+   * competing. Amber at 50% opacity read as tan, not sunlight. */
+  --color-sun: #e8b23c;
   /* Deep green FIELD, for the landscape foreground. Shares a value with
    * --color-moss but is kept separate: moss is a text colour and may be tuned
    * for legibility, forest is a ground and may be tuned for depth. Collapsing

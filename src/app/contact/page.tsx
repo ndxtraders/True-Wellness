@@ -15,10 +15,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-10">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
-              <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-                Contact
-              </p>
-              <h1 className="mt-5 text-display text-ink">Get in touch</h1>
+              <h1 className="text-display text-ink">Get in touch</h1>
               <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
                 Email is the surest way to reach Boclaire. Tell her who the class is for and roughly
                 what you are hoping for, and she will tell you honestly whether it is something she
@@ -28,35 +25,43 @@ export default function ContactPage() {
             <FigurePair className="mx-auto w-full max-w-sm" />
           </div>
         </div>
-        <HillsSun className="-mt-10 block w-full sm:-mt-20 lg:-mt-28" />
+        <HillsSun compact className="-mt-10 block w-full sm:-mt-20 lg:-mt-28" />
       </section>
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
-          <div className="grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
-            <a
-              href={`mailto:${contact.email}`}
-              className="rounded-(--radius-card) border border-line bg-surface p-8 transition-colors hover:border-plum"
-            >
-              <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-                Email
-              </span>
-              <span className="mt-3 block break-words font-medium text-plum">{contact.email}</span>
-            </a>
-            <a
-              href={contact.phoneHref}
-              className="rounded-(--radius-card) border border-line bg-surface p-8 transition-colors hover:border-plum"
-            >
-              <span className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-                Phone
-              </span>
-              <span className="mt-3 block font-medium text-plum">{contact.phoneDisplay}</span>
-            </a>
-          </div>
+          {/*
+            Ruled entries, not boxes. Two contact details do not need the same
+            card treatment as a class you are choosing between; reusing one card
+            shape for every kind of content is what makes a page read as a kit.
+          */}
+          <dl className="max-w-2xl">
+            <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 border-t border-line py-6">
+              <dt className="w-20 shrink-0 text-small text-ink-muted">Email</dt>
+              <dd>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="text-body-lg font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
+                >
+                  {contact.email}
+                </a>
+              </dd>
+            </div>
+            <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 border-y border-line py-6">
+              <dt className="w-20 shrink-0 text-small text-ink-muted">Phone</dt>
+              <dd>
+                <a
+                  href={contact.phoneHref}
+                  className="text-body-lg font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
+                >
+                  {contact.phoneDisplay}
+                </a>
+              </dd>
+            </div>
+          </dl>
 
           <p className="mt-8 text-ink-muted">
-            {site.locality} · {site.county}, {site.regionName}. Classes can also be run at your
-            location.
+            {site.locality}, in {site.county}. Classes can also be run at your location.
           </p>
         </div>
       </section>

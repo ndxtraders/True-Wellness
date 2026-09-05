@@ -63,7 +63,7 @@ export default async function PillarPage({ params }: { params: Promise<{ slug: s
             <ul className="mt-6 space-y-3">
               {p.inPractice.map((i) => (
                 <li key={i} className="flex gap-3 text-ink-muted">
-                  <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
+                  <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber" />
                   <span>{i}</span>
                 </li>
               ))}

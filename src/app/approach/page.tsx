@@ -15,16 +15,13 @@ export default function ApproachPage() {
     <>
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-10">
-          <p className="font-sans text-caption font-medium tracking-[0.06em] text-ink-muted uppercase">
-            Our approach
-          </p>
-          <h1 className="mt-5 max-w-3xl text-display text-ink">How we think about this</h1>
+          <h1 className="max-w-3xl text-display text-ink">How we think about this</h1>
           <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
             Five ideas run underneath every class. Each one comes with a plain statement of what it
             does not claim, because that is the part most wellness writing leaves out.
           </p>
         </div>
-        <HillsSun className="-mt-16 block w-full sm:-mt-28 lg:-mt-40" />
+        <HillsSun compact className="-mt-16 block w-full sm:-mt-28 lg:-mt-40" />
       </section>
 
       {/*

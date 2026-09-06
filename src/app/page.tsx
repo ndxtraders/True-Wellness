@@ -110,10 +110,10 @@ export default function HomePage() {
                 to sit still?
               </p>
               <p className="mt-5 text-body-lg text-ink-muted">
-                This is the other thing. Children already have good signals for movement, rest,
-                curiosity and play, and most of what we do is make room for those rather than
-                override them. Same for the adults, and the elders, and the people doing the
-                caring.
+                Most of what we do here is the opposite. Children already have good signals for
+                movement, rest, curiosity and play, and the job is mostly to make room for those
+                rather than override them. The same goes for the adults, the elders, and the
+                people doing the caring.
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      {/* 4. Pillars, on the sage field. First saturated colour on the page.*/}
+      {/* 4. Pillars, on the sage field. First saturated color on the page.*/}
       {/*    Ink is 8.42:1 here and plum 5.53:1, so both clear AA for body.  */}
       {/* ---------------------------------------------------------------- */}
       <section className="bg-sage" aria-labelledby="approach">
@@ -162,8 +162,8 @@ export default function HomePage() {
               How we think about this
             </h2>
             <p className="mt-5 text-body-lg text-ink">
-              Five ideas run underneath every class. They are also where we say plainly what a
-              practice does not claim to do.
+              Five ideas run underneath every class. They are also where we say plainly what we
+              do not claim to do.
             </p>
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
@@ -182,7 +182,7 @@ export default function HomePage() {
             ))}
           </ul>
         </div>
-        {/* Curved close, so the coloured band does not end as a hard rectangle. */}
+        {/* Curved close, so the colored band does not end as a hard rectangle. */}
         <ArcBand className="-mb-px block w-full" />
       </section>
 
@@ -201,9 +201,9 @@ export default function HomePage() {
               &mdash; Boclaire
             </figcaption>
             <p className="mt-8 max-w-md text-ink-muted">
-              She is not trying to produce small athletes. The work is cultivation: body awareness,
-              coordination, emotional awareness, and enough self-trust that a child knows what their
-              own body is telling them.
+              She isn&rsquo;t trying to produce small athletes. The work is cultivation: body
+              awareness, coordination, emotional awareness, and enough self-trust that a child
+              knows what their own body is telling them.
             </p>
             <Link
               href="/about"
@@ -216,8 +216,8 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      {/* 6. Children's Centre. The only currently wired revenue path.      */}
-      {/*    Carries the concrete programme numbers from master context 5;  */}
+      {/* 6. Children's Center. The only currently wired revenue path.      */}
+      {/*    Carries the concrete program numbers from master context 5;  */}
       {/*    twelve children and a 3:1 ratio persuade harder than adjectives*/}
       {/* ---------------------------------------------------------------- */}
       {/* The peak. Master context 5's numbers are the most persuasive content
@@ -241,13 +241,10 @@ export default function HomePage() {
                   ['16', 'hours each, monthly'],
                   ['3:1', 'children to instructor'],
                 ].map(([n, label]) => (
-                  <div key={label} className="border-t border-line pt-4">
-                    <dt className="sr-only">{label}</dt>
-                    <dd>
-                      <span className="block font-display text-mega leading-none font-semibold text-plum">
-                        {n}
-                      </span>
-                      <span className="mt-3 block text-small text-ink-muted">{label}</span>
+                  <div key={label} className="flex flex-col-reverse border-t border-line pt-4">
+                    <dt className="mt-3 text-small text-ink-muted">{label}</dt>
+                    <dd className="font-display text-mega leading-none font-semibold text-plum">
+                      {n}
                     </dd>
                   </div>
                 ))}
@@ -278,7 +275,7 @@ export default function HomePage() {
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 A monthly sponsorship puts a Tuolumne County child in nature-based wellness classes.
                 Small groups, outdoors, every week. Four levels, from one child to the whole
-                programme.
+                program.
               </p>
               <Link
                 href="/childrens-center/sponsor"
@@ -303,8 +300,8 @@ export default function HomePage() {
               Questions about a class?
             </h2>
             <p className="mt-5 text-body-lg text-ink-muted">
-              Classes can also be run at your location. Email Boclaire directly and she will tell
-              you honestly whether what you need is something she does.
+              Classes can also be run at your location. Email Boclaire directly and she&rsquo;ll
+              tell you honestly whether what you need is something she does.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
               <a

@@ -25,7 +25,7 @@ export default function ApproachPage() {
       </section>
 
       {/*
-        The claims section sits on the coloured field rather than in a grey box.
+        The claims section sits on the colored field rather than in a grey box.
         It is the most distinctive thing the practice says, and burying it in a
         secondary surface was underselling the one idea a competitor cannot copy
         without changing how they sell.

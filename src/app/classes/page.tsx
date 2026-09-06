@@ -19,7 +19,7 @@ export const metadata: Metadata = {
  * actually arrive with. A flat alphabetical grid makes a parent read fourteen
  * cards to find the two that concern them.
  *
- * Order is deliberate: children first, since that is the practice's centre of
+ * Order is deliberate: children first, since that is the practice's center of
  * gravity, and schools last, since that audience arrives knowing what it wants.
  */
 const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
@@ -41,7 +41,7 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
   {
     key: 'caregivers-elders',
     heading: 'For elders and the people caring for them',
-    blurb: 'Personalised sessions, at your pace, with travel to you where that helps.',
+    blurb: 'Personalized sessions, at your pace, with travel to you where that helps.',
   },
   {
     key: 'families-parents',
@@ -57,6 +57,12 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
     key: 'events',
     heading: 'Celebrations',
     blurb: 'Birthdays and gatherings, outdoors.',
+  },
+  {
+    key: 'spiritual',
+    heading: 'Faith-based classes',
+    blurb:
+      'Openly Christian, and grouped here so you can choose them on purpose rather than come across them in a list.',
   },
 ]
 

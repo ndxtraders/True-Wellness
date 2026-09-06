@@ -126,7 +126,7 @@ export default function SponsorPage() {
                       )}&body=${encodeURIComponent(
                         `Hi Boclaire,\n\nI'd like to talk about sponsoring at the ${t.name} level ($${t.amount}/month, ${t.children} ${
                           t.children === 1 ? 'child' : 'children'
-                        }).\n\nName:\nOrganisation (if any):\nPhone:\n\nThank you.`
+                        }).\n\nName:\nOrganization (if any):\nPhone:\n\nThank you.`
                       )}`}
                       className="text-small font-medium text-ink-muted underline decoration-line-strong underline-offset-4 transition-colors hover:text-plum"
                     >
@@ -179,7 +179,7 @@ export default function SponsorPage() {
                       href={`mailto:${contact.email}?subject=${encodeURIComponent(
                         `Sponsorship: ${t.name} ($${t.amount}/month)`
                       )}&body=${encodeURIComponent(
-                        `Hi Boclaire,\n\nI'd like to talk about sponsoring at the ${t.name} founding level ($${t.amount}/month, ${t.children} children).\n\nName:\nOrganisation (if any):\nPhone:\n\nThank you.`
+                        `Hi Boclaire,\n\nI'd like to talk about sponsoring at the ${t.name} founding level ($${t.amount}/month, ${t.children} children).\n\nName:\nOrganization (if any):\nPhone:\n\nThank you.`
                       )}`}
                       className="font-medium text-ink underline decoration-plum/50 decoration-2 underline-offset-4 transition-colors hover:text-plum"
                     >

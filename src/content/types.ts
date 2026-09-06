@@ -20,7 +20,7 @@ export type PillarKey =
   | 'whole-person-thinking'
   | 'somatic-movement'
   | 'mindful-meditation'
-  | 'health-meals'
+  | 'healthy-meals'
 
 /** Who a program is built for. Drives the audience-first navigation. */
 export type AudienceKey =
@@ -31,6 +31,11 @@ export type AudienceKey =
   | 'families-parents'
   | 'schools'
   | 'events'
+  /* Faith-based offerings sit in their own category rather than under children
+   * and teens. A parent choosing a children's yoga class and a parent choosing
+   * a Bible study are making different decisions, and mixing them means the
+   * children's list quietly asks people to opt out rather than opt in. */
+  | 'spiritual'
 
 /**
  * How real an offering is right now.

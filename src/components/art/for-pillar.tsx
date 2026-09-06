@@ -12,7 +12,7 @@ const registry: Record<PillarKey, (p: { className?: string }) => React.JSX.Eleme
   'whole-person-thinking': BeeBloom,
   'somatic-movement': FigureTree,
   'mindful-meditation': FigureSeated,
-  'health-meals': Sprig,
+  'healthy-meals': Sprig,
 }
 
 export function PillarArt({ pillar, className }: { pillar: PillarKey; className?: string }) {

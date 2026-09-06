@@ -9,7 +9,7 @@
  */
 
 type LogoProps = {
-  /** `roundel` is the circle and figure alone — use it below ~64px, where the arc wordmark is illegible. */
+  /** `roundel` is the circle and figure alone. Use it below ~64px, where the arc wordmark is illegible. */
   variant?: 'wordmark' | 'roundel'
   className?: string
 }

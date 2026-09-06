@@ -5,7 +5,7 @@
  * rewritten to describe what actually happens in a session. The rule Boclaire
  * set: say what people will do, not what it will do to them.
  *
- * Pricing is a PLACEHOLDER at $167 across the board pending real numbers —
+ * Pricing is a PLACEHOLDER at $167 across the board pending real numbers,
  * except acupressure, which is confirmed at $135. Nothing here has a checkout;
  * every class routes to a waitlist until the MailerLite forms exist.
  */
@@ -75,11 +75,11 @@ export const classes: ClassOffering[] = [
     name: "Nature's Sensory Gym",
     audience: 'children',
     audienceLabel: 'Children',
-    pillars: ['whole-person-thinking', 'health-meals'],
+    pillars: ['whole-person-thinking', 'healthy-meals'],
     summary: 'Hands in the dirt, in the herb garden.',
     body: [
       'Children dig, plant, crush leaves between their fingers, and smell what grows here. They learn which plant is which, and what it likes.',
-      'It is hands-on, it is outside, and most kids find it absorbing in a way a worksheet never is. That is most of the point.',
+      'It’s hands-on, it’s outside, and most kids get absorbed in it in a way a worksheet never manages. Children come away knowing a few plants by name, which is a small thing that tends to stick.',
     ],
     whatHappens: [
       'Planting and tending herbs in the garden',
@@ -103,7 +103,7 @@ export const classes: ClassOffering[] = [
     summary: 'A slow walk outdoors, with attention.',
     body: [
       'A deliberately slow walk in nature. We pay attention to breath, to the ground, and to what the body is already doing while it walks.',
-      'Acupressure points come into it where they are useful. Mostly it is walking, unhurried, with someone pointing out what to notice.',
+      'Acupressure points come into it where they’re useful. Mostly it’s walking, unhurried, with someone pointing out what to notice.',
     ],
     whatHappens: [
       'Walking slowly, outdoors',
@@ -126,8 +126,8 @@ export const classes: ClassOffering[] = [
     pillars: ['somatic-movement', 'returning-to-balance'],
     summary: 'A gentle full-body session outdoors.',
     body: [
-      'Walking, breath, and gentle full-body movement, outside. It is a workout in the sense that you will use your body, and not in the sense that anyone is counting reps at you.',
-      'The focus is on feeling how the body coordinates as one thing — legs, arms, torso, all of it — rather than working parts in isolation.',
+      'Walking, breath, and gentle full-body movement, outside. It’s a workout in the sense that you’ll use your body, and not in the sense that anyone is counting reps at you.',
+      'The focus is on feeling how the body coordinates as one thing, legs and arms and torso all together, rather than working parts in isolation.',
     ],
     whatHappens: [
       'Walking and gentle strength work',
@@ -151,7 +151,7 @@ export const classes: ClassOffering[] = [
     summary: 'A faith-based practice blending prayer, breath, and gentle movement.',
     body: [
       'Prayer, breathwork, and gentle movement together, held as a spiritual practice rather than a fitness class.',
-      'It is openly Christian in framing. If that is what you are looking for, this is that. If it is not, the other sessions do not include it.',
+      'It’s openly Christian in framing. If that’s what you’re looking for, this is that. If it isn’t, the other sessions don’t include it.',
     ],
     whatHappens: [
       'Prayer',
@@ -176,7 +176,7 @@ export const classes: ClassOffering[] = [
     summary: 'A birthday spent outside, exploring.',
     body: [
       'A birthday celebration on the trail. Kids walk, explore, play, look at things, and eat cake at the end like anybody else.',
-      'It is an easy first experience for a family that has never taken a class here — low commitment, and everybody already knows how a birthday party works.',
+      'It’s an easy first outing for a family who hasn’t taken a class here before. Low commitment, and everybody already knows how a birthday party works.',
     ],
     whatHappens: [
       'A guided hike suited to the age group',
@@ -199,7 +199,7 @@ export const classes: ClassOffering[] = [
     pillars: ['mindful-meditation', 'somatic-movement'],
     summary: 'A reflective hike for a birthday or a turning point.',
     body: [
-      'A hike built around a milestone — a birthday, a transition, the start of something. Walking, talking, and some quiet.',
+      'A hike built around a milestone: a birthday, a transition, the start of something. Walking, talking, and some quiet.',
       'Less a party than a good long walk with intention behind it, for people who would rather mark an occasion outdoors than in a restaurant.',
     ],
     whatHappens: [
@@ -232,7 +232,7 @@ export const classes: ClassOffering[] = [
       'Rest, mostly',
     ],
     honestNote:
-      'Dates, site details, and what is included are still being worked out. Join the waitlist and we will tell you when it is real.',
+      'Dates, site details and what’s included are still being worked out. Join the waitlist and we’ll tell you as soon as there’s something real to say.',
     price: 167,
     priceUnit: 'session',
     priceConfirmed: false,
@@ -241,7 +241,7 @@ export const classes: ClassOffering[] = [
     slug: 'childrens-bible-study',
     art: 'pair',
     name: "Children's Bible Study",
-    audience: 'children',
+    audience: 'spiritual',
     audienceLabel: 'Children',
     pillars: ['mindful-meditation'],
     summary: 'Stories and values from the Bible, for kids.',
@@ -265,13 +265,13 @@ export const classes: ClassOffering[] = [
     slug: 'teen-girls-bible-circle',
     art: 'seated',
     name: 'Teen Girls Bible Circle',
-    audience: 'teens',
+    audience: 'spiritual',
     audienceLabel: 'Teen girls',
     pillars: ['mindful-meditation', 'whole-person-thinking'],
     summary: 'An outdoor space for teen girls to gather and talk.',
     body: [
-      'Teen girls gather outdoors to read, listen, share, and work out what living it out actually looks like.',
-      'It is a place more than a lecture. The reading gives the conversation somewhere to start.',
+      'Teen girls gather outdoors to read, listen, talk, and work out what living it out actually looks like. Mostly what they get is a regular hour that belongs to them.',
+      'It’s a place more than a lecture, and the reading just gives the conversation somewhere to start.',
     ],
     whatHappens: [
       'Reading and open discussion',
@@ -280,7 +280,7 @@ export const classes: ClassOffering[] = [
       'A regular time that is theirs',
     ],
     honestNote:
-      'Openly faith-based. Nothing here touches dieting, body rules, or appearance — that is a firm line in every teen session.',
+      'Openly faith-based. Nothing here touches dieting, body rules or appearance. That’s a firm line in every teen session Boclaire runs.',
     price: 167,
     priceUnit: 'month',
     priceConfirmed: false,
@@ -296,7 +296,7 @@ export const classes: ClassOffering[] = [
     summary: 'A one-to-one acupressure session.',
     body: [
       'A private session using acupressure, a traditional practice of applying gentle pressure at specific points on the body.',
-      'Boclaire is a Certified Acupressure Teacher and works within Traditional Chinese Medicine as a tradition — one worth respecting on its own terms, and not a description of modern anatomy.',
+      'Boclaire is a Certified Acupressure Teacher. She works within Traditional Chinese Medicine as a tradition, one worth respecting on its own terms, and not as a description of modern anatomy.',
     ],
     whatHappens: [
       'A conversation about what is going on',
@@ -336,7 +336,7 @@ export const classes: ClassOffering[] = [
     format: 'One to one. Travel to your location is available.',
     summary: 'Individual sessions at your own pace, built around memory, focus, and staying mentally active.',
     body: [
-      'A personalised forty-minute session, one to one. Boclaire travels to you where that makes it easier, which for a lot of families is the difference between this happening and not happening.',
+      'A personalized forty-minute session, one to one. Boclaire travels to you where that makes it easier, which for a lot of families is the difference between this happening and not happening.',
       'Each session is put together around the person in front of her rather than a fixed curriculum. Some of it is gentle movement, some of it is breath and acupressure, and some of it is straightforward cognitive exercise.',
     ],
     whatHappens: [
@@ -346,6 +346,7 @@ export const classes: ClassOffering[] = [
       'Gentle movement, connecting brain and body',
       'Cognitive exercises chosen for you rather than off a list',
       'Simple eye exercises',
+      'Practices for building a more positive outlook',
     ],
     price: 167,
     priceUnit: 'session',
@@ -360,7 +361,7 @@ export const classes: ClassOffering[] = [
     name: 'Mindful Teen Circle',
     audience: 'teens',
     audienceLabel: 'Teens',
-    pillars: ['whole-person-thinking', 'somatic-movement', 'health-meals'],
+    pillars: ['whole-person-thinking', 'somatic-movement', 'healthy-meals'],
     status: 'in-development',
     art: 'seated',
     source: 'boclaire-flyer',
@@ -375,10 +376,12 @@ export const classes: ClassOffering[] = [
       'Mindful eating, and listening to hunger and fullness',
       'Nutrition without dieting',
       'Menstrual-cycle self-care: body changes, hygiene, rest, managing PMS naturally',
-      'Acupressure points traditionally used for cramps, bloating, headaches and low mood',
+      'Acupressure points traditionally used for cramps, bloating, stress, headaches, back pain and low mood',
       'Gentle yoga, stretching and movement',
       'Breathing, relaxation and guided meditation',
-      'Journalling, creative work and group discussion',
+      'Stress, emotional resilience and mindfulness',
+      'Confidence, friendships, emotional intelligence and self-compassion',
+      'Journaling, creative work and group discussion',
     ],
     price: 167,
     priceUnit: 'month',
@@ -397,16 +400,17 @@ export const classes: ClassOffering[] = [
     art: 'seated',
     source: 'boclaire-flyer',
     format: 'One to one, by appointment',
-    summary: 'A personalised movement session where you learn to read what your body is telling you and answer it.',
+    summary: 'Notice. Attend. Respond. A personalized session where you learn to read what your body is telling you, and answer it.',
     body: [
-      'What if movement was not about telling your body what to do? What if it was a conversation?',
-      'Private Somatic Flow is a personalised session where you slow down, notice what your body is communicating, and respond on purpose. Sometimes that means moving. Sometimes it means breath. Sometimes an acupressure point. Sometimes it means stopping and listening.',
-      'The goal is that you become your own guide. Boclaire\u2019s job is not to tell you what works for everyone. It is to help you become a better observer of your own body, so that eventually you do not need somebody standing next to you telling you what to feel.',
+      'What if movement wasn’t about telling your body what to do? What if it was a conversation?',
+      'Private Somatic Flow is a personalized session where you slow down, notice what your body is communicating, and respond on purpose. Sometimes that means moving. Sometimes it means breath. Sometimes an acupressure point. Sometimes it means stopping and listening.',
+      'Notice. Attend. Respond. Become your own guide. That’s the whole shape of it, and it’s the part Boclaire cares most about. Her job isn\u2019t to tell you what works for everyone. It\u2019s to help you become a better observer of your own body, so that eventually you don\u2019t need somebody standing next to you telling you what to feel.',
     ],
     whatHappens: [
       'Noticing where you hold tension',
       'Watching how your breathing changes',
       'Finding which movements bring ease',
+      'Hearing what your body is actually asking for',
       'Working with acupressure points and how they land for you',
       'Learning when to move, when to pause, and when to rest',
     ],
@@ -414,7 +418,7 @@ export const classes: ClassOffering[] = [
     priceUnit: 'session',
     priceConfirmed: false,
     honestNote:
-      'There is no perfect pose here, no pushing through, and no one-size-fits-all formula. This is wellness education and body awareness work, not physiotherapy, not treatment for an injury, and not a substitute for care you are already receiving.',
+      'There is no perfect pose here, no pushing through, and no one-size-fits-all formula. This is wellness education and body awareness work, not physiotherapy, not treatment for an injury, and not a substitute for care you’re already receiving.',
     verifyNote: 'PRICE: $167 is Rev standing placeholder. Master context 37 lists a $75 single session historically, which is the likelier real number. Confirm.',
   },
   {
@@ -429,7 +433,7 @@ export const classes: ClassOffering[] = [
     format: 'Weekly, by grade band. Runs as PE and social enrichment.',
     summary: 'A guided mindful walk for students, combining movement outdoors with breath, balance, and simple acupressure.',
     body: [
-      'A walking class that builds physical fitness and a calmer, more focused head at the same time. Each session centres on a guided mindful walk, where students practise being properly present: looking at what is actually around them, listening to it, and matching breath to movement.',
+      'A walking class that builds physical fitness and a calmer, more focused head at the same time. Each session centers on a guided mindful walk, where students practice being properly present: looking at what is actually around them, listening to it, and matching breath to movement.',
       'Around the walk sit age-appropriate movement, breathing, brain exercises and simple acupressure. Activities are adapted to each student\u2019s age and developmental stage and to whatever the outdoors is doing that day.',
       'Over a term students build balance, coordination, flexibility, strength, posture and endurance, and the class deliberately makes room for curiosity, teamwork and paying attention to other people.',
     ],

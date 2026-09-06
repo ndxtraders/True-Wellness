@@ -98,16 +98,16 @@ export default function AboutPage() {
                 belief that time outside does more for most of us than one more indoor program.
               </p>
               <p>
-                What she is most interested in is how it all connects. How the body, the mind,
-                movement, the environment, relationships, and ordinary daily habits work on each
-                other. That is usually where the useful answer is.
+                What interests her most is how it all connects: how the body, the mind, movement,
+                the environment, relationships and ordinary daily habits work on each other.
+                That&rsquo;s usually where the useful answer turns out to be.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Screening first, on the coloured field, because it is the thing a
+      {/* Screening first, on the colored field, because it is the thing a
           parent actually needs before any of the philosophy matters. */}
       <section className="bg-sage">
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
@@ -116,7 +116,7 @@ export default function AboutPage() {
             <div className="max-w-2xl">
               <h2 className="text-h2 text-ink">Before the philosophy</h2>
               <p className="mt-5 text-body-lg text-ink">
-                If you are handing your child to someone, you should get to know this part first.
+                If you&rsquo;re handing your child to someone, this is the part to know first.
               </p>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {screening.map((c) => (
@@ -202,10 +202,10 @@ export default function AboutPage() {
             <div>
               <h2 className="text-h2 text-ink">Not trying to sound perfect</h2>
               <p className="mt-6 text-body-lg text-ink-muted">
-                Boclaire does not have perfectly calm mornings or perfectly behaved days, and the
-                work has never been about that. It is about noticing sooner, pausing where you can,
-                and repairing when you do not. That goes for the people teaching as much as the
-                people learning.
+                Boclaire doesn&rsquo;t have perfectly calm mornings or perfectly behaved days, and
+                the work has never been about that. It&rsquo;s about noticing sooner, pausing when
+                you can, and repairing when you don&rsquo;t manage to. That goes for the people
+                teaching as much as the people learning.
               </p>
             </div>
           </div>
@@ -217,8 +217,8 @@ export default function AboutPage() {
           <div className="max-w-2xl">
             <h2 className="text-h3 text-ink">Come and see</h2>
             <p className="mt-5 text-ink-muted">
-              Email her directly. She will tell you honestly whether what you need is something she
-              does.
+              Email her directly. She&rsquo;ll tell you honestly whether what you need is
+              something she does.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link

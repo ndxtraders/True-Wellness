@@ -50,7 +50,7 @@ export default function ChildrensCenterPage() {
           />
         </figure>
         <figcaption className="mx-auto max-w-6xl px-5 py-6 text-caption text-ink-muted">
-          The garden the centre is being built around. Placeholder image while the space is under
+          The garden the center is being built around. Placeholder image while the space is under
           construction.
         </figcaption>
       </section>
@@ -78,7 +78,7 @@ export default function ChildrensCenterPage() {
             <div>
               <h2 className="text-h3 text-ink">What a sponsorship actually buys</h2>
               <p className="mt-4 text-ink-muted">
-                A full monthly sponsorship runs the programme for twelve children: two classes a
+                A full monthly sponsorship runs the program for twelve children: two classes a
                 week each, up to two hours a session, in groups of about three to one. Mornings and
                 afternoons, Monday through Thursday.
               </p>
@@ -106,7 +106,7 @@ export default function ChildrensCenterPage() {
               <p className="mt-3 flex-1 text-small text-ink-muted">
                 A monthly sponsorship puts a Tuolumne County child in nature-based wellness
                 classes. Small groups, outdoors, every week. Four levels, from one child to the
-                whole programme, set up as a recurring donation you control.
+                whole program, set up as a recurring donation you control.
               </p>
               <Link
                 href="/childrens-center/sponsor"

@@ -12,7 +12,7 @@
  * brand happens to be in; it is the brand. Supporting an inverted theme also
  * doubled the QA surface for a practice website: every token, every contrast
  * pair and every illustration had to be verified twice, and it introduced real
- * bugs (a landscape foreground filled with a text colour glowed in dark mode
+ * bugs (a landscape foreground filled with a text color glowed in dark mode
  * instead of receding). `color-scheme: light` below also keeps form controls,
  * scrollbars and autofill light for a visitor whose OS is set to dark.
  *
@@ -55,7 +55,7 @@
   /* Amber, not terracotta.
    *
    * Cream ground + high-contrast serif + terracotta is the single most
-   * recognisable generated-page signature, and we were shipping all three.
+   * recognizable generated-page signature, and we were shipping all three.
    * Amber is earned twice over instead: the bee in Boclaire's own "Bee Happy"
    * photograph is amber, and the Sierra foothills are gold, which is what her
    * Heavenly Hills frames actually show. Gold against purple is also an
@@ -77,11 +77,11 @@
   --color-lilac: #d3a0e3; /* sampled from Bee Happy, H286 vs the mark's H282 */
   /* The sun. FIELD-ONLY like sage and lilac, and deliberately the same hue
    * family as --color-amber at a much higher value: the accent and the sun are
-   * one colour at two brightnesses, which is why they sit together rather than
+   * one color at two brightnesses, which is why they sit together rather than
    * competing. Amber at 50% opacity read as tan, not sunlight. */
   --color-sun: #e8b23c;
   /* Deep green FIELD, for the landscape foreground. Shares a value with
-   * --color-moss but is kept separate: moss is a text colour and may be tuned
+   * --color-moss but is kept separate: moss is a text color and may be tuned
    * for legibility, forest is a ground and may be tuned for depth. Collapsing
    * them means one of the two jobs eventually loses. */
   --color-forest: #4a6741;

@@ -3,8 +3,8 @@ import type { Pillar } from './types'
 /**
  * The five approach pillars.
  *
- * These are a cross-cutting content layer, not the navigation. Three of them —
- * Somatic Movement, Mindful Meditation, Health Meals — are practice areas, the
+ * These are a cross-cutting content layer, not the navigation. Three of them,
+ * Somatic Movement, Mindful Meditation and Healthy Meals, are practice areas: the
  * kind of thing you do in a room. The other two are philosophy. Nobody searches
  * for "whole-person thinking near me," so navigation runs on audience instead
  * and these cross-link into it.
@@ -19,17 +19,17 @@ export const pillars: Pillar[] = [
     name: 'Returning to Balance',
     summary: 'Balance is something a body already knows how to find. Mostly we are removing interference.',
     definition: [
-      'Balance is not a state you achieve and then hold onto. It is something a body already knows how to find, and mostly what gets in the way is noise.',
-      'Children come with built-in signals for movement, rest, exploration, and connection. Adults still have those signals. Life just gets loud enough that we stop hearing them. So the work here is less about adding a fix and more about turning down the interference and paying attention again.',
+      'Balance isn\u2019t a state you reach and then hold on to. It\u2019s something a body already knows how to find, and mostly what gets in the way is noise.',
+      'Children come with built-in signals for movement, rest, exploration, and connection. Adults still have those signals too. Life just gets loud enough that we stop hearing them. So the work here isn\u2019t about adding a fix. It\u2019s about turning the noise down and listening again.',
     ],
     inPractice: [
       'Gentle movement and breath',
-      'Acupressure, in the traditional sense',
+      'Acupressure, as it is traditionally practiced',
       'Therapeutic sound',
-      'Time outdoors, unhurried',
+      'Unhurried time outdoors',
     ],
     doesNotClaim:
-      'Acupressure may be supportive, and practitioners have used it this way for a long time. That is not the same as saying a point works the same way for every person, or that a session removes a symptom. Traditional Chinese Medicine is a tradition worth respecting on its own terms — it is not a description of modern anatomy, and we do not present it as one.',
+      'Acupressure may be supportive, and practitioners have used it this way for a very long time. That isn’t the same as saying a point works the same way for everyone, or that a session takes a symptom away. Traditional Chinese Medicine deserves respect on its own terms. It isn’t a description of modern anatomy, and we don’t present it as one.',
     definitionConfirmed: false,
   },
   {
@@ -37,8 +37,8 @@ export const pillars: Pillar[] = [
     name: 'Whole-Person Thinking',
     summary: 'Look at the whole system before naming one cause.',
     definition: [
-      'A tired child, a stiff shoulder, a hard week — each one makes more sense in context. Sleep, food, light, movement, stress, and relationships are all on the table before anyone reaches for a single lever.',
-      'With children this is developmental thinking. Behavior can communicate a need, a skill gap, fatigue, hunger, overwhelm, or emotion. Children are developing skills, not miniature adults. With adults and elders it is the same move applied to a longer history.',
+      'A tired child, a stiff shoulder, a hard week. Each one makes more sense in context. Sleep, food, light, movement, stress and relationships are all worth looking at before anyone settles on a single cause.',
+      'With children, this is developmental thinking. Behavior can be telling you about a need, a missing skill, tiredness, hunger, overwhelm or feeling. Children are developing skills, not miniature adults. With grown-ups and elders it\u2019s the same approach, applied to a longer history.',
     ],
     inPractice: [
       'Asking what else is going on',
@@ -47,7 +47,7 @@ export const pillars: Pillar[] = [
       'Taking big claims apart one piece at a time',
     ],
     doesNotClaim:
-      'This is not a diagnosis, and it is not a claim that the right combination of habits replaces medical care. It also does not mean every behavior should be allowed — noticing the whole picture is not an excuse for skipping the specific thing in front of you.',
+      'This isn’t a diagnosis, and it isn’t a claim that the right combination of habits replaces medical care. It also doesn’t mean every behavior should be allowed. Seeing the whole picture is not an excuse for skipping the specific thing in front of you.',
     definitionConfirmed: false,
   },
   {
@@ -55,17 +55,17 @@ export const pillars: Pillar[] = [
     name: 'Somatic Movement',
     summary: 'Movement studied from the inside.',
     definition: [
-      'Let us think about walking, the most basic movement humans do. The legs move. The arms and torso counterbalance. The whole body coordinates as one thing. Movement is not isolated muscle training, and it never really was.',
-      'The practice is learning to feel that coordination in your own body rather than being told about it. For children it is cultivation, not training — body awareness, confidence, coordination, curiosity, self-trust. Not a program for producing small athletes.',
+      'Let\u2019s think about walking, the most basic movement humans do. The legs move. The arms and torso counterbalance. The whole body coordinates as one thing. Movement was never really isolated muscle training.',
+      'The practice is learning to feel that coordination in your own body, rather than being told about it. For children it’s cultivation rather than training: body awareness, confidence, coordination, curiosity and self-trust. We are not trying to produce small athletes.',
     ],
     inPractice: [
       'Gentle movement and yoga',
       'Breath',
       'Playful brain-and-body games',
-      'Walking, outdoors, at a real pace',
+      'Walking outdoors, unhurried',
     ],
     doesNotClaim:
-      'The verbs here are deliberate. Notice, explore, feel, observe, learn — not fix, correct, or force. What you get is your own experience of your own body, described honestly, rather than a promised outcome.',
+      'The verbs here are deliberate: notice, explore, feel, observe, learn. Not fix, correct or force. What you take away is your own experience of your own body, described honestly, rather than an outcome we promised you in advance.',
     definitionConfirmed: true,
   },
   {
@@ -73,8 +73,8 @@ export const pillars: Pillar[] = [
     name: 'Mindful Meditation',
     summary: 'Noticing what is happening before reacting to it.',
     definition: [
-      'For a parent that looks like pausing, noticing, breathing, connecting, understanding, guiding, repairing, and trying again. For a child it is simple breathing and attention practices outdoors — a chance to slow down, move, explore, and practice.',
-      'It travels well. It happens on a slow walk. It happens in the twenty minutes of closing practice at the end of a class. And where someone wants it, it happens in prayer, breath, and gentle movement together.',
+      'For a parent, that looks like pausing, noticing, breathing, connecting, understanding, guiding, repairing and trying again. For a child it’s simple breathing and attention practices outdoors: a chance to slow down, move, explore and practice paying attention.',
+      'It fits almost anywhere. It happens on a slow walk. It happens in the twenty minutes of closing practice at the end of a class. And where someone wants it, it happens in prayer, breath and gentle movement together.',
     ],
     inPractice: [
       'Simple breathing practices',
@@ -83,25 +83,25 @@ export const pillars: Pillar[] = [
       'Body prayer, for those who want it',
     ],
     doesNotClaim:
-      'Mindfulness is not a requirement to be calm. A mom does not have to be perfectly calm, and mindful parenting is not about becoming a robot who never gets frustrated. Where a practice is a spiritual one, we keep it in that register — it is never offered as a guarantee of medical healing.',
+      'Mindfulness isn’t an instruction to be calm. A mom doesn’t have to be perfectly calm, and mindful parenting isn’t about becoming a robot who never gets frustrated. Where a practice is a spiritual one, we keep it spiritual. It is never offered as a guarantee of physical healing.',
     definitionConfirmed: true,
   },
   {
-    key: 'health-meals',
-    name: 'Health Meals',
-    summary: 'The food side, and it is deliberately relaxed.',
+    key: 'healthy-meals',
+    name: 'Healthy Meals',
+    summary: 'The food side, and it\u2019s deliberately relaxed.',
     definition: [
-      'Boclaire cooks intuitively. A little of this, a little of that. She does not much enjoy measuring, so the approach here is flexible, substitution-friendly, and built for people cooking at the end of a long day rather than people optimizing a macro sheet.',
-      'It covers mindful eating as an everyday practice, herbs and the garden, and honest reading of food claims — where tradition, mechanism, and evidence get named separately instead of blended into one promise.',
+      'Boclaire cooks intuitively. A little of this, a little of that. She doesn\u2019t much enjoy measuring, so the approach here is relaxed and easy to substitute in, and it\u2019s built for someone cooking at the end of a long day rather than someone counting grams.',
+      'It covers mindful eating as an everyday habit, herbs and the garden, and how to read a food claim honestly. That means saying plainly which part is tradition, which part is a plausible explanation, and which part actually has evidence behind it, instead of blending all three into one promise.',
     ],
     inPractice: [
-      'Mindful eating, as a habit not a rule',
+      'Mindful eating, as a habit rather than a rule',
       'Herbs and the garden',
       'Cooking without measuring',
       'Reading food claims honestly',
     ],
     doesNotClaim:
-      'No detox language. No elimination rules. No claim that a food heals a condition. And nothing that shades into restrictive dieting or body fear — particularly on anything a teenager might read.',
+      'No detox language. No elimination rules. No claim that a food heals a condition. And nothing that edges toward restrictive dieting or body fear, especially not on a page a teenager might read.',
     definitionConfirmed: true,
   },
 ]

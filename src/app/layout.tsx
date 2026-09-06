@@ -30,7 +30,7 @@ const hanken = Hanken_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Children's & Family Wellness in ${site.county}`,
+    default: `${site.name}: Children's and Family Wellness in ${site.county}`,
     template: `%s · ${site.name}`,
   },
   description:
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <SiteFooter />
 
-        {/* GA4 — carries the site's entire measurement history. Do not change the id. */}
+        {/* GA4. Carries the site's entire measurement history. Do not change the id. */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${integrations.ga4MeasurementId}`}
           strategy="afterInteractive"

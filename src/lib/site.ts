@@ -3,14 +3,14 @@
  *
  * The integration identifiers below are carried over verbatim from the previous
  * site (ndxtraders/TrueWellnessMovement). They are live and wired to real
- * accounts — GA4 history, an existing subscriber list, and the only donation
+ * accounts: GA4 history, an existing subscriber list, and the only donation
  * path that currently works. Changing a value here silently breaks a revenue or
  * measurement path, so treat them as fixed unless Boclaire re-issues them.
  */
 
 export const site = {
   name: 'True Wellness Movement',
-  tagline: 'Movement, mindfulness, and time outside — for children, families, and the people who care for them.',
+  tagline: 'Movement, mindfulness and time outside, for children, families and the people who care for them.',
   locality: 'Jamestown',
   region: 'CA',
   regionName: 'California',
@@ -20,7 +20,7 @@ export const site = {
 
 export const contact = {
   email: 'truewellnessmovement@gmail.com',
-  /** Digits only — format at the render site so the footer bug on the old site can't recur. */
+  /** Digits only. Format at the render site so the footer bug on the old site cannot recur. */
   phoneDigits: '4085084309',
   phoneDisplay: '(408) 508-4309',
   phoneHref: 'tel:+14085084309',
@@ -37,7 +37,7 @@ export const integrations = {
     scriptSrc: 'https://assets.mailerlite.com/js/universal.js',
   },
 
-  /** Web3Forms — serverless form delivery, no backend required. */
+  /** Web3Forms. Serverless form delivery, no backend required. */
   web3forms: {
     accessKey: '44e85080-7afb-4ca2-8c9f-4c7485323760',
     endpoint: 'https://api.web3forms.com/submit',
@@ -102,7 +102,7 @@ export const spotifyEmbedUrl = `https://open.spotify.com/embed/episode/${integra
  */
 export const disclosures = {
   services:
-    'These classes are wellness education. They are not medical care, therapy, or treatment for any condition. If something is going on with your child’s health, please talk to your doctor.',
+    'These classes are wellness education. They are not medical care, therapy, or treatment for any condition. If something is going on with your health, or your child’s, please talk to a doctor.',
   donation:
     'True Wellness Movement is currently pursuing 501(c)(3) charitable status. Donations are not tax-deductible at this time.',
 } as const

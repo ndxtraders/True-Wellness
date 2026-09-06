@@ -73,7 +73,7 @@ export default function HomePage() {
             as two different sites. It still does its job on /about, where it is
             the subject rather than an accent.
           */}
-          <h1 className="max-w-3xl text-display text-ink">Move, breathe, and be outside.</h1>
+          <h1 className="max-w-3xl text-display text-ink">True Wellness Begins With Movement in Nature.</h1>
           <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
             Yoga, somatic movement, and mindfulness for children, families, caregivers, and elders.
             Small groups, mostly outdoors, at a pace that suits the person in front of us.

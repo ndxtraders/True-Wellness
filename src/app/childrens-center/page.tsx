@@ -14,9 +14,10 @@ export default function ChildrensCenterPage() {
   return (
     <>
       {/*
-        Hero: heading, then the image. Per Rev the garden belongs in the hero
-        rather than buried under a block of text, and the copy reads better
-        after you have seen the place it describes.
+        Hero: the image alone. Per Rev the garden opens the page and the
+        heading and copy follow underneath it, so you see the place before you
+        read about it. The h1 is still the first heading in the document; only
+        its visual position moved.
 
         Three things are true about this file and all three are deliberate:
         1. It is 9.1 MB and it is a PNG wearing a .jpg extension (2752x1536
@@ -32,13 +33,6 @@ export default function ChildrensCenterPage() {
         `priority` here, unlike before: it is now the page's LCP element.
       */}
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 pt-12 pb-10">
-          <h1 className="max-w-3xl text-display text-ink">The Children&rsquo;s Wellness Center</h1>
-          <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
-            An outdoor wellness space and herb garden, being built in {site.locality},{' '}
-            {site.county}.
-          </p>
-        </div>
         <figure className="relative aspect-[21/9] w-full overflow-hidden">
           <Image
             src="/images/heavenly-herb-garden.jpg"
@@ -57,7 +51,12 @@ export default function ChildrensCenterPage() {
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
-          <div className="max-w-2xl space-y-5 text-body-lg text-ink-muted">
+          <h1 className="max-w-3xl text-display text-ink">The Children&rsquo;s Wellness Center</h1>
+          <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
+            An outdoor wellness space and herb garden, being built in {site.locality},{' '}
+            {site.county}.
+          </p>
+          <div className="mt-8 max-w-2xl space-y-5 text-body-lg text-ink-muted">
             <p>
               We are building an outdoor wellness space and herb garden in Tuolumne County, so local
               kids have somewhere to move, plant things, and be outside every week.

@@ -36,6 +36,9 @@ export type AudienceKey =
    * a Bible study are making different decisions, and mixing them means the
    * children's list quietly asks people to opt out rather than opt in. */
   | 'spiritual'
+  /* Paid group work bought by an organisation rather than by a parent. It is a
+   * different buyer, a different budget, and it runs at their location. */
+  | 'business-retreats'
 
 /**
  * How real an offering is right now.

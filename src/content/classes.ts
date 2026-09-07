@@ -431,6 +431,32 @@ export const classes: ClassOffering[] = [
       'This is physical education and wellness education. It supports nervous-system regulation, body awareness and emotional well-being in the ordinary sense that moving outdoors and paying attention tend to help. It is not therapy and it is not treatment.',
     verifyNote:
       'Renamed from Wellness Walk on Rev\u2019s instruction (2026-09). Body copy is Boclaire\u2019s current flyer, near verbatim; the only edit is her opening subject, \u201cThe Wellness Walk helps students\u201d, changed to \u201cThis class\u201d so the page does not carry both names. Her flyer\u2019s About Your Teacher block is deliberately not published: Rev asked that her credentials not be recited on each class page, and one line of it claims approved Granite Peak Charter School vendor status, which master context 21 forbids publishing without current confirmation. SCHEDULE: the flyer says Fridays with limited spots, so Fridays is published and no grade bands or spot counts are. PRICE: $167/session is Rev\u2019s standing placeholder and the least likely of the four to be right; a school enrichment class is normally billed per term or per student to the school, not per session to a parent.',
+  },
+  {
+    slug: 'zenflow',
+    name: 'ZenFlow\u2122 with Boclaire',
+    audience: 'business-retreats',
+    audienceLabel: 'Businesses, schools, events, and retreats',
+    pillars: ['somatic-movement', 'mindful-meditation', 'returning-to-balance'],
+    status: 'by-request',
+    art: 'hands',
+    source: 'boclaire-flyer',
+    format: 'Runs at your location. For teams, schools, events, retreats, and community organizations.',
+    summary: 'Bring wellness to your workplace.',
+    body: [
+      'Support the health and well-being of your team with a calming, restorative wellness experience designed to reduce stress, improve focus, and leave you feeling refreshed and energized.',
+      'Perfect for businesses, schools, wellness events, retreats, and community organizations.',
+    ],
+    whatHappens: [
+      'Gentle somatic movement to release tension and improve mobility',
+      'Guided breathwork to calm the nervous system and increase mental clarity',
+      'Mindful Living Practice',
+      'Acupressure techniques to promote relaxation, ease stress, and support overall wellness',
+    ],
+    honestNote:
+      'This is wellness education for a group. It is not medical care, therapy, or treatment. Acupressure is used here as a traditional practice for relaxation, which is not the same as saying it treats a condition.',
+    verifyNote:
+      'Copy is Boclaire\u2019s flyer, near verbatim. Her About Boclaire block is deliberately not on the page: Rev asked that her credentials not be recited on each class, and three of its claims appear nowhere in the master context, namely authorship of \u201cChildren\u2019s Meditation Stories\u201d, founding Sierra Yoga Center, and founding Mindful Mom. Master context 1 forbids publishing credentials that are not confirmed, so those belong on /about once she confirms them. The \u2122 is hers and is reproduced as she wrote it; nobody here has checked whether the mark is registered. PRICE: none published. The flyer quotes no rate and this is quoted per booking.',
   }
 
 ]

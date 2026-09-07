@@ -64,6 +64,12 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
     blurb:
       'Openly Christian, and grouped here so you can choose them on purpose rather than come across them in a list.',
   },
+  {
+    key: 'business-retreats',
+    heading: 'For businesses and retreats',
+    blurb:
+      'For businesses, schools, wellness events, retreats, and community organizations. Boclaire comes to you.',
+  },
 ]
 
 const statusStyles: Record<string, string> = {

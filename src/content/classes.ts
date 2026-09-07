@@ -295,42 +295,6 @@ export const classes: ClassOffering[] = [
     faithBased: true,
   },
   {
-    slug: 'acupressure-therapy',
-    art: 'hands',
-    name: 'Acupressure Therapy',
-    audience: 'adults',
-    audienceLabel: 'Adults · One-to-one',
-    pillars: ['returning-to-balance', 'whole-person-thinking'],
-    summary: 'A one-to-one acupressure session.',
-    body: [
-      'A private session using acupressure, a traditional practice of applying gentle pressure at specific points on the body.',
-      'Boclaire is a Certified Acupressure Teacher. She works within Traditional Chinese Medicine as a tradition, one worth respecting on its own terms, and not as a description of modern anatomy.',
-    ],
-    whatHappens: [
-      'A conversation about what is going on',
-      'Gentle pressure at specific points',
-      'Breath and rest',
-      'Notes on anything worth trying at home',
-    ],
-    honestNote:
-      'Acupressure may be supportive. People and situations are not one-size-fits-all, and this is not medical treatment. If something needs a doctor, please see one.',
-    price: 135,
-    priceUnit: 'session',
-    priceConfirmed: true,
-  },
-  /* ----------------------------------------------------------------------
-   * The four below come from Boclaire's own class-description documents
-   * (Desktop/True Wellness Movement/Class descriptions). They are programs she
-   * has written up herself, and none of them existed on this site before.
-   *
-   * Her flyer copy states outcomes directly ("Improve memory and
-   * concentration", "reduce brain fog"). Master context 15, 44 and 9 do not
-   * permit that on a published page, and they are her own standards. The
-   * activity lists below are hers verbatim; the outcome language is reframed
-   * as what a session is built to support, with the limit stated. Nothing was
-   * dropped, only re-registered.
-   * -------------------------------------------------------------------- */
-  {
     slug: 'brain-wellness-for-elders',
     name: 'Brain Wellness Support for Elders',
     nameKo: '두뇌 건강 지원 세션',

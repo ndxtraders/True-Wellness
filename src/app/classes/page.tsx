@@ -26,7 +26,7 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
   {
     key: 'children',
     heading: 'For children',
-    blurb: 'Movement, mindfulness, and time outdoors, at a child’s pace rather than an adult’s.',
+    blurb: 'Movement, mindfulness, and time outdoors, at your child’s pace.',
   },
   {
     key: 'teens',

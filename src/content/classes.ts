@@ -153,7 +153,10 @@ export const classes: ClassOffering[] = [
     slug: 'body-prayer-session',
     art: 'seated',
     name: 'Body Prayer Session',
-    audience: 'adults',
+    /* Grouped with the faith-based classes rather than under adults. It was
+     * already flagged faithBased, which only labelled the card; the grouping is
+     * what actually lets someone choose it on purpose. */
+    audience: 'spiritual',
     audienceLabel: 'Adults',
     pillars: ['mindful-meditation', 'somatic-movement'],
     summary: 'A faith-based practice blending prayer, breath, and gentle movement.',

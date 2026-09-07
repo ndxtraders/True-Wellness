@@ -127,9 +127,6 @@ function ClassCard({ c }: { c: ClassOffering }) {
           )}
 
           <WaitlistButton className="mt-5" name={c.name} compact />
-          <p className="mt-3 text-caption text-ink-muted">
-            Placeholder. Joining does not book or charge you.
-          </p>
           <Link
             href={`/classes/${c.slug}`}
             className="mt-4 inline-block text-small font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"

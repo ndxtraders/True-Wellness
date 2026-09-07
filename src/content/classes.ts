@@ -97,9 +97,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'This is a garden session for children, not a therapy or a treatment. We are not going to tell you what it does to a child’s brain chemistry.',
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
   },
   {
     slug: 'meditative-wellness-walk',
@@ -121,9 +118,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'Practitioners have long used acupressure points to help people settle. That is not the same as saying a point works the same way for everyone.',
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
   },
   {
     slug: 'mindful-movement-workout',
@@ -145,9 +139,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'Come as you are. If something hurts, we work around it. This is wellness education, not physical therapy.',
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
   },
   {
     slug: 'body-prayer-session',
@@ -172,9 +163,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'This is a spiritual practice and we keep it in that register. It is not offered as a treatment, and it is not a promise of physical healing.',
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
     faithBased: true,
   },
   {
@@ -197,9 +185,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'Group size, route, and timing get set with you beforehand. Bring your own cake.',
-    price: 167,
-    priceUnit: 'session',
-    priceConfirmed: false,
   },
   {
     slug: 'adult-birthday-hike-party',
@@ -220,9 +205,6 @@ export const classes: ClassOffering[] = [
       'Somewhere worth looking at',
     ],
     honestNote: 'Route and length are set with you. Bring water and decent shoes.',
-    price: 167,
-    priceUnit: 'session',
-    priceConfirmed: false,
   },
   {
     slug: 'rv-wellness-retreat',
@@ -244,9 +226,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'Dates, site details and what’s included are still being worked out. Join the waitlist and we’ll tell you as soon as there’s something real to say.',
-    price: 167,
-    priceUnit: 'session',
-    priceConfirmed: false,
   },
   {
     slug: 'childrens-bible-study',
@@ -267,9 +246,6 @@ export const classes: ClassOffering[] = [
       'Time together',
     ],
     honestNote: 'This is an explicitly faith-based group, so you know what you are signing up for.',
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
     faithBased: true,
   },
   {
@@ -292,9 +268,6 @@ export const classes: ClassOffering[] = [
     ],
     honestNote:
       'Openly faith-based. Nothing here touches dieting, body rules or appearance. That’s a firm line in every teen session Boclaire runs.',
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
     faithBased: true,
   },
   {
@@ -323,9 +296,6 @@ export const classes: ClassOffering[] = [
       'Simple eye exercises',
       'Practices for building a more positive outlook',
     ],
-    price: 167,
-    priceUnit: 'session',
-    priceConfirmed: false,
     honestNote:
       'These sessions are wellness education. They are built to support memory, focus, confidence and staying mentally active, and whether they do that for any particular person varies. They are not treatment for dementia, Alzheimer\u2019s disease, or any neurological condition, and nothing here is offered as prevention or cure.',
     verifyNote:
@@ -358,9 +328,6 @@ export const classes: ClassOffering[] = [
       'Confidence, friendships, emotional intelligence and self-compassion',
       'Journaling, creative work and group discussion',
     ],
-    price: 167,
-    priceUnit: 'month',
-    priceConfirmed: false,
     honestNote:
       'All of this is educational. It encourages healthy habits and self-care, and it is not medical advice, nutritional therapy, or treatment for an eating disorder or any menstrual condition. There is no dieting, no calorie counting, and no body standards in this room.',
     verifyNote: 'No schedule, age range or group size established. Confirm all three. PRICE: $167/month is Rev standing placeholder, unverified.',
@@ -389,9 +356,6 @@ export const classes: ClassOffering[] = [
       'Working with acupressure points and how they land for you',
       'Learning when to move, when to pause, and when to rest',
     ],
-    price: 167,
-    priceUnit: 'session',
-    priceConfirmed: false,
     honestNote:
       'There is no perfect pose here, no pushing through, and no one-size-fits-all formula. This is wellness education and body awareness work, not physiotherapy, not treatment for an injury, and not a substitute for care you’re already receiving.',
     verifyNote: 'PRICE: $167 is Rev standing placeholder. Master context 37 lists a $75 single session historically, which is the likelier real number. Confirm.',
@@ -463,9 +427,6 @@ export const classes: ClassOffering[] = [
       'Simple acupressure techniques',
       'Observation of the natural world',
     ],
-    price: 167,
-    priceUnit: 'session',
-    priceConfirmed: false,
     honestNote:
       'This is physical education and wellness education. It supports nervous-system regulation, body awareness and emotional well-being in the ordinary sense that moving outdoors and paying attention tend to help. It is not therapy and it is not treatment.',
     verifyNote:

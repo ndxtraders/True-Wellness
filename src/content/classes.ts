@@ -41,7 +41,15 @@ export interface ClassOffering {
   honestNote: string
   /** Omitted where no price exists yet. An invented price is worse than none. */
   price?: number
-  priceUnit?: 'session' | 'month'
+  priceUnit?: 'session' | 'month' | 'hour'
+  /** Renders the headline price as "From $25", where it is an entry point rather than the price. */
+  priceFrom?: boolean
+  /**
+   * Commitment levels, where a class is sold by the number of days a week
+   * rather than at one number. Rendered on the detail page only; the card keeps
+   * the single headline figure so fourteen cards stay comparable.
+   */
+  priceTiers?: { label: string; amount: number; unit: 'week' | 'month' }[]
   /** True only where the number is confirmed. Drives the placeholder notice. */
   priceConfirmed?: boolean
   /** Faith-based sessions are labeled so families opt in knowingly. */
@@ -420,6 +428,48 @@ export const classes: ClassOffering[] = [
     honestNote:
       'There is no perfect pose here, no pushing through, and no one-size-fits-all formula. This is wellness education and body awareness work, not physiotherapy, not treatment for an injury, and not a substitute for care you’re already receiving.',
     verifyNote: 'PRICE: $167 is Rev standing placeholder. Master context 37 lists a $75 single session historically, which is the likelier real number. Confirm.',
+  },
+  {
+    slug: 'one-to-one-mindfulness-enrichment',
+    name: '1:1 Mindfulness Enrichment Program',
+    audience: 'children',
+    audienceLabel: 'Children',
+    pillars: ['whole-person-thinking', 'somatic-movement', 'mindful-meditation', 'healthy-meals'],
+    art: 'pair',
+    source: 'boclaire-flyer',
+    format: 'One to one. By the hour, or two, three, or five days a week.',
+    summary: 'A personalized mindful childhood experience.',
+    body: [
+      'A nurturing one-on-one experience designed around your child\u2019s unique needs, personality, interests, natural rhythm, and curiosity.',
+      'This program blends mindful care with meaningful enrichment through movement, nature, creativity, cultural exploration, and child-led learning.',
+      'Your child is supported in developing confidence, emotional awareness, creativity, independence, and a deeper connection with themselves, nature, and the world around them.',
+      'Your child receives Boclaire\u2019s full attention and her wellness-based approach to daily care. Made for busy parents who want a holistic experience for their child.',
+    ],
+    whatHappens: [
+      'Personalized attention and care',
+      'Children\u2019s yoga, brain exercise, and creative movement',
+      'Mindfulness, breathing, and body awareness',
+      'Outdoor nature exploration and gardening',
+      'Exploration of different cultures, traditions, foods, and ways of life',
+      'Child-led creative exploration: art, music, storytelling, and creative projects guided by your child\u2019s interests and imagination',
+      'Age-appropriate learning activities',
+      'Healthy homemade meals and snacks provided, organic whenever possible, and mindful eating practice',
+    ],
+    honestNote: 'This is childcare that teaches mindful living, rather than a class.',
+    price: 25,
+    priceUnit: 'hour',
+    priceFrom: true,
+    priceConfirmed: true,
+    priceTiers: [
+      { label: '2 days a week', amount: 325, unit: 'week' },
+      { label: '3 days a week', amount: 475, unit: 'week' },
+      { label: '5 days a week', amount: 750, unit: 'week' },
+      { label: '2 days a week', amount: 1200, unit: 'month' },
+      { label: '3 days a week', amount: 1800, unit: 'month' },
+      { label: '5 days a week', amount: 2800, unit: 'month' },
+    ],
+    verifyNote:
+      'Copy and every price come from Boclaire directly (2026-09). Rev confirmed this is regular childcare that teaches mindful living, so the page says childcare rather than dressing it as a class, and her credentials are deliberately not recited here. He also says no license is required for in-home care under a certain number of children. That number is not recorded anywhere in the source material and the site therefore makes NO licensing claim in either direction. If it is ever stated publicly, get the exemption in writing first.',
   },
   {
     slug: 'wellness-walk',

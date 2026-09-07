@@ -115,6 +115,7 @@ function ClassCard({ c }: { c: ClassOffering }) {
         <div className="mt-6 border-t border-line pt-5">
           {typeof c.price === 'number' ? (
             <p className="flex items-baseline gap-2">
+              {c.priceFrom && <span className="text-caption text-ink-muted">From</span>}
               <span className="font-display text-h4 font-semibold text-plum">${c.price}</span>
               <span className="text-caption text-ink-muted">
                 per {c.priceUnit}

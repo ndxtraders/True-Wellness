@@ -106,14 +106,12 @@ export default function HomePage() {
             <SeedHead className="mt-2 hidden h-16 w-16 shrink-0 sm:block" />
             <div>
               <p className="font-display text-h4 leading-snug text-ink">
-                Have you noticed how much of children&rsquo;s wellness is really about getting them
-                to sit still?
+                Have you noticed how often people tell children to sit still?
               </p>
               <p className="mt-5 text-body-lg text-ink-muted">
                 Most of what we do here is the opposite. Children already have good signals for
-                movement, rest, curiosity and play, and the job is mostly to make room for those
-                rather than override them. The same goes for the adults, the elders, and the
-                people doing the caring.
+                movement, rest, curiosity and play. So we teach children to notice what their own
+                bodies are telling them, and we hold class outside whenever the weather allows.
               </p>
             </div>
           </div>

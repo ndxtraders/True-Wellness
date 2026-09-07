@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contact, disclosures, site } from '@/lib/site'
 import { FigurePair, HillsSun, Sprig } from '@/components/art/illustrations'
+import { ContactForm } from '@/components/contact-form'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -66,7 +67,26 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-surface">
+      {/* The form. Same Web3Forms delivery the sponsors page on the old site
+          used, so mail lands where Boclaire already looks for it. */}
+      <section className="border-b border-line bg-surface" aria-labelledby="message">
+        <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
+          <div className="max-w-2xl">
+            <h2 id="message" className="text-h2 text-ink">
+              Or send her a message here
+            </h2>
+            <p className="mt-4 text-body-lg text-ink-muted">
+              It goes straight to her inbox. She answers these herself, so it may take a day or
+              two rather than a minute.
+            </p>
+          </div>
+          <div className="mt-10 max-w-3xl">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="flex max-w-3xl items-start gap-6">
             <Sprig className="hidden h-24 w-auto shrink-0 sm:block" />

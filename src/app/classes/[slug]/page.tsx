@@ -6,7 +6,7 @@ import { pillarByKey } from '@/content/pillars'
 import { WaitlistButton } from '@/components/waitlist-button'
 import { ClassArt } from '@/components/art/for-class'
 import { statusLabels } from '@/content/types'
-import { disclosures } from '@/lib/site'
+import { contact, disclosures } from '@/lib/site'
 
 export function generateStaticParams() {
   return classes.map((c) => ({ slug: c.slug }))
@@ -62,6 +62,7 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
               {typeof c.price === 'number' ? (
                 <>
                   <p className="flex items-baseline gap-2">
+                    {c.priceFrom && <span className="text-small text-ink-muted">From</span>}
                     <span className="font-display text-h2 font-semibold text-plum">${c.price}</span>
                     <span className="text-small text-ink-muted">per {c.priceUnit}</span>
                   </p>
@@ -128,6 +129,51 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
       </section>
+
+      {/* Enrollment tiers. Only a class sold by days-per-week has these, so the
+          section is absent rather than empty for the other thirteen. */}
+      {c.priceTiers && c.priceTiers.length > 0 && (
+        <section className="border-b border-line bg-surface">
+          <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
+            <h2 className="text-h3 text-ink">Enrollment options</h2>
+            <p className="mt-4 max-w-xl text-ink-muted">
+              Weekly and monthly enrollment options are available.
+            </p>
+            <dl className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+              {c.priceTiers.map((t) => (
+                <div
+                  key={`${t.unit}-${t.label}`}
+                  className="flex flex-col-reverse border-t border-line pt-5"
+                >
+                  <dt className="mt-2 text-small text-ink-muted">
+                    {t.label}, per {t.unit}
+                  </dt>
+                  <dd className="font-display text-h3 font-semibold text-plum">
+                    ${t.amount.toLocaleString('en-US')}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-10 max-w-xl text-ink-muted">
+              Contact Boclaire for details, at{' '}
+              <a
+                href={`mailto:${contact.email}`}
+                className="font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
+              >
+                {contact.email}
+              </a>{' '}
+              or{' '}
+              <Link
+                href="/contact"
+                className="font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
+              >
+                send her a message
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+      )}
 
       <section>
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">

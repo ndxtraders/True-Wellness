@@ -26,7 +26,7 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
   {
     key: 'children',
     heading: 'For children',
-    blurb: 'Movement, mindfulness, and time outdoors, at a child’s pace rather than an adult’s.',
+    blurb: 'Movement, mindfulness, and time outdoors, at your child’s pace.',
   },
   {
     key: 'teens',
@@ -154,11 +154,10 @@ export default function ClassesPage() {
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-12">
           <div className="max-w-2xl">
             <h1 className="text-display text-ink">
-              What we actually do, and who it is for.
+              True Wellness Classes For Everyone
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Small groups, mostly outdoors, built around what the people in front of us can do that
-              day. Every class below says plainly what happens in it and what it does not claim.
+              Small groups, mostly outdoors, built around people's actual abilities.
             </p>
           </div>
         </div>
@@ -171,11 +170,13 @@ export default function ClassesPage() {
         <div className="mx-auto flex max-w-6xl items-start gap-6 px-5 py-10">
           <Sprig className="hidden h-24 w-auto shrink-0 sm:block" />
           <div className="max-w-2xl">
-            <h2 className="text-h4 font-semibold text-ink">Everything is on a waitlist right now</h2>
+            <h2 className="text-h4 font-semibold text-ink">Class Schedule Changes Frequently</h2>
             <p className="mt-3 text-ink-muted">
-              The schedule is still being set, so nothing here is bookable yet and nothing is
-              charged when you join a list. Boclaire will be in touch with real dates and a real
-              price before anyone is asked to pay for anything.
+              Don&rsquo;t see what you are looking for? Come back often, or{' '}
+              <Link href="/contact" className="font-medium text-plum underline decoration-amber decoration-2 underline-offset-4">
+                contact Boclaire
+              </Link>{' '}
+              for more information.
             </p>
           </div>
         </div>

@@ -472,25 +472,27 @@ export const classes: ClassOffering[] = [
       'Copy and every price come from Boclaire directly (2026-09). Rev confirmed this is regular childcare that teaches mindful living, so the page says childcare rather than dressing it as a class, and her credentials are deliberately not recited here. He also says no license is required for in-home care under a certain number of children. That number is not recorded anywhere in the source material and the site therefore makes NO licensing claim in either direction. If it is ever stated publicly, get the exemption in writing first.',
   },
   {
-    slug: 'wellness-walk',
-    name: 'Wellness Walk',
+    slug: 'guided-mindful-walk',
+    name: 'Guided Mindful Walk',
     audience: 'schools',
     audienceLabel: 'Schools and homeschool co-ops',
     pillars: ['somatic-movement', 'mindful-meditation'],
     status: 'by-request',
     art: 'walking',
     source: 'boclaire-flyer',
-    format: 'Weekly, by grade band. Runs as PE and social enrichment.',
-    summary: 'A guided mindful walk for students, combining movement outdoors with breath, balance, and simple acupressure.',
+    format: 'Fridays. PE and social enrichment for homeschool students. Limited spots.',
+    summary:
+      'A PE and social enrichment class for homeschool students, built around a guided mindful walk in nature.',
     body: [
-      'A walking class that builds physical fitness and a calmer, more focused head at the same time. Each session centers on a guided mindful walk, where students practice being properly present: looking at what is actually around them, listening to it, and matching breath to movement.',
-      'Around the walk sit age-appropriate movement, breathing, brain exercises and simple acupressure. Activities are adapted to each student\u2019s age and developmental stage and to whatever the outdoors is doing that day.',
-      'Over a term students build balance, coordination, flexibility, strength, posture and endurance, and the class deliberately makes room for curiosity, teamwork and paying attention to other people.',
+      'This class helps students build healthy bodies and calm, focused minds through movement in nature. Each class includes a Guided Mindful Walk, where students practice being fully present by observing their surroundings, listening to nature, and connecting their breath with movement.',
+      'During each class, students will participate in guided mindful walking, age-appropriate movement, breathing, brain exercises, and simple acupressure techniques that support nervous system regulation, body awareness, and emotional well-being.',
+      'Activities are adapted to each student\u2019s age, developmental level, and the outdoor environment. Students will develop balance, coordination, flexibility, strength, posture, and endurance while practicing mindfulness and learning healthy movement habits. Classes also encourage curiosity, observation of the natural world, teamwork, self-confidence, and respect for others.',
+      'This program provides a safe, engaging, and supportive environment where students can improve their physical fitness while developing lifelong wellness skills through purposeful movement and time outdoors.',
     ],
     whatHappens: [
-      'A guided mindful walk, outdoors',
-      'Age-appropriate movement and games',
-      'Breathing and simple brain exercises',
+      'Guided mindful walking',
+      'Age-appropriate movement',
+      'Breathing and brain exercises',
       'Simple acupressure techniques',
       'Observation of the natural world',
     ],
@@ -500,7 +502,7 @@ export const classes: ClassOffering[] = [
     honestNote:
       'This is physical education and wellness education. It supports nervous-system regulation, body awareness and emotional well-being in the ordinary sense that moving outdoors and paying attention tend to help. It is not therapy and it is not treatment.',
     verifyNote:
-      'Boclaire\u2019s flyer states Wednesdays for grades 1-5, Fridays for grade 6 and up with 5 spots, and describes her as an approved Granite Peak Charter School vendor. Master context section 21 forbids publishing a partnership or vendor status without current confirmation, so the school is deliberately not named on the page and the schedule is not published. Confirm both. PRICE: $167/session is the standing placeholder and the least likely of the four to be right: a school enrichment class is normally billed per term or per student to the school, not per session to a parent.',
+      'Renamed from Wellness Walk on Rev\u2019s instruction (2026-09). Body copy is Boclaire\u2019s current flyer, near verbatim; the only edit is her opening subject, \u201cThe Wellness Walk helps students\u201d, changed to \u201cThis class\u201d so the page does not carry both names. Her flyer\u2019s About Your Teacher block is deliberately not published: Rev asked that her credentials not be recited on each class page, and one line of it claims approved Granite Peak Charter School vendor status, which master context 21 forbids publishing without current confirmation. SCHEDULE: the flyer says Fridays with limited spots, so Fridays is published and no grade bands or spot counts are. PRICE: $167/session is Rev\u2019s standing placeholder and the least likely of the four to be right; a school enrichment class is normally billed per term or per student to the school, not per session to a parent.',
   }
 
 ]

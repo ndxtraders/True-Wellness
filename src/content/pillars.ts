@@ -17,7 +17,7 @@ export const pillars: Pillar[] = [
   {
     key: 'returning-to-balance',
     name: 'Returning to Balance',
-    summary: 'Your body already knows how to naturally return to balance. We are removing the interference.',
+    summary: 'Your body already knows how to naturally return to balance. We are removing the blockages.',
     definition: [
       'Balance isn\u2019t a state you reach and then hold on to. It\u2019s something a body already knows how to find, and mostly what gets in the way is noise.',
       'Children come with built-in signals for movement, rest, exploration, and connection. Adults still have those signals too. Life just gets loud enough that we stop hearing them. So the work here isn\u2019t about adding a fix. It\u2019s about turning the noise down and listening again.',
@@ -35,7 +35,7 @@ export const pillars: Pillar[] = [
   {
     key: 'whole-person-thinking',
     name: 'Whole-Person Thinking',
-    summary: 'Look at the whole system before naming one cause.',
+    summary: 'Look at the whole system, not just one symptom.',
     definition: [
       'A tired child, a stiff shoulder, a hard week. Each one makes more sense in context. Sleep, food, light, movement, stress and relationships are all worth looking at before anyone settles on a single cause.',
       'With children, this is developmental thinking. Behavior can be telling you about a need, a missing skill, tiredness, hunger, overwhelm or feeling. Children are developing skills, not miniature adults. With grown-ups and elders it\u2019s the same approach, applied to a longer history.',

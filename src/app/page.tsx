@@ -166,10 +166,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
           <div className="max-w-2xl">
             <h2 id="approach" className="text-h2 text-ink">
-              How we think about this
+              Our Approach
             </h2>
             <p className="mt-5 text-body-lg text-ink">
-              Five "whole-person" wellness ideas run underneath every class. 
+              Five "whole-person" wellness ideas behind every class.
             </p>
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">

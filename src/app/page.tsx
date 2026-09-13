@@ -85,12 +85,6 @@ export default function HomePage() {
             >
               See the classes
             </Link>
-            <Link
-              href="/about"
-              className="rounded-pill border border-line-strong px-7 py-3.5 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
-            >
-              Meet Boclaire
-            </Link>
           </div>
         </div>
         <HillsSun compact withFigures className="-mt-8 block w-full sm:-mt-20 lg:-mt-32" />
@@ -109,8 +103,7 @@ export default function HomePage() {
                 Have you noticed how often people tell children to sit still?
               </p>
               <p className="mt-5 text-body-lg text-ink-muted">
-                Most of what we do here is the opposite. Children already have good signals for
-                movement, rest, curiosity and play. So we teach children to notice what their own
+                Children already have good signals for movement, rest, curiosity and play. So we teach children to notice what their own
                 bodies are telling them, and we hold class outside whenever the weather allows.
               </p>
             </div>
@@ -277,7 +270,7 @@ export default function HomePage() {
                 href="/childrens-center/sponsor"
                 className="mt-6 self-start rounded-pill border border-line-strong px-6 py-3 font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
               >
-                Support the build
+                Sponsor a child
               </Link>
             </div>
           </div>

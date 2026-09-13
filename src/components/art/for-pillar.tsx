@@ -2,7 +2,8 @@ import type { PillarKey } from '@/content/types'
 import { BeeBloom, FigureHands, FigureSeated, FigureTree, Sprig } from './illustrations'
 
 /**
- * One illustration per pillar, all five distinct.
+ * One illustration per pillar, all distinct. The two archived pillars keep
+ * their entries so a restored pillar gets its art back.
  *
  * Repetition is the failure mode here: the first render of the classes hub used
  * the same seated figure on all fourteen cards and read as a template.

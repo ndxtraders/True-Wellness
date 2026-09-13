@@ -7,7 +7,7 @@ import { HillsSun } from '@/components/art/illustrations'
 export const metadata: Metadata = {
   title: 'Our Approach',
   description:
-    'The five ideas that guide every True Wellness Movement class.',
+    'The three ideas that guide every True Wellness Movement class.',
 }
 
 export default function ApproachPage() {
@@ -16,7 +16,7 @@ export default function ApproachPage() {
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-10">
           <h1 className="max-w-3xl text-display text-ink">Our Approach</h1>
-          <p className="mt-6 max-w-xl text-body-lg text-ink-muted">Five simple ideas guide every class.</p>
+          <p className="mt-6 max-w-xl text-body-lg text-ink-muted">Three simple ideas guide every class.</p>
         </div>
         <HillsSun compact className="-mt-16 block w-full sm:-mt-28 lg:-mt-40" />
       </section>

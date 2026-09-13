@@ -169,7 +169,7 @@ export default function HomePage() {
               Our Approach
             </h2>
             <p className="mt-5 text-body-lg text-ink">
-              Five "whole-person" wellness ideas behind every class.
+              Three wellness ideas behind every class so you can return to balance.
             </p>
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">

@@ -14,7 +14,7 @@
  *    the public build, so an unconfirmed claim cannot ship by accident.
  */
 
-/** Which of the five approach pillars an offering expresses. */
+/** Which approach pillars an offering expresses. Two keys belong to archived pillars (pillars-archive.ts). */
 export type PillarKey =
   | 'returning-to-balance'
   | 'whole-person-thinking'

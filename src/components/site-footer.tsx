@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Logo } from './logo'
-import { contact, disclosures, integrations, site } from '@/lib/site'
+import { disclosures, integrations, site } from '@/lib/site'
 
 export function SiteFooter() {
   return (
@@ -41,24 +41,13 @@ export function SiteFooter() {
 
           <div>
             <h2 className="text-caption font-medium text-ink-muted">
-              Get in touch
+              Let&rsquo;s Connect
             </h2>
             <ul className="mt-4 space-y-2.5 text-small">
               <li>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="break-words text-ink-muted transition-colors hover:text-plum"
-                >
-                  {contact.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={contact.phoneHref}
-                  className="text-ink-muted transition-colors hover:text-plum"
-                >
-                  {contact.phoneDisplay}
-                </a>
+                <Link href="/contact" className="text-ink-muted transition-colors hover:text-plum">
+                  Send me a message
+                </Link>
               </li>
               <li>
                 <a

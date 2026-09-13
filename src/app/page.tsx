@@ -33,7 +33,7 @@ const audiences = [
   {
     href: '/classes#group-teens',
     label: 'My teenager',
-    note: 'Small circles for teens, built to be a place rather than a lecture.',
+    note: 'Small circles for teens, built to be a shared experience rather than a lecture.',
     Art: FigureSeated,
   },
   {
@@ -75,8 +75,8 @@ export default function HomePage() {
           */}
           <h1 className="max-w-3xl text-display text-ink">True Wellness Begins With Movement in Nature.</h1>
           <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
-            Yoga, somatic movement, and mindfulness for children, families, caregivers, and elders.
-            Small groups, mostly outdoors, at a pace that suits your abilities.
+            Somatic movement, and mindfulness for children, families, and elders.
+            Individual and Small group classes, at a pace that fits your abilities.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -160,8 +160,7 @@ export default function HomePage() {
               How we think about this
             </h2>
             <p className="mt-5 text-body-lg text-ink">
-              Five ideas run underneath every class. They are also where we say plainly what we
-              do not claim to do.
+              Five "whole-person" wellness ideas run underneath every class. 
             </p>
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
@@ -199,8 +198,7 @@ export default function HomePage() {
               &mdash; Boclaire
             </figcaption>
             <p className="mt-8 max-w-md text-ink-muted">
-              She isn&rsquo;t trying to produce small athletes. The work is cultivation: body
-              awareness, coordination, emotional awareness, and enough self-trust that a child
+              We cultivate mind-body awareness, coordination, emotional awareness, and self-trust so a child
               knows what their own body is telling them.
             </p>
             <Link
@@ -298,8 +296,7 @@ export default function HomePage() {
               Questions about a class?
             </h2>
             <p className="mt-5 text-body-lg text-ink-muted">
-              Classes can also be run at your location. Email Boclaire directly and she&rsquo;ll
-              tell you honestly whether what you need is something she does.
+              I can also deliver classes at your location. Email me directly let's talk whether what you need.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
               <a

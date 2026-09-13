@@ -610,6 +610,71 @@ export function FigureGathering({ className, title }: ArtProps) {
   )
 }
 
+/**
+ * A child walking a trail toward a tree, arms loose, breath drawn as a dotted
+ * curl. The Wellness Walk: a mindful nature walk with somatic movement and
+ * breathwork.
+ *
+ * Deliberately not FigureWalking. That piece is two figures side by side on flat
+ * ground and already stands for Meditative Wellness Walk and Guided Mindful
+ * Walk. This one is a single walker, a path that leads somewhere, and the breath
+ * made visible, so three walking classes do not share one picture.
+ */
+export function FigureTrail({ className, title }: ArtProps) {
+  return (
+    <svg viewBox="0 0 420 340" className={className} {...svgProps(title)}>
+      <ellipse cx="210" cy="310" rx="196" ry="16" className="fill-sage" opacity="0.42" filter="url(#twm-grain)" />
+
+      {/* the trail, winding back toward the tree. A stroke, so unfiltered (defs.tsx). */}
+      <path d="M88 320 C 150 312 212 300 262 284 C 292 274 318 266 350 262" className="stroke-amber" strokeWidth="20" strokeLinecap="round" fill="none" opacity="0.3" />
+
+      {/* tree, set back on the right */}
+      <path d="M336 262 C 337 240 338 222 336 200" className="stroke-moss" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <g className="fill-moss" filter="url(#twm-painted)">
+        <circle cx="336" cy="176" r="40" />
+        <circle cx="308" cy="198" r="24" />
+        <circle cx="364" cy="198" r="24" />
+      </g>
+
+      {/* grass */}
+      <path d="M62 302 C 60 292 56 284 50 278" className="stroke-moss" strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M68 302 C 69 290 70 280 74 272" className="stroke-moss" strokeWidth="4" strokeLinecap="round" fill="none" />
+      <path d="M74 302 C 78 294 84 288 92 284" className="stroke-moss" strokeWidth="4" strokeLinecap="round" fill="none" />
+
+      {/* --- child, mid-stride, walking toward the tree --- */}
+      <path d="M162 238 C 152 262 146 288 144 304" className="stroke-plum" strokeWidth="16" strokeLinecap="round" fill="none" />
+      <path d="M178 238 C 190 260 198 284 200 300" className="stroke-plum" strokeWidth="16" strokeLinecap="round" fill="none" />
+      <path d="M136 308 L152 308" className="stroke-plum" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <path d="M194 304 L210 304" className="stroke-plum" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <path d="M151 244 C 144 208 151 178 170 176 C 189 178 196 208 189 244 Z" className="fill-lilac" filter="url(#twm-painted)" />
+      {/* arms loose and a little open: natural movement, not marching */}
+      <path d="M153 200 C 138 214 128 230 124 246" className="stroke-lilac" strokeWidth="12" strokeLinecap="round" fill="none" />
+      <path d="M187 200 C 202 214 212 230 216 246" className="stroke-lilac" strokeWidth="12" strokeLinecap="round" fill="none" />
+      <g transform="translate(10 38)">
+        <path
+          d="M138 118 C 133 88 147 72 160 72 C 173 72 187 88 182 118 C 177 100 170 94 160 94 C 150 94 143 100 138 118 Z"
+          className="fill-ink"
+          opacity="0.72"
+          filter="url(#twm-painted)"
+        />
+        <circle cx="160" cy="114" r="22" className="fill-bg" filter="url(#twm-grain)" />
+        <circle cx="160" cy="114" r="22" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
+      </g>
+
+      {/* breath, drawn the way BeeBloom draws flight: a dotted amber curl */}
+      <path
+        d="M140 144 C 118 132 112 106 128 94 C 142 84 158 96 148 108"
+        className="stroke-amber"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeDasharray="2 9"
+        fill="none"
+        opacity="0.8"
+      />
+    </svg>
+  )
+}
+
 /* ------------------------------------------------------------------ */
 /* Botanical                                                           */
 /* ------------------------------------------------------------------ */

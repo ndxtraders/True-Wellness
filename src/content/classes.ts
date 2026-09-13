@@ -25,6 +25,7 @@ export type ArtKey =
   | 'pair'
   | 'walking'
   | 'tree'
+  | 'trail'
   | 'elder'
   | 'bee'
   | 'sprig'
@@ -536,6 +537,33 @@ export const classes: ClassOffering[] = [
     ],
     verifyNote:
       'Copy and every price come from Boclaire’s flyer “2. One-on-One Care”. Edits: the bullet “Personalized attention and care” is dropped because the closing line says it; her second “Includes” list is left off because it repeats the first. Rev confirmed this is regular childcare that teaches mindful living. He also says no license is required for in-home care under a certain number of children. That number is not recorded anywhere, so the site makes NO licensing claim in either direction.',
+  },
+  {
+    slug: 'wellness-walk',
+    name: 'Wellness Walk',
+    audience: 'children',
+    audienceLabel: 'Children',
+    pillars: ['somatic-movement', 'mindful-meditation'],
+    art: 'trail',
+    summary:
+      'A mindful nature walk that combines gentle somatic movement, body awareness, and breathwork.',
+    body: [
+      'A mindful nature walk that combines gentle somatic movement, body awareness, and breathwork. You’ll explore natural movement while walking, helping you reconnect with your body and become more aware of how you feel in the moment.',
+    ],
+    sections: [
+      {
+        heading: 'Benefits',
+        bullets: [
+          'Supports body awareness and mindful movement',
+          'Encourages relaxed, natural movement',
+          'Helps release everyday tension',
+          'Supports calm, steady breathing',
+          'Invites a deeper connection with nature',
+        ],
+      },
+    ],
+    verifyNote:
+      'Copy from Rev (2026-09-13), verbatim. Placed in the children group on his instruction, but the copy is written to “you” and reads as an adult or family walk: confirm with Boclaire who it is for. No schedule, group size, or price established. Not the same class as Guided Mindful Walk (homeschool PE) or Meditative Wellness Walk (adults), and it has its own illustration, FigureTrail, so the three walks do not share a picture.',
   },
   {
     slug: 'guided-mindful-walk',

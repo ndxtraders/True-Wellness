@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { pillars } from '@/content/pillars'
 import { contact, disclosures, integrations, site } from '@/lib/site'
@@ -10,7 +11,6 @@ import {
   FigureTree,
   FigureWalking,
   HillsSun,
-  SeedHead,
 } from '@/components/art/illustrations'
 
 /**
@@ -91,14 +91,14 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      {/* 2. Orientation. Narrow measure, conversational register.          */}
+      {/* 2. Orientation. Text on the left, aligned with the hero; the logo */}
+      {/*    on the right. On phones the logo sits below the text, smaller.  */}
       {/*    Master context 12 favours an opening that makes you pause.     */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
-          <div className="mx-auto flex max-w-3xl items-start gap-8">
-            <SeedHead className="mt-2 hidden h-16 w-16 shrink-0 sm:block" />
-            <div>
+          <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16">
+            <div className="max-w-2xl">
               <p className="font-display text-h4 leading-snug text-ink">
                 Have you noticed how often people tell children to sit still?
               </p>
@@ -107,6 +107,14 @@ export default function HomePage() {
                 bodies are telling them, and we hold class outside whenever the weather allows.
               </p>
             </div>
+            <Image
+              src="/images/True%20Wellness%20Movement%20Logo%20-%20Transparent.png"
+              alt="True Wellness Movement logo"
+              width={500}
+              height={500}
+              sizes="(min-width: 1024px) 240px, (min-width: 768px) 208px, 160px"
+              className="mx-auto h-auto w-40 md:mx-0 md:w-52 lg:w-60"
+            />
           </div>
         </div>
       </section>

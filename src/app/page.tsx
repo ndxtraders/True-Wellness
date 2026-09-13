@@ -76,7 +76,7 @@ export default function HomePage() {
           <h1 className="max-w-3xl text-display text-ink">True Wellness Begins With Movement in Nature.</h1>
           <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
             Somatic movement and mindfulness for children, families, and elders.
-            Individual and small group classes, at a pace that fits your abilities.
+            Individual and small group classes based on your needs.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link

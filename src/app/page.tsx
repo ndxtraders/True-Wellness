@@ -27,24 +27,24 @@ const audiences = [
   {
     href: '/classes#group-children',
     label: 'My child',
-    note: 'Yoga, movement, and mindfulness for kids, mostly outdoors.',
+    note: 'Yoga, movement, and mindfulness for kids in nature.',
     Art: FigureTree,
   },
   {
     href: '/classes#group-teens',
     label: 'My teenager',
-    note: 'A supportive and welcoming small circle group.',
+    note: 'A supportive and welcoming small mindfulness circle group.',
     Art: FigureSeated,
   },
   {
     href: '/classes#group-adults',
     label: 'Myself',
-    note: 'One-to-one somatic movement, acupressure, and quiet walks.',
+    note: 'One-to-one, private somatic movement, acupressure, and mindful walks.',
     Art: FigureWalking,
   },
   {
     href: '/classes#group-caregivers-elders',
-    label: 'Someone I care for',
+    label: 'Elders & Caregivers',
     note: 'Sessions for elders and the people looking after them.',
     Art: FigureElder,
   },
@@ -92,7 +92,8 @@ export default function HomePage() {
 
       {/* ---------------------------------------------------------------- */}
       {/* 2. Orientation. Text on the left, aligned with the hero; the logo */}
-      {/*    on the right, shifted halfway into the page margin from 1280px. */}
+      {/*    on the right, a quarter of the way into the page margin from   */}
+      {/*    1280px.                                                         */}
       {/*    Under 1024px it sits centered below the text.                   */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
@@ -113,7 +114,7 @@ export default function HomePage() {
               width={500}
               height={500}
               sizes="(min-width: 1024px) 240px, (min-width: 640px) 192px, 160px"
-              className="mx-auto h-auto w-40 sm:w-48 lg:mx-0 lg:w-60 xl:translate-x-[calc((100vw_-_72rem)/4)]"
+              className="mx-auto h-auto w-40 sm:w-48 lg:mx-0 lg:w-60 xl:translate-x-[calc((100vw_-_72rem)/8)]"
             />
           </div>
         </div>

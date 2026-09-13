@@ -92,12 +92,13 @@ export default function HomePage() {
 
       {/* ---------------------------------------------------------------- */}
       {/* 2. Orientation. Text on the left, aligned with the hero; the logo */}
-      {/*    on the right. On phones the logo sits below the text, smaller.  */}
+      {/*    on the right, shifted halfway into the page margin from 1280px. */}
+      {/*    Under 1024px it sits centered below the text.                   */}
       {/*    Master context 12 favours an opening that makes you pause.     */}
       {/* ---------------------------------------------------------------- */}
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
-          <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
             <div className="max-w-2xl">
               <p className="font-display text-h4 leading-snug text-ink">
                 Have you noticed how often people tell children to sit still?
@@ -112,8 +113,8 @@ export default function HomePage() {
               alt="True Wellness Movement logo"
               width={500}
               height={500}
-              sizes="(min-width: 1024px) 240px, (min-width: 768px) 208px, 160px"
-              className="mx-auto h-auto w-40 md:mx-0 md:w-52 lg:w-60"
+              sizes="(min-width: 1024px) 240px, (min-width: 640px) 192px, 160px"
+              className="mx-auto h-auto w-40 sm:w-48 lg:mx-0 lg:w-60 xl:translate-x-[calc((100vw_-_72rem)/4)]"
             />
           </div>
         </div>

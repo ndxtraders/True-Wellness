@@ -11,7 +11,7 @@ import { disclosures } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Classes',
   description:
-    'Yoga, somatic movement, mindfulness, walking, garden sessions, and one-to-one acupressure for children, teens, adults, elders, and schools in Tuolumne County.',
+    'Yoga, somatic movement, mindfulness, walking, garden sessions, and one-to-one care for children, teens, adults, elders, schools, and businesses in Tuolumne County.',
 }
 
 /**
@@ -31,12 +31,12 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
   {
     key: 'teens',
     heading: 'For teens',
-    blurb: 'Small circles built to be a place rather than a lecture.',
+    blurb: 'A supportive and welcoming group for teens.',
   },
   {
     key: 'adults',
     heading: 'For adults',
-    blurb: 'One-to-one work: somatic movement, acupressure, and walking with attention.',
+    blurb: 'Somatic movement, acupressure, and walking with attention.',
   },
   {
     key: 'caregivers-elders',
@@ -51,7 +51,7 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
   {
     key: 'schools',
     heading: 'For schools and homeschool co-ops',
-    blurb: 'Enrichment and PE classes that can run at your location.',
+    blurb: 'Classes now available for school enrichment programs and homeschool co-ops.',
   },
   {
     key: 'events',
@@ -68,7 +68,7 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
     key: 'business-retreats',
     heading: 'For businesses and retreats',
     blurb:
-      'For businesses, schools, wellness events, retreats, and community organizations. Boclaire comes to you.',
+      'For businesses, schools, wellness events, retreats, and community organizations.',
   },
 ]
 
@@ -110,29 +110,24 @@ function ClassCard({ c }: { c: ClassOffering }) {
         </h3>
         {c.nameKo && <p className="mt-1 text-small text-ink-muted">{c.nameKo}</p>}
 
-        <p className="mt-3 flex-1 text-small text-ink-muted">{c.summary}</p>
+        <p className="mt-3 flex-1 text-small text-ink-muted">{c.tagline ?? c.summary}</p>
 
-        {(c.format || c.duration) && (
-          <p className="mt-4 text-caption text-ink-muted">
-            {[c.duration, c.format].filter(Boolean).join('. ')}
-          </p>
+        {/* One key fact, the first from the details card: "40 minutes",
+            "Fridays: Limited spots available". */}
+        {c.details?.[0] && (
+          <p className="mt-4 text-caption font-medium text-ink">{c.details[0].value}</p>
         )}
 
         <div className="mt-6 border-t border-line pt-5">
-          {typeof c.price === 'number' ? (
-            <p className="flex items-baseline gap-2">
+          {typeof c.price === 'number' && (
+            <p className="mb-5 flex items-baseline gap-2">
               {c.priceFrom && <span className="text-caption text-ink-muted">From</span>}
               <span className="font-display text-h4 font-semibold text-plum">${c.price}</span>
-              <span className="text-caption text-ink-muted">
-                per {c.priceUnit}
-                {c.priceConfirmed ? '' : ', placeholder'}
-              </span>
+              <span className="text-caption text-ink-muted">per {c.priceUnit}</span>
             </p>
-          ) : (
-            <p className="text-caption text-ink-muted">Price to be confirmed.</p>
           )}
 
-          <WaitlistButton className="mt-5" name={c.name} compact />
+          <WaitlistButton name={c.name} compact />
           <Link
             href={`/classes/${c.slug}`}
             className="mt-4 inline-block text-small font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"

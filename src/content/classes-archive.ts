@@ -27,11 +27,16 @@ export const archivedClasses: ClassOffering[] = [
       'A private session using acupressure, a traditional practice of applying gentle pressure at specific points on the body.',
       'Boclaire is a Certified Acupressure Teacher. She works within Traditional Chinese Medicine as a tradition, one worth respecting on its own terms, and not as a description of modern anatomy.',
     ],
-    whatHappens: [
-      'A conversation about what is going on',
-      'Gentle pressure at specific points',
-      'Breath and rest',
-      'Notes on anything worth trying at home',
+    sections: [
+      {
+        heading: 'What happens',
+        bullets: [
+          'A conversation about what is going on',
+          'Gentle pressure at specific points',
+          'Breath and rest',
+          'Notes on anything worth trying at home',
+        ],
+      },
     ],
     honestNote:
       'Acupressure may be supportive. People and situations are not one-size-fits-all, and this is not medical treatment. If something needs a doctor, please see one.',

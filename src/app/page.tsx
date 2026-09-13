@@ -6,6 +6,7 @@ import {
   ArcBand,
   BeeBloom,
   FigureElder,
+  FigureGathering,
   FigurePair,
   FigureSeated,
   FigureTree,
@@ -14,7 +15,7 @@ import {
 } from '@/components/art/illustrations'
 
 /**
- * The homepage routes five different people to five different places without
+ * The homepage routes six different people to six different places without
  * making any of them read first. The audience cards are the mechanism: they sit
  * high, they are phrased the way someone would describe themselves rather than
  * the way a practice would categorise them, and each one now carries an
@@ -53,6 +54,12 @@ const audiences = [
     label: 'My school or group',
     note: 'Enrichment classes, homeschool co-ops, and custom programs.',
     Art: FigurePair,
+  },
+  {
+    href: '/classes#special-programs',
+    label: 'Special Programs',
+    note: 'Special programs for businesses, events, celebrations and faith-based classes.',
+    Art: FigureGathering,
   },
 ]
 

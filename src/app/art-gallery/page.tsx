@@ -1,6 +1,6 @@
 /** Internal art review page. Not linked, not in the sitemap. Delete before launch. */
 import {
-  ArcBand, BeeBloom, FigureElder, FigurePair, FigureSeated, FigureTree,
+  ArcBand, BeeBloom, FigureElder, FigureGathering, FigurePair, FigureSeated, FigureTree,
   FigureWalking, HillsSun, SeedHead, Sprig,
 } from '@/components/art/illustrations'
 
@@ -10,6 +10,7 @@ const figures = [
   ['FigureWalking', <FigureWalking key="c" className="w-full" />],
   ['FigureTree', <FigureTree key="d" className="w-full" />],
   ['FigureElder', <FigureElder key="e" className="w-full" />],
+  ['FigureGathering', <FigureGathering key="f" className="w-full" />],
 ] as const
 
 export default function Gallery() {

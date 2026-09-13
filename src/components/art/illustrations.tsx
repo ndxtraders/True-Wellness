@@ -511,6 +511,105 @@ export function FigureHands({ className, title }: ArtProps) {
   )
 }
 
+/**
+ * Three figures holding hands under a string of bunting. The Special Programs
+ * card on the homepage: businesses, events, celebrations and faith-based classes.
+ *
+ * A gathering, not a party. Nothing in it belongs to only one of those four: no
+ * cake, no desk, and no religious symbol, because faith-based classes stay
+ * something a family opts into (see the 'spiritual' audience in types.ts).
+ *
+ * The garland is a true parabola, drawn as a quadratic curve, and every pennant
+ * hangs from that same curve, so the flags meet the string instead of floating
+ * under it.
+ */
+export function FigureGathering({ className, title }: ArtProps) {
+  // y 16 at x 50 and 370, sagging to 40 at the centre. The quadratic path below,
+  // control point (210, 64), traces exactly this curve.
+  const garland = (x: number) => 16 + 24 * (1 - ((x - 210) / 160) ** 2)
+  const round = (n: number) => Math.round(n * 10) / 10
+  const pennants = [70, 116, 163, 210, 257, 304, 350].map(
+    (x) =>
+      `M${x - 12} ${round(garland(x - 12))} L${x + 12} ${round(garland(x + 12))} L${x} ${round(garland(x) + 22)} Z`,
+  )
+
+  return (
+    <svg viewBox="0 0 420 340" className={className} {...svgProps(title)}>
+      <ellipse cx="210" cy="322" rx="190" ry="14" className="fill-sage" opacity="0.42" filter="url(#twm-grain)" />
+
+      {/* bunting. The string stays unfiltered: a stroke has no real bounding box (defs.tsx). */}
+      <path d="M50 16 Q 210 64 370 16" className="stroke-ink" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.45" />
+      <g filter="url(#twm-painted)">
+        {pennants.map((d, i) => (
+          <path key={i} d={d} className={i % 2 === 0 ? 'fill-amber' : 'fill-lilac'} />
+        ))}
+      </g>
+
+      {/* --- adult, left --- */}
+      <path d="M112 236 C 110 268 110 294 110 314" className="stroke-plum" strokeWidth="19" strokeLinecap="round" fill="none" />
+      <path d="M128 236 C 130 268 132 294 132 314" className="stroke-plum" strokeWidth="19" strokeLinecap="round" fill="none" />
+      <path d="M100 318 L118 318" className="stroke-plum" strokeWidth="11" strokeLinecap="round" fill="none" />
+      <path d="M124 318 L142 318" className="stroke-plum" strokeWidth="11" strokeLinecap="round" fill="none" />
+      <path d="M100 242 C 92 198 100 154 120 152 C 140 154 148 198 140 242 Z" className="fill-plum" filter="url(#twm-painted)" />
+      <path d="M103 182 C 88 204 84 226 88 244" className="stroke-plum" strokeWidth="13" strokeLinecap="round" fill="none" />
+      {/* inner arm, down to the child's hand */}
+      <path d="M137 182 C 150 206 160 230 168 252" className="stroke-plum" strokeWidth="13" strokeLinecap="round" fill="none" />
+      <g transform="translate(-41 44)">
+        <path
+          d="M136 84 C 130 48 146 30 161 30 C 176 30 192 48 186 84 C 192 112 184 132 173 140 C 179 114 177 92 170 82 C 164 92 158 92 152 82 C 145 92 143 114 149 140 C 138 132 130 112 136 84 Z"
+          className="fill-ink"
+          opacity="0.72"
+          filter="url(#twm-painted)"
+        />
+        <circle cx="161" cy="78" r="24" className="fill-bg" filter="url(#twm-grain)" />
+        <circle cx="161" cy="78" r="24" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
+      </g>
+
+      {/* --- child, centre, holding both hands --- */}
+      <path d="M202 268 C 200 288 200 304 200 316" className="stroke-lilac" strokeWidth="15" strokeLinecap="round" fill="none" />
+      <path d="M218 268 C 220 288 220 304 220 316" className="stroke-lilac" strokeWidth="15" strokeLinecap="round" fill="none" />
+      <path d="M192 320 L208 320" className="stroke-lilac" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <path d="M212 320 L228 320" className="stroke-lilac" strokeWidth="10" strokeLinecap="round" fill="none" />
+      <path d="M194 272 C 188 238 194 210 210 208 C 226 210 232 238 226 272 Z" className="fill-lilac" filter="url(#twm-painted)" />
+      <path d="M196 232 C 186 242 176 248 170 252" className="stroke-lilac" strokeWidth="11" strokeLinecap="round" fill="none" />
+      <path d="M224 232 C 234 242 244 248 250 252" className="stroke-lilac" strokeWidth="11" strokeLinecap="round" fill="none" />
+      {/* two small buns: reads as "child" without needing a face */}
+      <g transform="translate(-94 6)">
+        <circle cx="284" cy="160" r="12" className="fill-ink" opacity="0.72" filter="url(#twm-grain)" />
+        <circle cx="324" cy="160" r="12" className="fill-ink" opacity="0.72" filter="url(#twm-grain)" />
+        <path
+          d="M283 186 C 278 158 289 144 304 144 C 319 144 330 158 325 186 C 320 168 313 162 304 162 C 295 162 288 168 283 186 Z"
+          className="fill-ink"
+          opacity="0.72"
+          filter="url(#twm-painted)"
+        />
+        <circle cx="304" cy="182" r="21" className="fill-bg" filter="url(#twm-grain)" />
+        <circle cx="304" cy="182" r="21" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
+      </g>
+
+      {/* --- adult, right --- */}
+      <path d="M292 236 C 290 268 288 294 288 314" className="stroke-moss" strokeWidth="19" strokeLinecap="round" fill="none" />
+      <path d="M308 236 C 310 268 310 294 310 314" className="stroke-moss" strokeWidth="19" strokeLinecap="round" fill="none" />
+      <path d="M278 318 L296 318" className="stroke-moss" strokeWidth="11" strokeLinecap="round" fill="none" />
+      <path d="M302 318 L320 318" className="stroke-moss" strokeWidth="11" strokeLinecap="round" fill="none" />
+      <path d="M280 242 C 272 198 280 154 300 152 C 320 154 328 198 320 242 Z" className="fill-moss" filter="url(#twm-painted)" />
+      <path d="M283 182 C 270 206 260 230 252 252" className="stroke-moss" strokeWidth="13" strokeLinecap="round" fill="none" />
+      {/* the free arm lifts: the one gesture that says "celebration" */}
+      <path d="M317 182 C 336 162 346 138 344 114" className="stroke-moss" strokeWidth="13" strokeLinecap="round" fill="none" />
+      <g transform="translate(27 -20)">
+        <path
+          d="M252 148 C 247 118 261 102 273 102 C 285 102 299 118 294 148 C 289 130 282 124 273 124 C 264 124 257 130 252 148 Z"
+          className="fill-ink"
+          opacity="0.72"
+          filter="url(#twm-painted)"
+        />
+        <circle cx="273" cy="146" r="20" className="fill-bg" filter="url(#twm-grain)" />
+        <circle cx="273" cy="146" r="20" className="fill-amber" opacity="0.26" filter="url(#twm-grain)" />
+      </g>
+    </svg>
+  )
+}
+
 /* ------------------------------------------------------------------ */
 /* Botanical                                                           */
 /* ------------------------------------------------------------------ */

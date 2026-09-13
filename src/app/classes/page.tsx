@@ -4,7 +4,7 @@ import { classes, statusOf, type ClassOffering } from '@/content/classes'
 import type { AudienceKey } from '@/content/types'
 import { statusLabels } from '@/content/types'
 import { ClassArt } from '@/components/art/for-class'
-import { HillsSun, Sprig } from '@/components/art/illustrations'
+import { ArcBand, HillsSun, Sprig } from '@/components/art/illustrations'
 import { WaitlistButton } from '@/components/waitlist-button'
 import { disclosures } from '@/lib/site'
 
@@ -20,9 +20,12 @@ export const metadata: Metadata = {
  * cards to find the two that concern them.
  *
  * Order is deliberate: children first, since that is the practice's center of
- * gravity, and schools last, since that audience arrives knowing what it wants.
+ * gravity, and schools last of the everyday groups, since that audience arrives
+ * knowing what it wants. Special programs follow under their own heading.
  */
-const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
+type Group = { key: AudienceKey; heading: string; blurb: string }
+
+const groups: Group[] = [
   {
     key: 'children',
     heading: 'For children',
@@ -53,6 +56,20 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
     heading: 'For schools and homeschool co-ops',
     blurb: 'Classes now available for school enrichment programs and homeschool co-ops.',
   },
+]
+
+/**
+ * Special programs: bookings that come from an organisation or an occasion
+ * rather than one family. They sit under one "Special Programs" heading, which
+ * the homepage card of the same name links to, in the order Rev set.
+ */
+const specialGroups: Group[] = [
+  {
+    key: 'business-retreats',
+    heading: 'For businesses and retreats',
+    blurb:
+      'For businesses, schools, wellness events, retreats, and community organizations.',
+  },
   {
     key: 'events',
     heading: 'Celebrations',
@@ -63,12 +80,6 @@ const groups: { key: AudienceKey; heading: string; blurb: string }[] = [
     heading: 'Faith-based classes',
     blurb:
       'Openly Christian, and grouped here so you can choose them on purpose rather than come across them in a list.',
-  },
-  {
-    key: 'business-retreats',
-    heading: 'For businesses and retreats',
-    blurb:
-      'For businesses, schools, wellness events, retreats, and community organizations.',
   },
 ]
 
@@ -140,10 +151,48 @@ function ClassCard({ c }: { c: ClassOffering }) {
   )
 }
 
+function GroupSection({
+  group,
+  items,
+  shaded,
+  headingLevel,
+}: {
+  group: Group
+  items: ClassOffering[]
+  shaded: boolean
+  /** Special programs sit under their own h2, so their group headings step down a level. */
+  headingLevel: 'h2' | 'h3'
+}) {
+  const Heading = headingLevel
+  return (
+    <section
+      className={`border-b border-line ${shaded ? 'bg-surface' : ''}`}
+      aria-labelledby={`group-${group.key}`}
+    >
+      <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
+        <div className="max-w-2xl">
+          <Heading id={`group-${group.key}`} className="text-h2 text-ink">
+            {group.heading}
+          </Heading>
+          <p className="mt-4 text-body-lg text-ink-muted">{group.blurb}</p>
+        </div>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((c) => (
+            <ClassCard key={c.slug} c={c} />
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
 export default function ClassesPage() {
-  const populated = groups
-    .map((g) => ({ ...g, items: classes.filter((c) => c.audience === g.key) }))
-    .filter((g) => g.items.length > 0)
+  const withItems = (list: Group[]) =>
+    list
+      .map((group) => ({ group, items: classes.filter((c) => c.audience === group.key) }))
+      .filter((g) => g.items.length > 0)
+  const core = withItems(groups)
+  const special = withItems(specialGroups)
 
   return (
     <>
@@ -181,26 +230,35 @@ export default function ClassesPage() {
       </section>
 
       {/* Groups. Alternating ground so fourteen cards do not read as one slab. */}
-      {populated.map((g, i) => (
+      {core.map(({ group, items }, i) => (
+        <GroupSection key={group.key} group={group} items={items} shaded={i % 2 === 1} headingLevel="h2" />
+      ))}
+
+      {/* The Special Programs heading, on the sage field so it reads as a new
+          part of the page rather than one more group. The homepage card links to
+          #special-programs; scroll-mt clears the 72px sticky header. */}
+      {special.length > 0 && (
         <section
-          key={g.key}
-          className={`border-b border-line ${i % 2 === 1 ? 'bg-surface' : ''}`}
-          aria-labelledby={`group-${g.key}`}
+          id="special-programs"
+          className="scroll-mt-[72px] bg-sage"
+          aria-labelledby="special-programs-heading"
         >
-          <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
+          <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
             <div className="max-w-2xl">
-              <h2 id={`group-${g.key}`} className="text-h2 text-ink">
-                {g.heading}
+              <h2 id="special-programs-heading" className="text-h1 text-ink">
+                Special Programs
               </h2>
-              <p className="mt-4 text-body-lg text-ink-muted">{g.blurb}</p>
+              <p className="mt-5 text-body-lg text-ink">
+                Special programs for businesses, events, celebrations and faith-based classes.
+              </p>
             </div>
-            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {g.items.map((c) => (
-                <ClassCard key={c.slug} c={c} />
-              ))}
-            </ul>
           </div>
+          <ArcBand className="-mb-px block w-full" />
         </section>
+      )}
+
+      {special.map(({ group, items }, i) => (
+        <GroupSection key={group.key} group={group} items={items} shaded={i % 2 === 1} headingLevel="h3" />
       ))}
 
       <section>

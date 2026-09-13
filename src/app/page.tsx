@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { pillars } from '@/content/pillars'
-import { contact, disclosures, integrations, site } from '@/lib/site'
+import { disclosures, integrations, site } from '@/lib/site'
 import {
   ArcBand,
   BeeBloom,
@@ -207,8 +207,7 @@ export default function HomePage() {
               &mdash; Boclaire
             </figcaption>
             <p className="mt-8 max-w-md text-ink-muted">
-              We cultivate mind-body awareness, coordination, emotional awareness, and self-trust so a child
-              knows what their own body is telling them.
+              We cultivate self-empowerment in children through movement and mindfulness in nature.
             </p>
             <Link
               href="/about"
@@ -237,8 +236,7 @@ export default function HomePage() {
                 The Children&rsquo;s Wellness Center
               </h2>
               <p className="mt-5 text-body-lg text-ink-muted">
-                We are building an outdoor wellness space and herb garden in Tuolumne County, so
-                local kids have somewhere to move, plant things, and be outside every week.
+                We are building an outdoor wellness and herbal garden where children learn mindfulness, movement, and emotional balance through nature-based learning.
               </p>
               <dl className="mt-10 grid gap-8 sm:grid-cols-3">
                 {[
@@ -278,9 +276,7 @@ export default function HomePage() {
             <div className="flex flex-col rounded-(--radius-card) border border-line bg-bg p-8">
               <h3 className="text-h4 font-semibold text-ink">Sponsor a child</h3>
               <p className="mt-3 flex-1 text-small text-ink-muted">
-                A monthly sponsorship puts a Tuolumne County child in nature-based wellness classes.
-                Small groups, outdoors, every week. Four levels, from one child to the whole
-                program.
+                Starting at $167/month, your sponsorship puts a Tuolumne County child in wellness classes every month.
               </p>
               <Link
                 href="/childrens-center/sponsor"
@@ -307,17 +303,12 @@ export default function HomePage() {
             <p className="mt-5 text-body-lg text-ink-muted">
               I can also deliver classes at your location. Email me directly and let's talk about what you need.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
-              <a
-                href={`mailto:${contact.email}`}
-                className="font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"
-              >
-                {contact.email}
-              </a>
-              <a href={contact.phoneHref} className="font-medium text-ink-muted hover:text-plum">
-                {contact.phoneDisplay}
-              </a>
-            </div>
+            <Link
+              href="/contact"
+              className="mt-8 inline-block rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+            >
+              Send me a message
+            </Link>
             <p className="mt-10 max-w-xl text-caption leading-relaxed text-ink-muted">
               {disclosures.services}
             </p>

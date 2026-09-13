@@ -625,8 +625,15 @@ export function FigureTrail({ className, title }: ArtProps) {
     <svg viewBox="0 0 420 340" className={className} {...svgProps(title)}>
       <ellipse cx="210" cy="310" rx="196" ry="16" className="fill-sage" opacity="0.42" filter="url(#twm-grain)" />
 
-      {/* the trail, winding back toward the tree. A stroke, so unfiltered (defs.tsx). */}
-      <path d="M88 320 C 150 312 212 300 262 284 C 292 274 318 266 350 262" className="stroke-amber" strokeWidth="20" strokeLinecap="round" fill="none" opacity="0.3" />
+      {/* The trail, winding back toward the tree. A filled shape that narrows with
+          distance: drawn as a thick stroke it read as a tilted plank, round caps
+          and all, with the child standing on it rather than walking along it. */}
+      <path
+        d="M88 340 C 120 312 190 298 250 281 C 284 272 312 265 338 262 L 340 270 C 314 276 286 286 252 303 C 196 327 160 338 150 340 Z"
+        className="fill-amber"
+        opacity="0.35"
+        filter="url(#twm-grain)"
+      />
 
       {/* tree, set back on the right */}
       <path d="M336 262 C 337 240 338 222 336 200" className="stroke-moss" strokeWidth="10" strokeLinecap="round" fill="none" />

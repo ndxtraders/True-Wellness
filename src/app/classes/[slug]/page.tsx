@@ -150,6 +150,28 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
         </section>
       )}
 
+      {/* Her own call to action, only where the flyer makes one. */}
+      {c.callToAction && (
+        <section className="border-b border-line bg-surface">
+          <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-(--spacing-section) md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-h3 text-ink">{c.callToAction.heading}</h2>
+              {c.callToAction.text.map((t) => (
+                <p key={t} className="mt-3 text-body-lg text-ink-muted">
+                  {t}
+                </p>
+              ))}
+            </div>
+            <Link
+              href={c.callToAction.href}
+              className="shrink-0 rounded-pill bg-plum px-7 py-3.5 font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+            >
+              {c.callToAction.label}
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Enrollment tiers. Only a class sold by days-per-week has these, so the
           section is absent rather than empty for the others. */}
       {c.priceTiers && c.priceTiers.length > 0 && (

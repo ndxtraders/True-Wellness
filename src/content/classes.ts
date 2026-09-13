@@ -7,6 +7,9 @@
  * line where master context 9 or 15 does not allow the claim on a public page.
  * Each such edit is recorded in that entry's verifyNote.
  *
+ * Person follows the flyer: where she writes "I" or "my", the page says "I"
+ * or "my"; where she writes "we" or "our", so does the page.
+ *
  * Classes with no flyer still carry copy adapted from the old website. Leave
  * them alone until she writes one.
  *
@@ -56,6 +59,8 @@ export interface ClassOffering {
   sections: ClassSection[]
   /** Her closing or goal line, set large. Omitted when the flyer has none. */
   closing?: string
+  /** Her own call to action, where the flyer has one ("Support our work"). Shown after the closing line. */
+  callToAction?: { heading: string; text: string[]; label: string; href: string }
   /**
    * A limit specific to this class. Optional: the site-wide footer already says
    * these are not medical care, therapy, or treatment, so repeating that here is
@@ -107,9 +112,12 @@ export const classes: ClassOffering[] = [
     audienceLabel: 'Children',
     pillars: ['whole-person-thinking', 'healthy-meals'],
     source: 'boclaire-flyer',
+    tagline: 'One of our signature wellness programs',
     summary: 'A playful outdoor journey where children explore nature using all their senses.',
+    details: [{ label: 'Where', value: 'Outdoor wellness center in Jamestown (in development)' }],
     body: [
       'This is a playful outdoor journey where children explore nature using all their senses, touching, smelling, listening, and connecting with themselves and natural elements, including hands-on time in our herbal garden.',
+      'I am currently developing an outdoor wellness center in Jamestown that includes an herbal garden and focuses on supporting children’s emotional, physical, and nervous system health through nature-based practices.',
     ],
     sections: [
       {
@@ -118,9 +126,18 @@ export const classes: ClassOffering[] = [
       },
     ],
     closing:
-      'We believe every child deserves access to wellness tools and resources that support emotional balance, focus, resilience, and joy.',
+      'Our goal is to provide free wellness classes to children in Tuolumne County. We believe every child deserves access to wellness tools and resources that support emotional balance, focus, resilience, and joy.',
+    callToAction: {
+      heading: 'Support our work',
+      text: [
+        'Would you like to support children’s emotional and mental health in our community?',
+        'Please consider becoming a sponsor today!',
+      ],
+      label: 'Become a sponsor',
+      href: '/childrens-center/sponsor',
+    },
     verifyNote:
-      'Renamed from Nature’s Sensory Gym (an old-site name) to the name on Boclaire’s flyer, “1. Nature Based Sensory Experience AKA signature program”, updated 2026-09-12. Copy is hers. Left off the page: “These experiences also support neuroplasticity, helping the brain build stronger pathways for learning, emotional balance, focus, and adaptability.” That is a brain-development claim master context 15 and 27 require evidence for. The flyer’s bio, “Other wellness classes” list, and sponsor ask are not this class and are not on this page.',
+      'Renamed from Nature’s Sensory Gym (an old-site name) to the name on Boclaire’s flyer, “1. Nature Based Sensory Experience AKA signature program”, updated 2026-09-12. Copy is hers. Left off the page: “These experiences also support neuroplasticity, helping the brain build stronger pathways for learning, emotional balance, focus, and adaptability.” That is a brain-development claim master context 15 and 27 require evidence for. Also from the flyer (2026-09-13, Rev approved): the tagline (her “One of our signature wellness program”, made plural), her first-person center sentence (“nature based” hyphenated), the mission line, and her Support Our Work ask, linked to the sponsor page. The “Where” detail is condensed from her center sentence. Still not on this page: her bio, and the seven “Other wellness classes”, which the flyer labels as other classes. Her flyer ends “All classes are designed based on individual needs and may include:” with no list after it.',
   },
   {
     slug: 'meditative-wellness-walk',
@@ -503,7 +520,7 @@ export const classes: ClassOffering[] = [
       },
     ],
     closing:
-      'Your child is receiving Boclaire’s full attention and her unique wellness-based approach to daily care. Perfect for busy parents who want a holistic experience for their child.',
+      'Your child is receiving my full attention and my unique wellness-based approach to daily care. Perfect for busy parents who want a holistic experience for their child.',
     honestNote: 'This is childcare that teaches mindful living, rather than a class.',
     price: 25,
     priceUnit: 'hour',
@@ -518,7 +535,7 @@ export const classes: ClassOffering[] = [
       { label: '5 days a week', amount: 2800, unit: 'month' },
     ],
     verifyNote:
-      'Copy and every price come from Boclaire’s flyer “2. One-on-One Care”. Edits: her closing line is moved from first person (“my full attention”) to third; the bullet “Personalized attention and care” is dropped because the closing line says it; her second “Includes” list is left off because it repeats the first. Rev confirmed this is regular childcare that teaches mindful living. He also says no license is required for in-home care under a certain number of children. That number is not recorded anywhere, so the site makes NO licensing claim in either direction.',
+      'Copy and every price come from Boclaire’s flyer “2. One-on-One Care”. Edits: the bullet “Personalized attention and care” is dropped because the closing line says it; her second “Includes” list is left off because it repeats the first. Rev confirmed this is regular childcare that teaches mindful living. He also says no license is required for in-home care under a certain number of children. That number is not recorded anywhere, so the site makes NO licensing claim in either direction.',
   },
   {
     slug: 'guided-mindful-walk',

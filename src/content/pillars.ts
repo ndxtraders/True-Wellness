@@ -17,7 +17,7 @@ export const pillars: Pillar[] = [
   {
     key: 'returning-to-balance',
     name: 'Returning to Balance',
-    summary: 'Balance is something a body already knows how to find. Mostly we are removing interference.',
+    summary: 'Your body already knows how to naturally return to balance. We are removing the interference.',
     definition: [
       'Balance isn\u2019t a state you reach and then hold on to. It\u2019s something a body already knows how to find, and mostly what gets in the way is noise.',
       'Children come with built-in signals for movement, rest, exploration, and connection. Adults still have those signals too. Life just gets loud enough that we stop hearing them. So the work here isn\u2019t about adding a fix. It\u2019s about turning the noise down and listening again.',
@@ -53,7 +53,7 @@ export const pillars: Pillar[] = [
   {
     key: 'somatic-movement',
     name: 'Somatic Movement',
-    summary: 'Movement studied from the inside.',
+    summary: 'Gentle movement to retrain the brain-to-muscle connection and build internal body awareness.',
     definition: [
       'Let\u2019s think about walking, the most basic movement humans do. The legs move. The arms and torso counterbalance. The whole body coordinates as one thing. Movement was never really isolated muscle training.',
       'The practice is learning to feel that coordination in your own body, rather than being told about it. For children it’s cultivation rather than training: body awareness, confidence, coordination, curiosity and self-trust. We are not trying to produce small athletes.',
@@ -89,7 +89,7 @@ export const pillars: Pillar[] = [
   {
     key: 'healthy-meals',
     name: 'Healthy Meals',
-    summary: 'The food side, and it\u2019s deliberately relaxed.',
+    summary: 'Mindful eating for better health.',
     definition: [
       'Boclaire cooks intuitively. A little of this, a little of that. She doesn\u2019t much enjoy measuring, so the approach here is relaxed and easy to substitute in, and it\u2019s built for someone cooking at the end of a long day rather than someone counting grams.',
       'It covers mindful eating as an everyday habit, herbs and the garden, and how to read a food claim honestly. That means saying plainly which part is tradition, which part is a plausible explanation, and which part actually has evidence behind it, instead of blending all three into one promise.',

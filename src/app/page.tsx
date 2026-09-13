@@ -33,7 +33,7 @@ const audiences = [
   {
     href: '/classes#group-teens',
     label: 'My teenager',
-    note: 'Small circles for teens, built to be a shared experience rather than a lecture.',
+    note: 'A supportive and welcoming small circle group.',
     Art: FigureSeated,
   },
   {
@@ -75,8 +75,8 @@ export default function HomePage() {
           */}
           <h1 className="max-w-3xl text-display text-ink">True Wellness Begins With Movement in Nature.</h1>
           <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
-            Somatic movement, and mindfulness for children, families, and elders.
-            Individual and Small group classes, at a pace that fits your abilities.
+            Somatic movement and mindfulness for children, families, and elders.
+            Individual and small group classes, at a pace that fits your abilities.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -296,7 +296,7 @@ export default function HomePage() {
               Questions about a class?
             </h2>
             <p className="mt-5 text-body-lg text-ink-muted">
-              I can also deliver classes at your location. Email me directly let's talk whether what you need.
+              I can also deliver classes at your location. Email me directly and let's talk about what you need.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
               <a

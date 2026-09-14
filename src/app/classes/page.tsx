@@ -78,8 +78,7 @@ const specialGroups: Group[] = [
   {
     key: 'spiritual',
     heading: 'Faith-based classes',
-    blurb:
-      'Openly Christian, and grouped here so you can choose them on purpose rather than come across them in a list.',
+    blurb: 'Christian classes and groups for children, teens, and adults.',
   },
 ]
 
@@ -138,7 +137,16 @@ function ClassCard({ c }: { c: ClassOffering }) {
             </p>
           )}
 
-          <WaitlistButton name={c.name} compact />
+          {c.primaryAction === 'contact' ? (
+            <Link
+              href="/contact"
+              className="inline-block rounded-pill bg-plum px-5 py-2.5 text-small font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+            >
+              Contact Boclaire
+            </Link>
+          ) : (
+            <WaitlistButton name={c.name} compact />
+          )}
           <Link
             href={`/classes/${c.slug}`}
             className="mt-4 inline-block text-small font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"

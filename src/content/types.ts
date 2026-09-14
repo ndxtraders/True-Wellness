@@ -31,10 +31,8 @@ export type AudienceKey =
   | 'families-parents'
   | 'schools'
   | 'events'
-  /* Faith-based offerings sit in their own category rather than under children
-   * and teens. A parent choosing a children's yoga class and a parent choosing
-   * a Bible study are making different decisions, and mixing them means the
-   * children's list quietly asks people to opt out rather than opt in. */
+  /* Faith-based offerings have their own category so the Christian framing is
+   * clear without adding commentary about the visitor's beliefs or choices. */
   | 'spiritual'
   /* Paid group work bought by an organisation rather than by a parent. It is a
    * different buyer, a different budget, and it runs at their location. */

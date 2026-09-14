@@ -112,17 +112,30 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
                 </dl>
               )}
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <WaitlistButton name={c.name} compact />
-                <Link
-                  href="/contact"
-                  className="rounded-pill border border-line-strong px-5 py-2.5 text-small font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
-                >
-                  Contact Boclaire
-                </Link>
+                {c.primaryAction === 'contact' ? (
+                  <Link
+                    href="/contact"
+                    className="rounded-pill bg-plum px-5 py-2.5 text-small font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+                  >
+                    Contact Boclaire
+                  </Link>
+                ) : (
+                  <>
+                    <WaitlistButton name={c.name} compact />
+                    <Link
+                      href="/contact"
+                      className="rounded-pill border border-line-strong px-5 py-2.5 text-small font-semibold text-ink transition-colors duration-200 hover:border-plum hover:text-plum"
+                    >
+                      Contact Boclaire
+                    </Link>
+                  </>
+                )}
               </div>
-              <p className="mt-5 text-caption text-ink-muted">
-                Joining the waitlist does not book or charge you.
-              </p>
+              {c.primaryAction !== 'contact' && (
+                <p className="mt-5 text-caption text-ink-muted">
+                  Joining the waitlist does not book or charge you.
+                </p>
+              )}
             </aside>
           </div>
         </div>

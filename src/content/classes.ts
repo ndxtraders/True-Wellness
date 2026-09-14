@@ -85,6 +85,8 @@ export interface ClassOffering {
   priceConfirmed?: boolean
   /** Faith-based sessions are labeled so families opt in knowingly. */
   faithBased?: boolean
+  /** Defaults to waitlist. Use contact when the service starts with a conversation. */
+  primaryAction?: 'waitlist' | 'contact'
   /** Defaults to 'waitlist'. Nothing on this site is bookable yet. */
   status?: OfferingStatus
   /** Which illustration represents it. */
@@ -113,32 +115,44 @@ export const classes: ClassOffering[] = [
     audienceLabel: 'Children',
     pillars: ['whole-person-thinking'],
     source: 'boclaire-flyer',
-    tagline: 'One of our signature wellness programs',
-    summary: 'A playful outdoor journey where children explore nature using all their senses.',
-    details: [{ label: 'Where', value: 'Outdoor wellness center in Jamestown (in development)' }],
+    tagline: 'A playful outdoor experience for children',
+    summary:
+      'Children explore nature through touch, smell, sound, movement, and hands-on garden time.',
+    status: 'in-development',
+    details: [
+      { label: 'Planned location', value: 'Outdoor wellness center and herbal garden in Jamestown' },
+    ],
     body: [
-      'This is a playful outdoor journey where children explore nature using all their senses, touching, smelling, listening, and connecting with themselves and natural elements, including hands-on time in our herbal garden.',
-      'I am currently developing an outdoor wellness center in Jamestown that includes an herbal garden and focuses on supporting children’s emotional, physical, and nervous system health through nature-based practices.',
+      'Children learn through movement, play, and their senses. In this outdoor experience, they explore plants, herbs, sounds, textures, and movement. They are invited to slow down, notice what is around them, and connect with nature at their own pace.',
+      'Nature-Based Sensory Experience is being developed for our outdoor wellness center and herbal garden in Jamestown.',
     ],
     sections: [
       {
-        heading: 'Through herbs, plants, and natural environments, children:',
-        bullets: ['Awaken their senses', 'Calm their nervous system', 'Experience a natural reset'],
+        heading: 'What children explore',
+        bullets: [
+          'Touch and smell herbs and plants',
+          'Listen to sounds in nature',
+          'Move and play outdoors',
+          'Spend hands-on time in our herbal garden',
+          'Notice how their bodies feel',
+        ],
+      },
+      {
+        heading: 'What this may support',
+        intro: 'These activities may help children:',
+        bullets: ['Slow down and feel calmer', 'Pay attention to what is around them'],
       },
     ],
     closing:
-      'Our goal is to provide free wellness classes to children in Tuolumne County. We believe every child deserves access to wellness tools and resources that support emotional balance, focus, resilience, and joy.',
+      'Our goal is to provide free wellness classes to children in Tuolumne County. We believe every child deserves access to time outdoors, mindful movement, and simple wellness tools they can use in daily life.',
     callToAction: {
       heading: 'Support our work',
-      text: [
-        'Would you like to support children’s emotional and mental health in our community?',
-        'Please consider becoming a sponsor today!',
-      ],
+      text: ['Want to help us bring free wellness classes to local children?'],
       label: 'Become a sponsor',
       href: '/childrens-center/sponsor',
     },
     verifyNote:
-      'Renamed from Nature’s Sensory Gym (an old-site name) to the name on Boclaire’s flyer, “1. Nature Based Sensory Experience AKA signature program”, updated 2026-09-12. Copy is hers. Left off the page: “These experiences also support neuroplasticity, helping the brain build stronger pathways for learning, emotional balance, focus, and adaptability.” That is a brain-development claim master context 15 and 27 require evidence for. Also from the flyer (2026-09-13, Rev approved): the tagline (her “One of our signature wellness program”, made plural), her first-person center sentence (“nature based” hyphenated), the mission line, and her Support Our Work ask, linked to the sponsor page. The “Where” detail is condensed from her center sentence. Still not on this page: her bio, and the seven “Other wellness classes”, which the flyer labels as other classes. Her flyer ends “All classes are designed based on individual needs and may include:” with no list after it.',
+      'Rewritten from Boclaire’s Nature-Based Sensory Experience flyer and approved by Rev on 2026-09-13. The page leads with the activities, uses one modest relative benefit claim after the activities, and keeps the Jamestown center, herbal garden, free-class mission, waitlist, and sponsorship path. Left off the page: the neuroplasticity claim, the stronger nervous-system and “natural reset” claims, Boclaire’s bio, the unrelated list of other classes, and the unfinished final sentence from the flyer.',
   },
   {
     slug: 'meditative-wellness-walk',
@@ -364,38 +378,42 @@ export const classes: ClassOffering[] = [
     status: 'by-request',
     art: 'elder',
     source: 'boclaire-flyer',
-    tagline: 'Personalized Support At Your Pace',
+    tagline: 'Personal support at your pace',
     summary:
-      'Individual sessions designed to support memory, focus, confidence, and brain wellness for overall well-being.',
+      'A gentle private session with movement, breathing, mindfulness, and simple activities for focus.',
     details: [
       { label: 'Length', value: '40 minutes' },
-      { label: 'Where', value: 'Travel to your location available' },
+      { label: 'Where', value: "A visit to the person's home may be available" },
     ],
     body: [
-      'Individual sessions designed to support memory, focus, confidence, and brain wellness for overall well-being.',
+      'This is a gentle 40-minute private session for an older adult. Boclaire may use movement, breathing, mindfulness, acupressure, and simple games for focus and coordination. She keeps the pace comfortable.',
     ],
     sections: [
       {
-        heading: 'Exercises include',
+        heading: 'During a session',
+        intro: "Activities are chosen for the person's needs and comfort. A session may include:",
         bullets: [
-          'Neuro exercises',
-          'Mindfulness practice for mental clarity',
-          'Breathwork & acupressure points for stress reduction',
-          'Gentle movement for brain and body connection',
-          'Personalized cognitive exercise based on your needs',
-          'Eye exercises for vision and brain health',
-          'Practices to develop a more positive outlook on life',
+          'Gentle movement and coordination games',
+          'Short memory and focus games',
+          'Mindfulness and slow breathing',
+          'Gentle acupressure points',
+          'Simple eye movements',
+          'Positive thoughts and conversation',
         ],
       },
       {
-        heading: 'Benefits',
-        bullets: ['Build confidence', 'Stay mentally active', 'Support healthy aging'],
+        heading: 'What this may support',
+        bullets: [
+          'Focus and keeping the mind active',
+          'Feeling calm, confident, and engaged during the visit',
+        ],
       },
     ],
     honestNote:
-      'These sessions are not treatment for dementia, Alzheimer’s disease, or any neurological condition.',
+      "This is a wellness session. It is not treatment for dementia, Alzheimer's disease, vision problems, or other health conditions.",
+    primaryAction: 'contact',
     verifyNote:
-      'Copy is Boclaire’s flyer “5. Elder care”. Edits, each because master context 9 forbids promising outcomes for elders: “Eye exercises for improving vision and brain health” loses “improving”; the Benefits list keeps only Build confidence, Stay mentally active, and Support healthy aging, and leaves off “Improve memory and concentration and reduce brain fog” and “Navigate Life Stress with Ease and Turn Stress into Strength”. The honest note is the one sentence section 9 requires. Master context 9 notes there has previously been only one spot. PRICE: none published.',
+      'Rewritten from Boclaire’s “5. Elder care” flyer. The copy explains the activities in plain language and does not promise changes in memory, vision, brain fog, stress, or health. Confirm current availability, travel, and whether there is still only one spot. No price is published.',
   },
   {
     slug: 'mindful-teen-circle',
@@ -406,34 +424,32 @@ export const classes: ClassOffering[] = [
     status: 'in-development',
     art: 'seated',
     source: 'boclaire-flyer',
+    tagline: 'A welcoming space for self-care, confidence, and honest conversation',
     summary:
-      'A supportive and welcoming group designed to help teens build a healthy relationship with their bodies, food, and emotional well-being.',
+      'Teens move, create, talk, and learn practical ways to care for their bodies and emotions.',
     body: [
-      'A supportive and welcoming group designed to help teens build a healthy relationship with their bodies, food, and emotional well-being. Through mindfulness, open discussion, gentle movement, and practical life skills and wellness tools, participants will learn to care for themselves with confidence, kindness, and respect.',
+      'Mindful Teen Circle is a welcoming group where teens can talk, move, create, and learn everyday self-care. Sessions explore body image, food, stress, friendships, and menstrual care in a kind, non-shaming way. Teens are invited to ask questions and take part at their own comfort level.',
+      'Boclaire may also teach simple acupressure points as a self-care practice. Some teens might find the practice relaxing or comforting when they have cramps, bloating, or other common menstrual discomfort.',
     ],
     sections: [
       {
-        heading: 'Topics include',
+        heading: 'What we explore',
         bullets: [
-          'Developing a positive body image and healthy self-esteem',
-          'Mindful eating and listening to the body’s natural hunger and fullness cues',
-          'Healthy nutrition without dieting or body shame',
-          'Mindful self-care during the menstrual cycle',
-          'Safe acupressure points that may help relieve common menstrual discomforts',
-          'Gentle yoga, stretching, and movement',
-          'Stress management, emotional resilience, and mindfulness practices',
-          'Breathing exercises, relaxation techniques, and guided meditation',
-          'Building confidence, healthy friendships, emotional intelligence, and self-compassion',
-          'Journaling, creative activities, and meaningful group discussions',
+          'Body respect and healthy self-esteem',
+          'Mindful eating and noticing hunger and fullness',
+          'Basic nutrition without dieting or body shame',
+          'Menstrual care, hygiene, rest, and nourishment',
+          'Gentle yoga, stretching, breathing, and meditation',
+          'Journaling, creative activities, friendships, and group discussion',
         ],
       },
     ],
     closing:
-      'The goal of the Mindful Teen Circle is to empower teens with practical, lifelong tools that support physical health, emotional balance, body awareness, and confidence as they navigate the exciting and sometimes challenging journey of adolescence.',
+      'The goal is to give teens useful ways to notice what they need and care for themselves with more kindness. There are no diet rules, calorie counting, or body standards.',
     honestNote:
-      'All wellness practices are educational in nature and are intended to encourage healthy habits and self-care. There is no dieting, no calorie counting, and no body standards, and nothing here is treatment for an eating disorder or any menstrual condition.',
+      'This is an educational wellness group. It is not treatment for an eating disorder, a menstrual condition, or a mental health condition.',
     verifyNote:
-      'Copy is Boclaire’s flyer “7. Mindful Teen Circle”. Bullets are her ten topics with lead-in verbs and the two longest tails trimmed; her full wording is in the flyer. The second sentence of the honest note is not hers and is kept deliberately: a class about body image and food with teenagers is where that limit matters (master context 47). No schedule, age range, or group size is established.',
+      'Rewritten from Boclaire’s “7. Mindful Teen Circle” flyer. Ten topics are grouped into six scan-friendly bullets. Confirm the age range, group size, location, schedule, current status, and whether all menstrual-care topics will be included. No price is published.',
   },
   {
     slug: 'private-somatic-flow',
@@ -444,47 +460,36 @@ export const classes: ClassOffering[] = [
     status: 'by-request',
     art: 'seated',
     source: 'boclaire-flyer',
-    tagline: 'A Conversation with Your Mind + Body',
+    tagline: 'A conversation with your mind and body',
     summary:
-      'A personalized movement experience where you learn to slow down, notice what your body is communicating, and respond with intention.',
+      'A private, gentle movement session for listening to your body and choosing how to respond.',
     details: [
       { label: 'Booking', value: 'By appointment' },
       { label: 'Pace', value: 'Come as you are. Move at your own pace.' },
     ],
     body: [
-      'What if movement wasn’t about telling your body what to do? What if it was a conversation?',
-      'Private Somatic Flow is a personalized movement experience where you learn to slow down, notice what your body is communicating, and respond with intention.',
+      'What if movement were a conversation with your body?',
+      'Private Somatic Flow is a one-on-one session that gives you space to slow down and notice how your body feels. I guide you through gentle movement, breathing, body awareness, and simple acupressure. You move at your own pace and choose what feels useful.',
     ],
     sections: [
       {
-        heading: 'The goal is empowerment',
-        intro: 'You will learn how to notice what is happening in your body and choose how to respond.',
+        heading: 'What happens in a session',
+        intro: 'Each session is shaped around you. We may use:',
         bullets: [
-          'Sometimes your body may need movement',
-          'Sometimes it may need breath',
-          'Sometimes it may benefit from an acupressure point',
-          'Sometimes it may simply need you to pause and listen',
-        ],
-      },
-      {
-        heading: 'You may begin to notice',
-        intro:
-          'We explore gentle movement, mindful breathing, body awareness, and acupressure to help you develop a deeper connection with yourself.',
-        bullets: [
-          'Where you hold tension',
-          'How your breathing changes',
-          'What movements bring ease',
-          'What your body is asking for',
-          'How different acupressure points affect your awareness',
-          'When to move, when to pause, and when to rest',
+          'Gentle movement based on how your body feels',
+          'Simple breathing practices',
+          'Time to notice tension, ease, and changes in your breath',
+          'Optional acupressure points',
+          'Pauses to listen and rest',
         ],
       },
     ],
     closing: 'Notice. Attend. Respond. Become your own guide.',
     honestNote:
-      'There is no perfect pose. No pushing through. No one-size-fits-all formula. We listen first. Then we respond.',
+      'I guide you as you notice your body’s signals and choose how to respond. There is no perfect pose and no need to push through. We listen first. Then we respond.',
+    primaryAction: 'contact',
     verifyNote:
-      'Copy is Boclaire’s flyer “PRIVATE SOMATIC FLOW WITH BOCLAIRE”, verbatim apart from trimming. Left off: the “My role is…” lines, which are about her rather than the class, and the leftover AI comment in that file (“I especially love…”), which is not flyer copy. “4. Somatic flow” may describe a separate group class; not built until Rev confirms. PRICE: none published. Master context 37 lists $75 for a single session historically.',
+      'Rewritten from Boclaire’s “PRIVATE SOMATIC FLOW WITH BOCLAIRE” flyer. The conversation idea and Notice. Attend. Respond. line are preserved. No outcome claim or price is added. Confirm whether a separate group Somatic Flow class exists and whether the historical $75 single-session price is current.',
   },
   {
     slug: 'one-to-one-mindfulness-enrichment',
@@ -494,49 +499,35 @@ export const classes: ClassOffering[] = [
     pillars: ['whole-person-thinking', 'somatic-movement', 'mindful-meditation'],
     art: 'pair',
     source: 'boclaire-flyer',
-    tagline: 'A personalized mindful childhood experience',
+    status: 'by-request',
+    tagline: 'One-on-one care shaped around your child',
     summary:
-      'A nurturing one-on-one experience designed around your child’s unique needs, personality, interests, natural rhythm, and curiosity.',
+      'Personal care and enrichment through movement, nature, creativity, and child-led learning.',
     details: [
       { label: 'Format', value: 'One-on-one' },
-      { label: 'Enrollment', value: 'Weekly and monthly enrollment options available' },
+      { label: 'Availability', value: 'Contact Boclaire for current options' },
     ],
     body: [
-      'A nurturing one-on-one experience designed around your child’s unique needs, personality, interests, natural rhythm, and curiosity.',
-      'This program blends mindful care with meaningful enrichment through movement, nature, creativity, cultural exploration, and child-led learning.',
-      'Your child is supported in developing confidence, emotional awareness, creativity, independence, and a deeper connection with themselves, nature, and the world around them.',
+      "This one-on-one program gives your child Boclaire's full attention. Each day follows your child's age, interests, needs, and natural pace. Your child may move, explore outside, make art, hear stories, learn about different cultures, and practice simple mindfulness.",
+      'Depending on the care plan, Boclaire may provide healthy homemade meals and snacks, with organic food used when possible. Children may also practice eating slowly and paying attention to their food.',
+      "Boclaire follows your child's interests and questions. Your child has room to move, make things, play outside, and learn at a comfortable pace.",
     ],
     sections: [
       {
-        heading: 'Your child’s experience includes',
+        heading: "Your child's day may include",
         bullets: [
-          'Children’s yoga, brain exercise, and creative movement',
+          'Yoga, movement, and coordination games',
           'Mindfulness, breathing, and body awareness',
-          'Outdoor nature exploration and gardening',
-          'Exploration of different cultures, traditions, foods, and ways of life',
-          'Child-led creative exploration: art, music, storytelling, and creative projects guided by your child’s interests and imagination',
-          'Age-appropriate learning activities',
-          'Healthy homemade meals, snacks provided (organic whenever possible) and mindful eating practice',
+          'Outdoor play, garden time, and wellness walks',
+          'Art, music, storytelling, and child-led projects',
+          'Foods, traditions, and ways of life from around the world',
+          "Learning activities suited to your child's age",
         ],
       },
     ],
-    closing:
-      'Your child is receiving my full attention and my unique wellness-based approach to daily care. Perfect for busy parents who want a holistic experience for their child.',
-    honestNote: 'This is childcare that teaches mindful living, rather than a class.',
-    price: 25,
-    priceUnit: 'hour',
-    priceFrom: true,
-    priceConfirmed: true,
-    priceTiers: [
-      { label: '2 days a week', amount: 325, unit: 'week' },
-      { label: '3 days a week', amount: 475, unit: 'week' },
-      { label: '5 days a week', amount: 750, unit: 'week' },
-      { label: '2 days a week', amount: 1200, unit: 'month' },
-      { label: '3 days a week', amount: 1800, unit: 'month' },
-      { label: '5 days a week', amount: 2800, unit: 'month' },
-    ],
+    primaryAction: 'contact',
     verifyNote:
-      'Copy and every price come from Boclaire’s flyer “2. One-on-One Care”. Edits: the bullet “Personalized attention and care” is dropped because the closing line says it; her second “Includes” list is left off because it repeats the first. Rev confirmed this is regular childcare that teaches mindful living. He also says no license is required for in-home care under a certain number of children. That number is not recorded anywhere, so the site makes NO licensing claim in either direction.',
+      'Rewritten from Boclaire’s “2. One-on-One Care” flyer. Confirm current availability, care hours, age range, location, weekly and monthly options, meals, snacks, and every price. The historical $25 hourly rate and weekly and monthly tiers are held back until confirmed. The site makes no licensing claim in either direction.',
   },
   {
     slug: 'wellness-walk',
@@ -574,42 +565,34 @@ export const classes: ClassOffering[] = [
     status: 'by-request',
     art: 'walking',
     source: 'boclaire-flyer',
-    tagline: 'PE and Social Enrichment Class',
+    tagline: 'Outdoor PE and social enrichment',
     summary:
-      'Each class includes a Guided Mindful Walk, where students practice being fully present by observing their surroundings, listening to nature, and connecting their breath with movement.',
+      'An outdoor class where students walk, move, breathe, observe nature, and spend time together.',
     details: [
-      { label: 'When', value: 'Fridays: Limited spots available' },
       { label: 'For', value: 'Homeschool students' },
+      { label: 'Schedule', value: 'Contact Boclaire for current availability' },
     ],
     body: [
-      'This class helps students build healthy bodies and calm, focused minds through movement in nature. Each class includes a Guided Mindful Walk, where students practice being fully present by observing their surroundings, listening to nature, and connecting their breath with movement.',
+      'Guided Mindful Walk is an outdoor PE and social class for homeschool students. Children walk, move, breathe, and notice the world around them. The activities change with the age group, weather, and place.',
     ],
     sections: [
       {
         heading: 'During each class',
-        intro:
-          'Activities are adapted to each student’s age, developmental level, and the outdoor environment.',
         bullets: [
-          'Guided mindful walking',
-          'Age-appropriate movement',
-          'Breathing',
-          'Brain exercises',
-          'Simple acupressure techniques',
-        ],
-      },
-      {
-        heading: 'Students will develop',
-        bullets: [
-          'Balance, coordination, flexibility, strength, posture, and endurance',
-          'Mindfulness and healthy movement habits',
-          'Curiosity, observation of the natural world, teamwork, self-confidence, and respect for others',
+          'A guided walk with time to notice sights and sounds',
+          'Movement for balance and coordination',
+          'Breathing and body-awareness practices',
+          'Simple games that connect thought and movement',
+          'Simple acupressure taught as a wellness practice',
+          'Time to explore and work with others',
         ],
       },
     ],
     closing:
-      'This program provides a safe, engaging, and supportive environment where students can improve their physical fitness while developing lifelong wellness skills through purposeful movement and time outdoors.',
+      'Students practice healthy ways to move while they spend time outdoors together. Walking, breathing, and paying attention may help them feel calm and focused during class.',
+    primaryAction: 'contact',
     verifyNote:
-      'Copy is Boclaire’s flyer “6. Homeschoolers”. Edits: her opening subject “The Wellness Walk helps students” becomes “This class” so the page carries one name; her second paragraph becomes the “During each class” bullets; “while practicing mindfulness and learning healthy movement habits” becomes the bullet “Mindfulness and healthy movement habits”. Her About Your Teacher block is not published, including the Granite Peak vendor line, which master context 21 forbids without current confirmation. PRICE: none published.',
+      'Rewritten from Boclaire’s “6. Homeschoolers” flyer. The Friday schedule and limited-spots language are held back until confirmed. A second “Wellness Walk” file may describe a Granite Peak version or a separate offer. Confirm the public name, age or grade range, schedule, location, capacity, audience, and current status. Do not publish Granite Peak vendor status without current confirmation. No price is published.',
   },
   {
     slug: 'zenflow',
@@ -620,30 +603,43 @@ export const classes: ClassOffering[] = [
     status: 'by-request',
     art: 'hands',
     source: 'boclaire-flyer',
-    tagline: 'Bring Wellness to Your Workplace',
+    tagline: 'Bring gentle movement and mindfulness to your group',
     summary:
-      'Support the health and well-being of your team with a calming, restorative wellness experience.',
+      'A gentle group session with movement, breathing, mindfulness, and simple acupressure.',
     details: [
-      { label: 'Who it suits', value: 'Accessible to all ages and fitness levels' },
-      { label: 'Booking', value: 'Workplace wellness classes or event bookings' },
+      { label: 'Booking', value: 'Offered by request' },
+      { label: 'Pace', value: 'Participants move at their own pace' },
     ],
     body: [
-      'Support the health and well-being of your team with a calming, restorative wellness experience designed to reduce stress, improve focus, and leave you feeling refreshed and energized.',
+      'ZenFlow™ with Boclaire brings a gentle wellness class to your workplace or event. Your group steps away from the usual routine for movement, breathing, mindfulness, and simple acupressure. Boclaire guides the class at an easy pace and invites each person to work within their comfort level.',
     ],
     sections: [
       {
-        heading: 'Each class blends',
+        heading: 'Each class may include',
         bullets: [
-          'Gentle somatic movement to release tension and improve mobility',
-          'Guided breathwork to calm the nervous system and increase mental clarity',
-          'Mindful Living Practice',
-          'Acupressure techniques to promote relaxation, ease stress, and support overall wellness',
+          'Gentle somatic movement for the whole body',
+          'Guided breathing',
+          'A simple mindful living practice',
+          'Optional acupressure points',
+          'Quiet time to notice how the body feels',
+        ],
+      },
+      {
+        heading: 'Good settings for ZenFlow™',
+        bullets: [
+          'Workplaces and staff wellness days',
+          'Schools and community organizations',
+          'Wellness events and retreats',
         ],
       },
     ],
-    closing: 'Perfect for businesses, schools, wellness events, retreats, and community organizations.',
+    closing:
+      "Time for movement and breathing may help people feel less tense and return to their day with a clearer mind. Each person's experience may be different.",
+    honestNote:
+      'ZenFlow™ is a wellness and educational experience. It is not medical care or treatment.',
+    primaryAction: 'contact',
     verifyNote:
-      'Copy is Boclaire’s flyer “7. Bring Wellness to Your Workplace”, verbatim. “Accessible to all ages and fitness levels” comes from the flyer’s About block but describes the classes, not her. The rest of that block is not published: three of its claims appear nowhere in the master context (the “Children’s Meditation Stories” authorship, Sierra Yoga Center, Mindful Mom). The ™ is hers; nobody has checked whether the mark is registered. PRICE: none published; quoted per booking.',
+      'Rewritten from Boclaire’s “7. Bring Wellness to Your Workplace” flyer. The session is explained before one modest possible benefit. Confirm the trademark symbol, booking status, length, group-size limits, location or travel area, pricing, and whether schools remain an intended audience. No price is published.',
   }
 
 ]

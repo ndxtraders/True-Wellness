@@ -10,8 +10,8 @@
  * Person follows the flyer: where she writes "I" or "my", the page says "I"
  * or "my"; where she writes "we" or "our", so does the page.
  *
- * Classes with no flyer still carry copy adapted from the old website. Leave
- * them alone until she writes one.
+ * Classes with no dedicated flyer use owner-confirmed offer details from the
+ * old website, with voice and claims guidance from the master context.
  *
  * Only confirmed prices are published. Nothing here has a checkout; every class
  * routes to a waitlist or to the contact form.
@@ -161,24 +161,26 @@ export const classes: ClassOffering[] = [
     audience: 'adults',
     audienceLabel: 'Adults',
     pillars: ['mindful-meditation', 'somatic-movement'],
-    summary: 'A slow walk outdoors, with attention.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary: 'A slow, mindful walk with breathing, acupressure, and time to notice.',
     body: [
-      'A deliberately slow walk in nature. We pay attention to breath, to the ground, and to what the body is already doing while it walks.',
-      'Acupressure points come into it where they’re useful. Mostly it’s walking, unhurried, with someone pointing out what to notice.',
+      'Meditative Wellness Walk is a slow walk in nature with time to notice your breath, your body, and what is around you. Boclaire may include simple breathing and acupressure as part of the walk. You can move at your own pace.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'Walking slowly, outdoors',
-          'Simple breathing practices',
-          'Light acupressure, in the traditional sense',
-          'Noticing rather than achieving',
+          'Slow guided walking',
+          'Breathing with movement',
+          'Noticing sights, sounds, and body sensations',
+          'Simple acupressure',
+          'Time to pause outdoors',
         ],
       },
     ],
-    honestNote:
-      'Practitioners have long used acupressure points to help people settle. That is not the same as saying a point works the same way for everyone.',
+    closing: 'The walk may help you feel calm and present during your time outdoors.',
   },
   {
     slug: 'mindful-movement-workout',
@@ -187,24 +189,26 @@ export const classes: ClassOffering[] = [
     audience: 'adults',
     audienceLabel: 'Adults',
     pillars: ['somatic-movement'],
-    summary: 'A gentle full-body session outdoors.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary: 'A gentle full-body workout outdoors.',
     body: [
-      'Walking, breath, and gentle full-body movement, outside. It’s a workout in the sense that you’ll use your body, and not in the sense that anyone is counting reps at you.',
-      'The focus is on feeling how the body coordinates as one thing, legs and arms and torso all together, rather than working parts in isolation.',
+      'Mindful Movement Workout combines walking, breathing, and gentle full-body movement in nature. You pay attention to how your arms, legs, and upper body move together. Boclaire guides the class at an easy pace.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'Walking and gentle strength work',
-          'Breath paired with movement',
-          'Attention to how the whole body coordinates',
-          'Outdoors, weather permitting',
+          'Walking and gentle strength-building movement',
+          'Breathing with movement',
+          'Balance and coordination',
+          'Full-body movement',
+          'Time outdoors',
         ],
       },
     ],
-    honestNote:
-      'Come as you are. If something hurts, we work around it.',
+    closing: 'The class is designed to support strength, coordination, and body awareness.',
   },
   {
     slug: 'body-prayer-session',
@@ -216,26 +220,27 @@ export const classes: ClassOffering[] = [
     audience: 'spiritual',
     audienceLabel: 'Adults',
     pillars: ['mindful-meditation', 'somatic-movement'],
-    summary: 'A faith-based practice blending prayer, breath, and gentle movement.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary:
+      'A faith-based practice that blends prayer, breathwork, and gentle movement to support spiritual connection and inner peace.',
     body: [
-      'Prayer, breathwork, and gentle movement together, held as a spiritual practice rather than a fitness class.',
-      'It’s openly Christian in framing. If that’s what you’re looking for, this is that. If it isn’t, the other sessions don’t include it.',
+      'Body Prayer Session is a Christian wellness practice that brings prayer, breathing, gentle movement, body awareness, and mindfulness together. Participants are invited to move, pause, and pray at their own pace.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
           'Prayer',
-          'Breathwork',
-          'Gentle movement and stillness',
+          'Breathing practices',
+          'Gentle movement',
           'Body awareness',
-          'Mindfulness',
-          'Quiet, unhurried pacing',
+          'Mindfulness and quiet time',
         ],
       },
     ],
-    honestNote:
-      'This is a spiritual practice and we keep it in that register. It is not offered as a treatment, and it is not a promise of physical healing.',
+    honestNote: 'This is a faith-based wellness practice. It does not promise physical healing.',
     faithBased: true,
   },
   {
@@ -245,24 +250,25 @@ export const classes: ClassOffering[] = [
     audience: 'events',
     audienceLabel: 'Children · Events',
     pillars: ['somatic-movement', 'mindful-meditation'],
-    summary: 'A birthday spent outside, exploring.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary: 'An outdoor birthday celebration with movement, play, and nature.',
     body: [
-      'A birthday celebration on the trail. Kids walk, explore, play, look at things, and eat cake at the end like anybody else.',
-      'It’s an easy first outing for a family who hasn’t taken a class here before. Low commitment, and everybody already knows how a birthday party works.',
+      "Kids' Birthday Hike Party gives children time to walk, explore, play, and celebrate outdoors. Boclaire guides the group through a mindful nature experience shaped for the children taking part.",
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'A guided hike suited to the age group',
-          'Games and exploring along the way',
-          'A quiet moment before heading back',
-          'Celebrating, outdoors',
+          'A guided outdoor walk',
+          'Nature exploration',
+          'Movement and play',
+          'Time together outdoors',
+          'A birthday celebration in nature',
         ],
       },
     ],
-    honestNote:
-      'Group size, route, and timing get set with you beforehand. Bring your own cake.',
   },
   {
     slug: 'adult-birthday-hike-party',
@@ -271,23 +277,25 @@ export const classes: ClassOffering[] = [
     audience: 'events',
     audienceLabel: 'Adults · Events',
     pillars: ['mindful-meditation', 'somatic-movement'],
-    summary: 'A reflective hike for a birthday or a turning point.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary: 'A reflective nature hike for a birthday or life milestone.',
     body: [
-      'A hike built around a milestone: a birthday, a transition, the start of something. Walking, talking, and some quiet.',
-      'Less a party than a good long walk with intention behind it, for people who would rather mark an occasion outdoors than in a restaurant.',
+      'Adult Birthday Hike Party is a guided nature walk for marking a birthday, transition, or new beginning. The group has time to walk, talk, reflect, and enjoy the outdoors together.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'A guided walk at a conversational pace',
-          'Space for reflection, if the group wants it',
-          'Simple breathing practice',
-          'Somewhere worth looking at',
+          'A guided nature walk',
+          'A comfortable, conversational pace',
+          'Optional breathing and reflection',
+          'Time to talk and connect',
+          'Time outdoors together',
         ],
       },
     ],
-    honestNote: 'Route and length are set with you. Bring water and decent shoes.',
   },
   {
     slug: 'rv-wellness-retreat',
@@ -296,24 +304,25 @@ export const classes: ClassOffering[] = [
     audience: 'events',
     audienceLabel: 'Adults · Retreat',
     pillars: ['whole-person-thinking'],
-    summary: 'Stay in your own RV. Rest, and take what you want.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary: 'A nature retreat with your own RV, rest, and optional wellness experiences.',
     body: [
-      'Guests stay in their own RV. Rest is the main event. Wellness sessions are available and entirely optional.',
-      'Nobody is going to knock on your door at six in the morning to get you to a sunrise practice. If you want to sleep, sleep.',
+      'RV Wellness Retreat gives guests time in nature while staying in their own RV. The experience may include mindfulness, gentle movement, body awareness, reflection, connection, and rest. Wellness activities are optional.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'Your own RV, your own schedule',
-          'Optional movement and meditation sessions',
-          'Time outdoors',
-          'Rest, mostly',
+          'Stay in your own RV',
+          'Spend time in nature',
+          'Join optional mindfulness and movement experiences',
+          'Make room for reflection and connection',
+          'Rest at your own pace',
         ],
       },
     ],
-    honestNote:
-      'Dates, site details and what’s included are still being worked out. Join the waitlist and we’ll tell you as soon as there’s something real to say.',
   },
   {
     slug: 'childrens-bible-study',
@@ -322,23 +331,25 @@ export const classes: ClassOffering[] = [
     audience: 'spiritual',
     audienceLabel: 'Children',
     pillars: ['mindful-meditation'],
-    summary: 'Stories and values from the Bible, for kids.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary: 'Bible stories and values for children.',
     body: [
-      'A study group for children focused on love, kindness, forgiveness, and the other values that come up again and again in the Bible.',
-      'Age-appropriate, discussion-led, and openly Christian.',
+      "Children's Bible Study focuses on love, kindness, forgiveness, and other important values found in the Bible. Children read or listen to Bible stories, talk about what they mean, and spend time learning together.",
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'Reading and talking through stories',
-          'Discussion suited to the age group',
-          'Simple quiet practice',
-          'Time together',
+          'Reading or listening to Bible stories',
+          'Talking about the stories together',
+          'Learning about love, kindness, and forgiveness',
+          'Talking about biblical values',
+          'Time to learn together',
         ],
       },
     ],
-    honestNote: 'This is an explicitly faith-based group, so you know what you are signing up for.',
     faithBased: true,
   },
   {
@@ -348,24 +359,26 @@ export const classes: ClassOffering[] = [
     audience: 'spiritual',
     audienceLabel: 'Teen girls',
     pillars: ['mindful-meditation', 'whole-person-thinking'],
-    summary: 'An outdoor space for teen girls to gather and talk.',
+    source: 'old-site',
+    status: 'by-request',
+    primaryAction: 'contact',
+    summary:
+      "A welcoming outdoor space for teen girls to gather, read, listen, share, and live out God's Word together.",
     body: [
-      'Teen girls gather outdoors to read, listen, talk, and work out what living it out actually looks like. Mostly what they get is a regular hour that belongs to them.',
-      'It’s a place more than a lecture, and the reading just gives the conversation somewhere to start.',
+      "Teen Girls Bible Circle gives teen girls a welcoming outdoor place to read the Bible, listen, share, and talk about living out God's Word together.",
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'Reading and open discussion',
-          'Outdoors where the weather allows',
-          'Room to talk, and room not to',
-          'A regular time that is theirs',
+          'Bible reading',
+          'Listening and sharing',
+          'Outdoor gathering',
+          'Conversation about living faith',
+          'Time together',
         ],
       },
     ],
-    honestNote:
-      'Openly faith-based. Nothing here touches dieting, body rules or appearance.',
     faithBased: true,
   },
   {

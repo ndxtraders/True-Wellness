@@ -75,7 +75,7 @@ export default async function PillarPage({ params }: { params: Promise<{ slug: s
       <section className="bg-sage">
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
           <div className="max-w-2xl">
-            <h2 className="text-h2 text-ink">What this does not claim</h2>
+            <h2 className="text-h2 text-ink">What to know</h2>
             <p className="mt-5 text-body-lg text-ink">{p.doesNotClaim}</p>
           </div>
         </div>

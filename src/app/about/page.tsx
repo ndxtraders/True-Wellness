@@ -7,7 +7,7 @@ import { ArcBand, FigureSeated, SeedHead, Sprig } from '@/components/art/illustr
 export const metadata: Metadata = {
   title: 'About Boclaire',
   description:
-    'Boclaire is a Natural Wellness Practitioner and Educator in Tuolumne County, California: a certified yoga, acupressure, and child development teacher.',
+    'Meet Boclaire, a Natural Wellness Practitioner and Educator serving children, families, caregivers, and elders in Tuolumne County.',
 }
 
 /**
@@ -88,35 +88,33 @@ export default function AboutPage() {
             <h1 className="text-display text-ink">Meet Boclaire</h1>
             <div className="mt-7 max-w-xl space-y-5 text-body-lg text-ink-muted">
               <p>
-                Boclaire is a Natural Wellness Practitioner and Educator. She teaches yoga,
-                movement, and mindfulness to children, families, caregivers, and elders here in
-                Tuolumne County.
+                Boclaire is a Natural Wellness Practitioner and Educator in Tuolumne County. She
+                teaches children, families, caregivers, and elders. Her classes include yoga,
+                movement, and mindfulness.
               </p>
               <p>
-                Her work pulls from a lot of places: mindfulness, movement, yoga, acupressure,
-                Traditional Chinese Medicine, child development, positive parenting, and a stubborn
-                belief that time outside does more for most of us than one more indoor program.
+                Her work includes child development, movement, time outdoors, and body awareness.
+                She also uses simple wellness practices.
               </p>
               <p>
-                What interests her most is how it all connects: how the body, the mind, movement,
-                the environment, relationships and ordinary daily habits work on each other.
-                That&rsquo;s usually where the useful answer turns out to be.
+                She looks at how the body, mind, daily life, and the people around us work
+                together. Her teaching gives people time to notice what they need. They practice
+                caring for themselves with more awareness.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Screening first, on the colored field, because it is the thing a
-          parent actually needs before any of the philosophy matters. */}
+      {/* Screening appears early because it is useful information for parents. */}
       <section className="bg-sage">
         <div className="mx-auto max-w-6xl px-5 pt-(--spacing-section) pb-16">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
             <FigureSeated className="h-40 w-auto shrink-0" />
             <div className="max-w-2xl">
-              <h2 className="text-h2 text-ink">Before the philosophy</h2>
+              <h2 className="text-h2 text-ink">Working with children</h2>
               <p className="mt-5 text-body-lg text-ink">
-                If you&rsquo;re handing your child to someone, this is the part to know first.
+                Parents deserve clear information about the person teaching their child.
               </p>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {screening.map((c) => (
@@ -129,9 +127,6 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-small text-ink/85">
-                Small groups, and a parent is welcome to stay for any children&rsquo;s class.
-              </p>
             </div>
           </div>
         </div>
@@ -162,7 +157,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-h3 text-ink">Also</h2>
+            <h2 className="text-h3 text-ink">Experience</h2>
             <dl className="mt-6 space-y-5">
               {alsoTrue.map((a) => (
                 <div key={`${a.label}-${a.detail}`} className="border-t border-line pt-4">
@@ -194,18 +189,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Master context 34: do not make Boclaire sound perfect. */}
+      {/* Master context 34: present mindful living as a real practice. */}
       <section className="border-b border-line bg-surface">
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="mx-auto flex max-w-3xl items-start gap-8">
             <SeedHead className="mt-2 hidden h-16 w-16 shrink-0 sm:block" />
             <div>
-              <h2 className="text-h2 text-ink">Not trying to sound perfect</h2>
+              <h2 className="text-h2 text-ink">A practice for real life</h2>
               <p className="mt-6 text-body-lg text-ink-muted">
-                Boclaire doesn&rsquo;t have perfectly calm mornings or perfectly behaved days, and
-                the work has never been about that. It&rsquo;s about noticing sooner, pausing when
-                you can, and repairing when you don&rsquo;t manage to. That goes for the people
-                teaching as much as the people learning.
+                Boclaire uses these practices in her own life too. Some days are easier than
+                others. Mindful living includes pausing, noticing, repairing, and trying again.
               </p>
             </div>
           </div>
@@ -215,10 +208,9 @@ export default function AboutPage() {
       <section>
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <div className="max-w-2xl">
-            <h2 className="text-h3 text-ink">Come and see</h2>
+            <h2 className="text-h3 text-ink">Learn more</h2>
             <p className="mt-5 text-ink-muted">
-              Email her directly. She&rsquo;ll tell you honestly whether what you need is
-              something she does.
+              Explore the classes or email Boclaire with a question.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link

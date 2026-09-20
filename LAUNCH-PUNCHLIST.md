@@ -3,7 +3,8 @@
 **Created:** 2026-09-19, from a full review of the repo against the deployed staging site.
 **LAUNCHED 2026-09-20.** https://www.truewellnessmovement.com serves this project. Section 1
 is history now; sections 2 and 3 are the live list.
-**Status of HANDOFF.md:** knowingly out of date. Rev made a lot of changes. Clean it up after launch, not before.
+**Status of HANDOFF.md:** rewritten 2026-09-20 against the live code. It explains how the
+site is built and why. This file tracks what is still wrong. They do not overlap.
 
 ---
 

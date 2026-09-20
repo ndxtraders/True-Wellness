@@ -1,11 +1,13 @@
 # Launch punch list
 
 **Created:** 2026-09-19, from a full review of the repo against the deployed staging site.
+**LAUNCHED 2026-09-20.** https://www.truewellnessmovement.com serves this project. Section 1
+is history now; sections 2 and 3 are the live list.
 **Status of HANDOFF.md:** knowingly out of date. Rev made a lot of changes. Clean it up after launch, not before.
 
 ---
 
-## 1. Launch. What is done and what is left.
+## 1. Launch. Done 2026-09-20.
 
 ### 1.1 Done
 
@@ -26,44 +28,26 @@
   have pointed at a redirect. Now they point at `www`.
 - **Footer copyright** reads the current year instead of a hardcoded 2026.
 
-### 1.2 The cutover
+### 1.2 The cutover, as it actually went
 
-The domain is already on Vercel. Namecheap is registrar and nameserver only: apex A record
-to `216.198.79.1`, `www` CNAME to the apex. **Those records are already correct and do not
-change.**
+Done 2026-09-20. Namecheap DNS now: apex `A` to `216.150.1.1`, `www` CNAME to
+`272d44ff3619e02a.vercel-dns-016.com.`, SPF and both `google-site-verification` TXT records
+untouched, all five `eforward` MX records untouched. The two `_vercel` TXT challenges were
+added, verified, and removed.
 
-What changes is which Vercel project answers for the domain.
+Vercel: both domains sit on `true-wellness-site` in the Pro team, `www` primary, apex 308 to
+`www`, valid configuration. `isLive` was flipped to `true` before verification completed, so
+the domain never served `noindex` to a crawler.
 
-| | |
-|---|---|
-| New site | `true-wellness-site`, team **Raul Vaughn's projects** (Pro) |
-| Old site, live copy | free account `dans-projects-b454f17d`, holds `truewellnessmovement.com` today |
-| Old site, rollback copy | `truewellnessmovement` in the Pro team, serving `truewellnessmovement-two.vercel.app` |
+Verified live: 13 routes 200, `/art-gallery` 404, `/classes/meditative-wellness-walk` 308,
+`index, follow`, GA4 firing, `/robots.txt` open with the `Sitemap:` line, `/sitemap.xml` 27
+URLs all on `www`. Sitemap processed successfully in Search Console.
 
-Because the rollback copy is in the same Pro team as the new site, rolling back after
-cutover is a domain swap between two projects in one account. Instant, no verification.
+**Rollback** is a domain swap to `truewellnessmovement` in the same Pro team, which still
+serves the old static site at `truewellnessmovement-two.vercel.app`. Same account, so no
+re-verification.
 
-**Order matters: add the domain first, flip `isLive` second.** Flipping the flag while
-`true-wellness-site.vercel.app` is the only host invites Google to index the staging
-hostname, which is the exact problem the gate was built to prevent.
-
-1. Add `truewellnessmovement.com` and `www.truewellnessmovement.com` to `true-wellness-site`.
-   The domain currently belongs to a different Vercel account, so Vercel issues a `_vercel`
-   TXT challenge.
-2. Add that TXT at Namecheap, Advanced DNS. Host is exactly `_vercel`, not
-   `_vercel.truewellnessmovement.com`. Namecheap appends the domain itself.
-3. Wait for Vercel to verify. It then detaches the domain from the free account.
-4. Set `www` as the primary domain so the apex redirects to it, matching today's behavior
-   and matching `site.url`.
-5. Flip `isLive` to `true` in `src/lib/site.ts`. Push.
-6. Verify **on the real domain**, not locally: `/robots.txt` reads `Allow: /` with the
-   `Sitemap:` line, the meta tag reads `index, follow`, GA4 fires, `/sitemap.xml` returns
-   27 URLs, and the contact form and DonorBox links work.
-7. Remove the TXT record. Submit `https://www.truewellnessmovement.com` in Search Console.
-
-Leave MX records alone if any mail runs on the domain.
-
-### 1.3 Still open before launch
+### 1.3 Carried forward, now that the site is public
 
 - **Pricing.** No class on the site carries a price. See section 3.
 - **Cancellation policy.** Deliberately not written into `/policies`. Inventing one would be
@@ -72,7 +56,7 @@ Leave MX records alone if any mail runs on the domain.
 - ~~**Photo release for minors.**~~ Resolved 2026-09-20: Boclaire has signed release forms
   on file and does not want this on the site. `/policies` correctly says only that the
   website itself collects no photographs. Nothing further to add.
-- **The copy questions in section 3**, including two typos now live.
+- **The copy questions in section 3.** The two typos are fixed.
 
 ---
 

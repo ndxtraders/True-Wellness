@@ -8,6 +8,30 @@
  * measurement path, so treat them as fixed unless Boclaire re-issues them.
  */
 
+/**
+ * PRE-LAUNCH SWITCH. Flip this one boolean on cutover day.
+ *
+ * While it is `false` the deployment is invisible to search engines and sends
+ * no analytics. It controls three things, deliberately from a single place:
+ *
+ *   1. `/robots.txt`            src/app/robots.ts       Disallow: / while false
+ *   2. the `robots` meta tag    src/app/layout.tsx      noindex while false
+ *   3. the GA4 tag              src/app/layout.tsx      not rendered while false
+ *
+ * WHY ONE FLAG AND NOT THREE FILES. The dangerous failure is launching with a
+ * stale `Disallow: /` still in place, which makes a local business invisible on
+ * Google indefinitely and gives no error anywhere. Three separate switches means
+ * three chances to forget one. There is exactly one here.
+ *
+ * WHY NOT AN ENV VAR. `VERCEL_ENV === 'production'` is true for the production
+ * deployment of the *staging* project too, so it would have unblocked crawlers
+ * on `true-wellness-site.vercel.app` immediately. A hand-flipped constant is the
+ * honest control: the site goes live when a person says it does.
+ *
+ * See HANDOFF.md, "Going live".
+ */
+export const isLive = false
+
 export const site = {
   name: 'True Wellness Movement',
   tagline: 'Movement, mindfulness and time outside for children, families and Elders.',

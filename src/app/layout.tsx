@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, Hanken_Grotesk } from 'next/font/google'
 import Script from 'next/script'
-import { integrations, site } from '@/lib/site'
+import { integrations, isLive, site } from '@/lib/site'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ArtDefs } from '@/components/art/defs'
@@ -40,7 +40,10 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: 'en_US',
   },
-  robots: { index: true, follow: true },
+  // Pre-launch: noindex until `isLive` is flipped. See src/lib/site.ts.
+  robots: isLive
+    ? { index: true, follow: true }
+    : { index: false, follow: false, nocache: true },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -58,17 +61,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <SiteFooter />
 
-        {/* GA4. Carries the site's entire measurement history. Do not change the id. */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${integrations.ga4MeasurementId}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
+        {/*
+          GA4. Carries the site's entire measurement history, so the property
+          must not be polluted with internal review traffic from the staging
+          deployment. Gated on `isLive` rather than on a Vercel env var: see the
+          note on that constant in src/lib/site.ts. Do not change the id.
+        */}
+        {isLive && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${integrations.ga4MeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${integrations.ga4MeasurementId}');`}
-        </Script>
+            </Script>
+          </>
+        )}
       </body>
     </html>
   )

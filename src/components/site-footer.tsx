@@ -14,7 +14,7 @@ export function SiteFooter() {
             </div>
             <p className="mt-4 max-w-sm text-small text-ink-muted">{site.tagline}</p>
             <p className="mt-4 text-small text-ink-muted">
-              {site.locality} · {site.county}, {site.region}
+              {site.locality}, {site.county}, {site.region}
             </p>
           </div>
 

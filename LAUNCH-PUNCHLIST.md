@@ -69,9 +69,9 @@ Leave MX records alone if any mail runs on the domain.
 - **Cancellation policy.** Deliberately not written into `/policies`. Inventing one would be
   a claim about how the practice runs that Boclaire has not made. Needs her decision, then a
   section on that page.
-- **Photo release for minors.** Same. `/policies` says only what is true of the website,
-  which is that it collects no photographs. The release covering photographs taken during a
-  class is an operational document, not website copy.
+- ~~**Photo release for minors.**~~ Resolved 2026-09-20: Boclaire has signed release forms
+  on file and does not want this on the site. `/policies` correctly says only that the
+  website itself collects no photographs. Nothing further to add.
 - **The copy questions in section 3**, including two typos now live.
 
 ---

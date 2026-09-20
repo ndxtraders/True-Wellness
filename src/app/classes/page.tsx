@@ -68,7 +68,7 @@ const specialGroups: Group[] = [
     key: 'business-retreats',
     heading: 'For businesses and retreats',
     blurb:
-      'For businesses, schools, wellness events, retreats, and community organizations.',
+      'Special classes or businesses, schools, wellness events, retreats, and community organizations.',
   },
   {
     key: 'events',
@@ -212,7 +212,7 @@ export default function ClassesPage() {
               True Wellness Classes For Everyone
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Small groups, mostly outdoors, built around people's actual abilities.
+              Individuals and small groups, mostly outdoors, built around people's actual abilities.
             </p>
           </div>
         </div>

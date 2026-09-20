@@ -238,7 +238,9 @@ export default async function ClassPage({ params }: { params: Promise<{ slug: st
         >
           {c.honestNote && (
             <div>
-              <h2 className="text-h4 font-semibold text-ink">Worth being clear about</h2>
+              <h2 className="text-h4 font-semibold text-ink">
+                {c.honestNoteHeading ?? 'Worth being clear about'}
+              </h2>
               <p className="mt-4 text-ink-muted">{c.honestNote}</p>
             </div>
           )}

@@ -83,6 +83,8 @@ export interface ClassOffering {
   priceTiers?: { label: string; amount: number; unit: 'week' | 'month' }[]
   /** True only where the number is confirmed. */
   priceConfirmed?: boolean
+  /** Overrides the default "Worth being clear about" heading above `honestNote`. */
+  honestNoteHeading?: string
   /** Faith-based sessions are labeled so families opt in knowingly. */
   faithBased?: boolean
   /** Defaults to waitlist. Use contact when the service starts with a conversation. */
@@ -138,16 +140,18 @@ export const classes: ClassOffering[] = [
         ],
       },
       {
-        heading: 'What this may support',
-        intro: 'These activities may help children:',
+        heading: 'Benefits:',
+        intro: 'These activities can help children:',
         bullets: ['Slow down and feel calmer', 'Pay attention to what is around them'],
       },
     ],
     closing:
-      'Our goal is to provide free wellness classes to children in Tuolumne County. We believe every child deserves access to time outdoors, mindful movement, and simple wellness tools they can use in daily life.',
+      'We believe every child deserves access to time outdoors, mindful movement, and simple wellness tools they can use in daily life.',
     callToAction: {
       heading: 'Support our work',
-      text: ['Want to help us bring free wellness classes to local children?'],
+      text: [
+        'Our ultimate goal is to provide free wellness classes to children in Tuolumne County. Help us bring free wellness classes to local children.',
+      ],
       label: 'Become a sponsor',
       href: '/childrens-center/sponsor',
     },
@@ -155,9 +159,9 @@ export const classes: ClassOffering[] = [
       'Rewritten from Boclaire’s Nature-Based Sensory Experience flyer and approved by Rev on 2026-09-13. The page leads with the activities, uses one modest relative benefit claim after the activities, and keeps the Jamestown center, herbal garden, free-class mission, waitlist, and sponsorship path. Left off the page: the neuroplasticity claim, the stronger nervous-system and “natural reset” claims, Boclaire’s bio, the unrelated list of other classes, and the unfinished final sentence from the flyer.',
   },
   {
-    slug: 'meditative-wellness-walk',
+    slug: 'meditative-walk',
     art: 'walking',
-    name: 'Meditative Wellness Walk',
+    name: 'Meditative Walk',
     audience: 'adults',
     audienceLabel: 'Adults',
     pillars: ['mindful-meditation', 'somatic-movement'],
@@ -166,7 +170,7 @@ export const classes: ClassOffering[] = [
     primaryAction: 'contact',
     summary: 'A slow, mindful walk with breathing, acupressure, and time to notice.',
     body: [
-      'Meditative Wellness Walk is a slow walk in nature with time to notice your breath, your body, and what is around you. Boclaire may include simple breathing and acupressure as part of the walk. You can move at your own pace.',
+      'Meditative Walk is a slow walk in nature with time to notice your breath, your body, and what is around you. Boclaire may include simple breathing and acupressure as part of the walk. You can move at your own pace.',
     ],
     sections: [
       {
@@ -194,7 +198,7 @@ export const classes: ClassOffering[] = [
     primaryAction: 'contact',
     summary: 'A gentle full-body workout outdoors.',
     body: [
-      'Mindful Movement Workout combines walking, breathing, and gentle full-body movement in nature. You pay attention to how your arms, legs, and upper body move together. Boclaire guides the class at an easy pace.',
+      'Mindful Movement Workout combines active walking, breathing, and gentle full-body movement in nature. You pay attention to how your arms, legs, and upper body feel and move together.',
     ],
     sections: [
       {
@@ -327,14 +331,14 @@ export const classes: ClassOffering[] = [
   {
     slug: 'childrens-bible-study',
     art: 'pair',
-    name: "Children's Bible Study",
+    name: "Kid's Bible Stories",
     audience: 'spiritual',
     audienceLabel: 'Children',
     pillars: ['mindful-meditation'],
     source: 'old-site',
     status: 'by-request',
     primaryAction: 'contact',
-    summary: 'Bible stories and values for children.',
+    summary: 'Faith-filled stories and lessons for children.',
     body: [
       "Children's Bible Study focuses on love, kindness, forgiveness, and other important values found in the Bible. Children read or listen to Bible stories, talk about what they mean, and spend time learning together.",
     ],
@@ -399,7 +403,7 @@ export const classes: ClassOffering[] = [
       { label: 'Where', value: "A visit to the person's home may be available" },
     ],
     body: [
-      'This is a gentle 40-minute private session for an older adult. Boclaire may use movement, breathing, mindfulness, acupressure, and simple games for focus and coordination. She keeps the pace comfortable.',
+      'This is a gentle 40-minute private session that uses movement, breathing, mindfulness, acupressure, and exercises for focus, memory and coordination.',
     ],
     sections: [
       {
@@ -407,7 +411,7 @@ export const classes: ClassOffering[] = [
         intro: "Activities are chosen for the person's needs and comfort. A session may include:",
         bullets: [
           'Gentle movement and coordination games',
-          'Short memory and focus games',
+          'Neuro-movement for focus',
           'Mindfulness and slow breathing',
           'Gentle acupressure points',
           'Simple eye movements',
@@ -422,6 +426,7 @@ export const classes: ClassOffering[] = [
         ],
       },
     ],
+    honestNoteHeading: 'About Brain Wellness Support for Elders',
     honestNote:
       "This is a wellness session. It is not treatment for dementia, Alzheimer's disease, vision problems, or other health conditions.",
     primaryAction: 'contact',
@@ -452,7 +457,7 @@ export const classes: ClassOffering[] = [
           'Mindful eating and noticing hunger and fullness',
           'Basic nutrition without dieting or body shame',
           'Menstrual care, hygiene, rest, and nourishment',
-          'Gentle yoga, stretching, breathing, and meditation',
+          'Gentle somatic movement, stretching, breathing, and meditation',
           'Journaling, creative activities, friendships, and group discussion',
         ],
       },
@@ -473,7 +478,7 @@ export const classes: ClassOffering[] = [
     status: 'by-request',
     art: 'seated',
     source: 'boclaire-flyer',
-    tagline: 'A conversation with your mind and body',
+    tagline: 'A moving conversation with your mind and body',
     summary:
       'A private, gentle movement session for listening to your body and choosing how to respond.',
     details: [
@@ -482,12 +487,12 @@ export const classes: ClassOffering[] = [
     ],
     body: [
       'What if movement were a conversation with your body?',
-      'Private Somatic Flow is a one-on-one session that gives you space to slow down and notice how your body feels. I guide you through gentle movement, breathing, body awareness, and simple acupressure. You move at your own pace and choose what feels useful.',
+      'Private Somatic Flow is a one-on-one session that gives you space to tune in and notice how your body feels. I guide you through gentle movement, breathing, body awareness, and simple acupressure. You move at your own pace and choose what feels right for you.',
     ],
     sections: [
       {
         heading: 'What happens in a session',
-        intro: 'Each session is shaped around you. We may use:',
+        intro: 'Each session is is designed for you and what you need right now.',
         bullets: [
           'Gentle movement based on how your body feels',
           'Simple breathing practices',
@@ -498,8 +503,9 @@ export const classes: ClassOffering[] = [
       },
     ],
     closing: 'Notice. Attend. Respond. Become your own guide.',
+    honestNoteHeading: 'What is Somatic Movement?',
     honestNote:
-      'I guide you as you notice your body’s signals and choose how to respond. There is no perfect pose and no need to push through. We listen first. Then we respond.',
+      'Somatic movement is a mind-body practice that prioritizes how a movement feels on the inside rather than how it looks from the outside. Unlike traditional workouts that focus on external goals, somatic movement asks you to turn your attention inward, using small “micro-movements” and breath awareness to retrain your brain and nervous system.',
     primaryAction: 'contact',
     verifyNote:
       'Rewritten from Boclaire’s “PRIVATE SOMATIC FLOW WITH BOCLAIRE” flyer. The conversation idea and Notice. Attend. Respond. line are preserved. No outcome claim or price is added. Confirm whether a separate group Somatic Flow class exists and whether the historical $75 single-session price is current.',
@@ -529,7 +535,7 @@ export const classes: ClassOffering[] = [
       {
         heading: "Your child's day may include",
         bullets: [
-          'Yoga, movement, and coordination games',
+          'Somatic movement, and coordination exercises',
           'Mindfulness, breathing, and body awareness',
           'Outdoor play, garden time, and wellness walks',
           'Art, music, storytelling, and child-led projects',
@@ -595,14 +601,14 @@ export const classes: ClassOffering[] = [
           'A guided walk with time to notice sights and sounds',
           'Movement for balance and coordination',
           'Breathing and body-awareness practices',
-          'Simple games that connect thought and movement',
+          'Practice mindful movement',
           'Simple acupressure taught as a wellness practice',
           'Time to explore and work with others',
         ],
       },
     ],
     closing:
-      'Students practice healthy ways to move while they spend time outdoors together. Walking, breathing, and paying attention may help them feel calm and focused during class.',
+      'Students practice healthy ways to move while they spend time in nature. Walking, breathing, and paying attention may help them feel calm and focused during class.',
     primaryAction: 'contact',
     verifyNote:
       'Rewritten from Boclaire’s “6. Homeschoolers” flyer. The Friday schedule and limited-spots language are held back until confirmed. A second “Wellness Walk” file may describe a Granite Peak version or a separate offer. Confirm the public name, age or grade range, schedule, location, capacity, audience, and current status. Do not publish Granite Peak vendor status without current confirmation. No price is published.',

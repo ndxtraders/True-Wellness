@@ -125,9 +125,8 @@ The About dropdown button in `src/components/site-header.tsx` has `aria-expanded
      on love, kindness, forgiveness..."
 3. ~~**Meditative Walk moved.**~~ Done. `/classes/meditative-wellness-walk` now 308s to
    `/classes/meditative-walk`, alongside the legacy old-site redirects in `next.config.ts`.
-4. **Two typos went in verbatim**, because replacement copy is applied exactly as given:
-   - Private Somatic Flow: "Each session **is is** designed for you and what you need right now."
-   - For businesses and retreats: "Special classes **or** businesses, schools, wellness events..."
+4. ~~**Two typos went in verbatim.**~~ Fixed 2026-09-20 on Rev's instruction: the doubled
+   "is" deleted, and "or" becomes "for".
 5. **Sensory page CTA repeats itself.** "Our ultimate goal is to provide **free wellness
    classes** to children in Tuolumne County. Help us bring **free wellness classes** to local
    children." Same phrase twice in two sentences.

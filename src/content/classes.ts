@@ -492,7 +492,7 @@ export const classes: ClassOffering[] = [
     sections: [
       {
         heading: 'What happens in a session',
-        intro: 'Each session is is designed for you and what you need right now.',
+        intro: 'Each session is designed for you and what you need right now.',
         bullets: [
           'Gentle movement based on how your body feels',
           'Simple breathing practices',

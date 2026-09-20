@@ -68,7 +68,7 @@ const specialGroups: Group[] = [
     key: 'business-retreats',
     heading: 'For businesses and retreats',
     blurb:
-      'Special classes or businesses, schools, wellness events, retreats, and community organizations.',
+      'Special classes for businesses, schools, wellness events, retreats, and community organizations.',
   },
   {
     key: 'events',

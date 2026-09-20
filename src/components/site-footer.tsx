@@ -29,6 +29,7 @@ export function SiteFooter() {
                 { href: '/childrens-center', label: "Children's Center" },
                 { href: '/about', label: 'About Boclaire' },
                 { href: '/contact', label: 'Contact' },
+                { href: '/policies', label: 'Policies' },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-ink-muted transition-colors hover:text-plum">
@@ -67,7 +68,7 @@ export function SiteFooter() {
           <p>{disclosures.services}</p>
           <p>{disclosures.donation}</p>
           <p className="pt-2">
-            © {2026} {site.name}
+            © {new Date().getFullYear()} {site.name}
           </p>
         </div>
       </div>

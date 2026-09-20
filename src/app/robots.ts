@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { isLive } from '@/lib/site'
+import { isLive, site } from '@/lib/site'
 
 /**
  * Serves `/robots.txt`.
@@ -25,9 +25,9 @@ import { isLive } from '@/lib/site'
  * If a staging URL ever DOES show up in Google, invert this: allow crawling so the
  * `noindex` can be read, wait for it to drop out, then re-block.
  *
- * WHEN LIVE: open, with no `Sitemap:` line. There is no sitemap route yet. A
- * `Sitemap:` pointing at a 404 is a reported error in Search Console. Add the
- * line here in the same change that adds `src/app/sitemap.ts`.
+ * WHEN LIVE: open, and pointing at `src/app/sitemap.ts`. The line is only
+ * emitted on the live branch: a `Sitemap:` that a crawler is simultaneously
+ * told not to fetch is a reported error in Search Console.
  */
 export default function robots(): MetadataRoute.Robots {
   if (!isLive) {
@@ -38,5 +38,6 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: { userAgent: '*', allow: '/' },
+    sitemap: `${site.url}/sitemap.xml`,
   }
 }

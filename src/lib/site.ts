@@ -39,7 +39,13 @@ export const site = {
   region: 'CA',
   regionName: 'California',
   county: 'Tuolumne County',
-  url: 'https://truewellnessmovement.com',
+  /**
+   * Canonical host. `www`, not the apex, because that is what the live domain
+   * has always served: the apex 307s to `www` today. Canonicals, OG URLs and
+   * the sitemap all derive from this, so pointing it at the host that redirects
+   * would make every canonical on the site a redirect.
+   */
+  url: 'https://www.truewellnessmovement.com',
 } as const
 
 export const contact = {

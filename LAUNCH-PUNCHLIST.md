@@ -5,46 +5,74 @@
 
 ---
 
-## 1. Blockers. Fix before the site goes live.
+## 1. Launch. What is done and what is left.
 
-### 1.1 The pre-launch gate exists only on Rev's machine
+### 1.1 Done
 
-`main` and `origin/main` are identical. The gate is uncommitted work in the local checkout:
+- **Pre-launch gate shipped.** `isLive` in `src/lib/site.ts` drives `/robots.txt`, the
+  `robots` meta tag and the GA4 tag together. Verified in both directions: with the flag
+  off, robots.txt reads `Disallow: /`, the meta tag reads `noindex, nofollow, nocache` and
+  no GA4 script renders; with it on, robots.txt reads `Allow: /` plus a `Sitemap:` line,
+  the meta tag reads `index, follow` and GA4 renders. The flag is **off**.
+- **`/art-gallery` deleted.** The internal illustration review page is gone from the build.
+- **`/policies` added.** Scope of practice, what the contact form collects and where it
+  goes, GA4 and cookies with an opt-out, DonorBox handling payments, children, and
+  photographs. Linked from the footer.
+- **`/sitemap.xml` added.** 27 URLs, generated from `classes.ts` and `pillars.ts` so a class
+  added on github.com appears without anyone remembering. `robots.ts` points at it, but only
+  on the live branch.
+- **Canonical host set to `www`.** `site.url` was the apex. The live domain has always
+  served `www` and 307s the apex to it, so every canonical, OG URL and sitemap entry would
+  have pointed at a redirect. Now they point at `www`.
+- **Footer copyright** reads the current year instead of a hardcoded 2026.
 
-| File | State |
+### 1.2 The cutover
+
+The domain is already on Vercel. Namecheap is registrar and nameserver only: apex A record
+to `216.198.79.1`, `www` CNAME to the apex. **Those records are already correct and do not
+change.**
+
+What changes is which Vercel project answers for the domain.
+
+| | |
 |---|---|
-| `src/app/robots.ts` | untracked, never pushed |
-| `src/lib/site.ts` | modified, adds `export const isLive = false` |
-| `src/app/layout.tsx` | modified, gates the noindex meta tag and GA4 on `isLive` |
-| `src/components/site-footer.tsx` | modified, `Jamestown · Tuolumne` becomes `Jamestown, Tuolumne` |
+| New site | `true-wellness-site`, team **Raul Vaughn's projects** (Pro) |
+| Old site, live copy | free account `dans-projects-b454f17d`, holds `truewellnessmovement.com` today |
+| Old site, rollback copy | `truewellnessmovement` in the Pro team, serving `truewellnessmovement-two.vercel.app` |
 
-Verified on https://true-wellness-site.vercel.app on 2026-09-19:
+Because the rollback copy is in the same Pro team as the new site, rolling back after
+cutover is a domain swap between two projects in one account. Instant, no verification.
 
-- `/robots.txt` returns **404**
-- the page serves `<meta name="robots" content="index, follow">`
-- GA4 `G-CBXJ1LM80R` is loading and recording
+**Order matters: add the domain first, flip `isLive` second.** Flipping the flag while
+`true-wellness-site.vercel.app` is the only host invites Google to index the staging
+hostname, which is the exact problem the gate was built to prevent.
 
-So unconfirmed copy is crawlable right now, and internal review traffic is going into the
-live GA4 property that carries the old site's whole measurement history.
+1. Add `truewellnessmovement.com` and `www.truewellnessmovement.com` to `true-wellness-site`.
+   The domain currently belongs to a different Vercel account, so Vercel issues a `_vercel`
+   TXT challenge.
+2. Add that TXT at Namecheap, Advanced DNS. Host is exactly `_vercel`, not
+   `_vercel.truewellnessmovement.com`. Namecheap appends the domain itself.
+3. Wait for Vercel to verify. It then detaches the domain from the free account.
+4. Set `www` as the primary domain so the apex redirects to it, matching today's behavior
+   and matching `site.url`.
+5. Flip `isLive` to `true` in `src/lib/site.ts`. Push.
+6. Verify **on the real domain**, not locally: `/robots.txt` reads `Allow: /` with the
+   `Sitemap:` line, the meta tag reads `index, follow`, GA4 fires, `/sitemap.xml` returns
+   27 URLs, and the contact form and DonorBox links work.
+7. Remove the TXT record. Submit `https://www.truewellnessmovement.com` in Search Console.
 
-**Fix:** commit and push these five files. Decide separately whether GA4 should stay off
-until cutover or start recording now.
+Leave MX records alone if any mail runs on the domain.
 
-### 1.2 Delete the internal art page
+### 1.3 Still open before launch
 
-`src/app/art-gallery/page.tsx` still builds and still ships. It is unlinked, but it is public.
-
-### 1.3 No privacy page
-
-`/policies` does not exist. The contact form collects name, email and phone, and GA4 runs
-once `isLive` flips. Nothing on the site covers privacy, scope of practice, the photo
-release for minors, or cancellation. There is no privacy link next to the form.
-
-### 1.4 No sitemap
-
-`src/app/sitemap.ts` does not exist. Add it, and in the same change add the `Sitemap:`
-line to `robots.ts`. A `Sitemap:` pointing at a 404 is a reported error in Search Console,
-which is why the line is left out today.
+- **Pricing.** No class on the site carries a price. See section 3.
+- **Cancellation policy.** Deliberately not written into `/policies`. Inventing one would be
+  a claim about how the practice runs that Boclaire has not made. Needs her decision, then a
+  section on that page.
+- **Photo release for minors.** Same. `/policies` says only what is true of the website,
+  which is that it collects no photographs. The release covering photographs taken during a
+  class is an operational document, not website copy.
+- **The copy questions in section 3**, including two typos now live.
 
 ---
 

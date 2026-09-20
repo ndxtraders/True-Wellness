@@ -95,10 +95,8 @@ The About dropdown button in `src/components/site-header.tsx` has `aria-expanded
      existing link
    - the first body paragraph on the detail page still opens "Children's Bible Study focuses
      on love, kindness, forgiveness..."
-3. **Meditative Walk moved.** `/classes/meditative-wellness-walk` is now a 404 and the page
-   lives at `/classes/meditative-walk`. Nothing links to the old URL and the site is not
-   indexed, so no redirect was added. If that URL was ever shared by hand, add one to
-   `next.config.ts`.
+3. ~~**Meditative Walk moved.**~~ Done. `/classes/meditative-wellness-walk` now 308s to
+   `/classes/meditative-walk`, alongside the legacy old-site redirects in `next.config.ts`.
 4. **Two typos went in verbatim**, because replacement copy is applied exactly as given:
    - Private Somatic Flow: "Each session **is is** designed for you and what you need right now."
    - For businesses and retreats: "Special classes **or** businesses, schools, wellness events..."

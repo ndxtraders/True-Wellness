@@ -30,7 +30,7 @@
  *
  * See HANDOFF.md, "Going live".
  */
-export const isLive = false
+export const isLive = true
 
 export const site = {
   name: 'True Wellness Movement',

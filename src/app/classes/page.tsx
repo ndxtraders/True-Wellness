@@ -212,7 +212,7 @@ export default function ClassesPage() {
               True Wellness Classes For Everyone
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Individuals and small groups, mostly outdoors, built around people's actual abilities.
+             All classes are designed based on your needs
             </p>
           </div>
         </div>

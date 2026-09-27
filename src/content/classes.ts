@@ -134,7 +134,7 @@ export const classes: ClassOffering[] = [
         bullets: [
           'Touch and smell herbs and plants',
           'Listen to sounds in nature',
-          'Move and play outdoors',
+          'Move and play in nature',
           'Spend hands-on time in our herbal garden',
           'Notice how their bodies feel',
         ],
@@ -146,7 +146,7 @@ export const classes: ClassOffering[] = [
       },
     ],
     closing:
-      'We believe every child deserves access to time outdoors, mindful movement, and simple wellness tools they can use in daily life.',
+      'We believe every child deserves access to time in nature, mindful movement, and simple wellness tools they can use in daily life.',
     callToAction: {
       heading: 'Support our work',
       text: [
@@ -168,23 +168,23 @@ export const classes: ClassOffering[] = [
     source: 'old-site',
     status: 'by-request',
     primaryAction: 'contact',
-    summary: 'A slow, mindful walk with breathing, acupressure, and time to notice.',
+    summary: 'A slow, mindful walk with breathwork, acupressure, and time to notice.',
     body: [
-      'Meditative Walk is a slow walk in nature with time to notice your breath, your body, and what is around you. Boclaire may include simple breathing and acupressure as part of the walk. You can move at your own pace.',
+      'Meditative Walk is a slow walk in nature with time to notice your breath, your body, your mind, and your surroundings. Boclaire may include simple breathwork and acupressure as part of the walk. You can move at your own pace.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
-          'Slow guided walking',
-          'Breathing with movement',
-          'Noticing sights, sounds, and body sensations',
+          'Slow intentional walking',
+          'movement with breathwork',
+          'Noticing sights, sounds, thoughts, and body sensations',
           'Simple acupressure',
-          'Time to pause outdoors',
+          'Time to pause in nature',
         ],
       },
     ],
-    closing: 'The walk may help you feel calm and present during your time outdoors.',
+    closing: 'The walk may help you feel calm and present during your time in nature.',
   },
   {
     slug: 'mindful-movement-workout',
@@ -196,19 +196,19 @@ export const classes: ClassOffering[] = [
     source: 'old-site',
     status: 'by-request',
     primaryAction: 'contact',
-    summary: 'A gentle full-body workout outdoors.',
+    summary: 'A gentle full-body workout in nature.',
     body: [
-      'Mindful Movement Workout combines active walking, breathing, and gentle full-body movement in nature. You pay attention to how your arms, legs, and upper body feel and move together.',
+      'Mindful Movement Workout combines active walking, breathwork, and gentle full-body movement in nature. You observe and notice how your body moves and feels.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
           'Walking and gentle strength-building movement',
-          'Breathing with movement',
+          'Breathwork with movement',
           'Balance and coordination',
           'Full-body movement',
-          'Time outdoors',
+          'Time in nature',
         ],
       },
     ],
@@ -230,14 +230,14 @@ export const classes: ClassOffering[] = [
     summary:
       'A faith-based practice that blends prayer, breathwork, and gentle movement to support spiritual connection and inner peace.',
     body: [
-      'Body Prayer Session is a Christian wellness practice that brings prayer, breathing, gentle movement, body awareness, and mindfulness together. Participants are invited to move, pause, and pray at their own pace.',
+      'Body Prayer Session is a Christian wellness practice that brings prayer, breathwork, gentle movement, body awareness, and mindfulness together. Participants are invited to move, pause, and pray at their own pace.',
     ],
     sections: [
       {
         heading: 'What happens',
         bullets: [
           'Prayer',
-          'Breathing practices',
+          'Breathwork practices',
           'Gentle movement',
           'Body awareness',
           'Mindfulness and quiet time',
@@ -259,7 +259,7 @@ export const classes: ClassOffering[] = [
     primaryAction: 'contact',
     summary: 'An outdoor birthday celebration with movement, play, and nature.',
     body: [
-      "Kids' Birthday Hike Party gives children time to walk, explore, play, and celebrate outdoors. Boclaire guides the group through a mindful nature experience shaped for the children taking part.",
+      "Kids' Birthday Hike Party gives children time to walk, explore, play, and celebrate in nature. Boclaire guides the group through a mindful nature experience shaped for the children taking part.",
     ],
     sections: [
       {
@@ -268,7 +268,7 @@ export const classes: ClassOffering[] = [
           'A guided outdoor walk',
           'Nature exploration',
           'Movement and play',
-          'Time together outdoors',
+          'Time together in nature',
           'A birthday celebration in nature',
         ],
       },
@@ -286,7 +286,7 @@ export const classes: ClassOffering[] = [
     primaryAction: 'contact',
     summary: 'A reflective nature hike for a birthday or life milestone.',
     body: [
-      'Adult Birthday Hike Party is a guided nature walk for marking a birthday, transition, or new beginning. The group has time to walk, talk, reflect, and enjoy the outdoors together.',
+      'Adult Birthday Hike Party is a guided nature walk for marking a birthday, transition, or new beginning. The group has time to walk, talk, reflect, and enjoy nature together.',
     ],
     sections: [
       {
@@ -294,9 +294,9 @@ export const classes: ClassOffering[] = [
         bullets: [
           'A guided nature walk',
           'A comfortable, conversational pace',
-          'Optional breathing and reflection',
+          'Optional breathwork and reflection',
           'Time to talk and connect',
-          'Time outdoors together',
+          'Time in nature together',
         ],
       },
     ],
@@ -397,13 +397,13 @@ export const classes: ClassOffering[] = [
     source: 'boclaire-flyer',
     tagline: 'Personal support at your pace',
     summary:
-      'A gentle private session with movement, breathing, mindfulness, and simple activities for focus.',
+      'A gentle private session with movement, breathwork, mindfulness, and simple activities for focus.',
     details: [
       { label: 'Length', value: '40 minutes' },
       { label: 'Where', value: "A visit to the person's home may be available" },
     ],
     body: [
-      'This is a gentle 40-minute private session that uses movement, breathing, mindfulness, acupressure, and exercises for focus, memory and coordination.',
+      'This is a gentle 40-minute private session that uses movement, breathwork, mindfulness, acupressure, and exercises for focus, memory and coordination.',
     ],
     sections: [
       {
@@ -412,7 +412,7 @@ export const classes: ClassOffering[] = [
         bullets: [
           'Gentle movement and coordination games',
           'Neuro-movement for focus',
-          'Mindfulness and slow breathing',
+          'Mindfulness and slow breathwork',
           'Gentle acupressure points',
           'Simple eye movements',
           'Positive thoughts and conversation',
@@ -457,7 +457,7 @@ export const classes: ClassOffering[] = [
           'Mindful eating and noticing hunger and fullness',
           'Basic nutrition without dieting or body shame',
           'Menstrual care, hygiene, rest, and nourishment',
-          'Gentle somatic movement, stretching, breathing, and meditation',
+          'Gentle somatic movement, stretching, breathwork, and meditation',
           'Journaling, creative activities, friendships, and group discussion',
         ],
       },
@@ -487,7 +487,7 @@ export const classes: ClassOffering[] = [
     ],
     body: [
       'What if movement were a conversation with your body?',
-      'Private Somatic Flow is a one-on-one session that gives you space to tune in and notice how your body feels. I guide you through gentle movement, breathing, body awareness, and simple acupressure. You move at your own pace and choose what feels right for you.',
+      'Private Somatic Flow is a one-on-one session that gives you space to tune in and notice how your body feels. I guide you through gentle movement, breathwork, body awareness, and simple acupressure. You move at your own pace and choose what feels right for you.',
     ],
     sections: [
       {
@@ -495,7 +495,7 @@ export const classes: ClassOffering[] = [
         intro: 'Each session is designed for you and what you need right now.',
         bullets: [
           'Gentle movement based on how your body feels',
-          'Simple breathing practices',
+          'Simple breathwork practices',
           'Time to notice tension, ease, and changes in your breath',
           'Optional acupressure points',
           'Pauses to listen and rest',
@@ -536,7 +536,7 @@ export const classes: ClassOffering[] = [
         heading: "Your child's day may include",
         bullets: [
           'Somatic movement, and coordination exercises',
-          'Mindfulness, breathing, and body awareness',
+          'Mindfulness, breathwork, and body awareness',
           'Outdoor play, garden time, and wellness walks',
           'Art, music, storytelling, and child-led projects',
           'Foods, traditions, and ways of life from around the world',
@@ -600,7 +600,7 @@ export const classes: ClassOffering[] = [
         bullets: [
           'A guided walk with time to notice sights and sounds',
           'Movement for balance and coordination',
-          'Breathing and body-awareness practices',
+          'Breathwork and body-awareness practices',
           'Practice mindful movement',
           'Simple acupressure taught as a wellness practice',
           'Time to explore and work with others',
@@ -608,7 +608,7 @@ export const classes: ClassOffering[] = [
       },
     ],
     closing:
-      'Students practice healthy ways to move while they spend time in nature. Walking, breathing, and paying attention may help them feel calm and focused during class.',
+      'Students practice healthy ways to move while they spend time in nature. Walking, breathwork, and paying attention may help them feel calm and focused during class.',
     primaryAction: 'contact',
     verifyNote:
       'Rewritten from Boclaire’s “6. Homeschoolers” flyer. The Friday schedule and limited-spots language are held back until confirmed. A second “Wellness Walk” file may describe a Granite Peak version or a separate offer. Confirm the public name, age or grade range, schedule, location, capacity, audience, and current status. Do not publish Granite Peak vendor status without current confirmation. No price is published.',
@@ -624,20 +624,20 @@ export const classes: ClassOffering[] = [
     source: 'boclaire-flyer',
     tagline: 'Bring gentle movement and mindfulness to your group',
     summary:
-      'A gentle group session with movement, breathing, mindfulness, and simple acupressure.',
+      'A gentle group session with movement, breathwork, mindfulness, and simple acupressure.',
     details: [
       { label: 'Booking', value: 'Offered by request' },
       { label: 'Pace', value: 'Participants move at their own pace' },
     ],
     body: [
-      'ZenFlow™ with Boclaire brings a gentle wellness class to your workplace or event. Your group steps away from the usual routine for movement, breathing, mindfulness, and simple acupressure. Boclaire guides the class at an easy pace and invites each person to work within their comfort level.',
+      'ZenFlow™ with Boclaire brings a gentle wellness class to your workplace or event. Your group steps away from the usual routine for movement, breathwork, mindfulness, and simple acupressure. Boclaire guides the class at an easy pace and invites each person to work within their comfort level.',
     ],
     sections: [
       {
         heading: 'Each class may include',
         bullets: [
           'Gentle somatic movement for the whole body',
-          'Guided breathing',
+          'Guided breathwork',
           'A simple mindful living practice',
           'Optional acupressure points',
           'Quiet time to notice how the body feels',
@@ -653,7 +653,7 @@ export const classes: ClassOffering[] = [
       },
     ],
     closing:
-      "Time for movement and breathing may help people feel less tense and return to their day with a clearer mind. Each person's experience may be different.",
+      "Time for movement and breathwork may help people feel less tense and return to their day with a clearer mind. Each person's experience may be different.",
     honestNote:
       'ZenFlow™ is a wellness and educational experience. It is not medical care or treatment.',
     primaryAction: 'contact',

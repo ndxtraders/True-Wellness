@@ -93,7 +93,7 @@ export default function AboutPage() {
                 movement, and mindfulness.
               </p>
               <p>
-                Her work includes child development, movement, time outdoors, and body awareness.
+                Her work includes child development, movement, time in nature, and body awareness.
                 She also uses simple wellness practices.
               </p>
               <p>

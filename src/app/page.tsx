@@ -111,8 +111,8 @@ export default function HomePage() {
                 Our children are spending too much time sitting indoors in front of screens.
               </p>
               <p className="mt-5 text-body-lg text-ink-muted">
-                Children are naturally meant to move and play, and their bodies already know when to
-                move, eat, and rest. So we create a safe space for them to do that outside in nature.
+                Children need room to move, play, and explore. We give them that space outdoors,
+                where they can listen to their bodies, connect with nature, and simply be children.
               </p>
             </div>
             <Image
@@ -183,7 +183,7 @@ export default function HomePage() {
                     {p.name}
                   </Link>
                 </h3>
-                <p className="mt-3 text-small text-ink/85">{p.summary}</p>
+                <p className="mt-3 text-body text-ink/85">{p.summary}</p>
               </li>
             ))}
           </ul>
@@ -259,7 +259,7 @@ export default function HomePage() {
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             <div className="flex flex-col rounded-(--radius-card) border border-line bg-bg p-8">
               <h3 className="text-h4 font-semibold text-ink">Make a donation</h3>
-              <p className="mt-3 flex-1 text-small text-ink-muted">
+              <p className="mt-3 flex-1 text-body text-ink-muted">
                 Donations go toward the garden build, class materials, and free classes for local
                 kids.
               </p>
@@ -275,7 +275,7 @@ export default function HomePage() {
 
             <div className="flex flex-col rounded-(--radius-card) border border-line bg-bg p-8">
               <h3 className="text-h4 font-semibold text-ink">Sponsor a child</h3>
-              <p className="mt-3 flex-1 text-small text-ink-muted">
+              <p className="mt-3 flex-1 text-body text-ink-muted">
                 Starting at $167/month, your sponsorship puts a Tuolumne County child in wellness classes every month.
               </p>
               <Link

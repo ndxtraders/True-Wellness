@@ -34,7 +34,7 @@ export default function SponsorPage() {
               </h1>
               <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
                 A monthly sponsorship covers a Tuolumne County child&rsquo;s place in the program:
-                two classes a week, up to two hours each, outdoors, in groups of about three to one.
+                two classes a week, up to two hours each, in nature, in groups of about three to one.
               </p>
             </div>
             <BeeBloom className="mx-auto w-full max-w-xs" />
@@ -96,13 +96,13 @@ export default function SponsorPage() {
                     </span>
                     <span className="text-small text-ink-muted">per month</span>
                   </p>
-                  <p className="mt-5 border-y border-line py-6 text-small text-ink">
+                  <p className="mt-5 border-y border-line py-6 text-body text-ink">
                     Sponsors {t.children} {t.children === 1 ? 'child' : 'children'}, {t.hours} hours
                     of wellness education a month.
                   </p>
                   <ul className="mt-5 flex-1 space-y-2.5">
                     {t.benefits.map((b) => (
-                      <li key={b} className="flex gap-3 text-small text-ink-muted">
+                      <li key={b} className="flex gap-3 text-body text-ink-muted">
                         <span
                           aria-hidden="true"
                           className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber"

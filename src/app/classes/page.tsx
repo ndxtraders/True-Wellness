@@ -29,7 +29,7 @@ const groups: Group[] = [
   {
     key: 'children',
     heading: 'For children',
-    blurb: 'Movement, mindfulness, and time outdoors, at your child’s pace.',
+    blurb: 'Movement, mindfulness, and time in nature, at your child’s pace.',
   },
   {
     key: 'teens',
@@ -39,7 +39,7 @@ const groups: Group[] = [
   {
     key: 'adults',
     heading: 'For adults',
-    blurb: 'Somatic movement, acupressure, and walking with attention.',
+    blurb: 'Somatic movement, acupressure, and walking with intention.',
   },
   {
     key: 'caregivers-elders',
@@ -73,7 +73,7 @@ const specialGroups: Group[] = [
   {
     key: 'events',
     heading: 'Celebrations',
-    blurb: 'Birthdays and gatherings, outdoors.',
+    blurb: 'Birthdays and gatherings, in nature.',
   },
   {
     key: 'spiritual',
@@ -120,7 +120,7 @@ function ClassCard({ c }: { c: ClassOffering }) {
         </h3>
         {c.nameKo && <p className="mt-1 text-small text-ink-muted">{c.nameKo}</p>}
 
-        <p className="mt-3 flex-1 text-small text-ink-muted">{c.tagline ?? c.summary}</p>
+        <p className="mt-3 flex-1 text-body text-ink-muted">{c.tagline ?? c.summary}</p>
 
         {/* One key fact, the first from the details card: "40 minutes",
             "Fridays: Limited spots available". */}

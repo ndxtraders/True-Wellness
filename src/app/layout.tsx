@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    'Yoga, somatic movement, mindfulness, and time outdoors for children, families, caregivers, and elders in Tuolumne County, California.',
+    'Yoga, somatic movement, mindfulness, and time in nature for children, families, caregivers, and elders in Tuolumne County, California.',
   openGraph: {
     type: 'website',
     siteName: site.name,

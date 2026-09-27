@@ -43,9 +43,9 @@ export const pillars: Pillar[] = [
     ],
     inPractice: [
       'Gentle movement and yoga',
-      'Simple breathing',
+      'Simple breathwork',
       'Playful movement games',
-      'Walking outdoors',
+      'Walking in nature',
       'Time to pause and rest',
     ],
     doesNotClaim:
@@ -58,11 +58,11 @@ export const pillars: Pillar[] = [
     summary: 'Paying attention to what is happening right now.',
     definition: [
       'Mindful living starts with paying attention. You might notice your breath, your body, your feelings, or what is happening around you.',
-      'For parents, this may mean pausing before responding, listening, and trying again after a hard moment. For children, it may include simple breathing, quiet attention, movement, or time outdoors.',
+      'For parents, this may mean pausing before responding, listening, and trying again after a hard moment. For children, it may include simple breathwork, quiet attention, movement, or time in nature.',
       'Mindfulness can be part of a walk, a class, a meal, or a few quiet minutes at home.',
     ],
     inPractice: [
-      'Brief breathing practices',
+      'Brief breathwork practices',
       'Slow walks with attention',
       'A pause before responding',
       'Paying attention while eating or moving',

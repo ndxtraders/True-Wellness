@@ -63,7 +63,7 @@ export default function ChildrensCenterPage() {
             </p>
             <p>
               Kids move differently outside. They climb, wander, notice things, and get tired in a
-              good way. Two hours a week outdoors is a reasonable thing to want for a child, and
+              good way. Two hours a week in nature is a reasonable thing to want for a child, and
               most kids around here do not get it.
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function ChildrensCenterPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="flex flex-col rounded-(--radius-card) border border-line bg-surface p-8">
               <h2 className="text-h4 font-semibold text-ink">Make a donation</h2>
-              <p className="mt-3 flex-1 text-small text-ink-muted">
+              <p className="mt-3 flex-1 text-body text-ink-muted">
                 Donations go toward the garden build, class materials, and free classes for local
                 kids.
               </p>
@@ -102,9 +102,9 @@ export default function ChildrensCenterPage() {
 
             <div className="flex flex-col rounded-(--radius-card) border border-line bg-surface p-8">
               <h2 className="text-h4 font-semibold text-ink">Sponsor a child</h2>
-              <p className="mt-3 flex-1 text-small text-ink-muted">
+              <p className="mt-3 flex-1 text-body text-ink-muted">
                 A monthly sponsorship puts a Tuolumne County child in nature-based wellness
-                classes. Small groups, outdoors, every week. Four levels, from one child to the
+                classes. Small groups, in nature, every week. Four levels, from one child to the
                 whole program, set up as a recurring donation you control.
               </p>
               <Link

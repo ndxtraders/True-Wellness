@@ -54,7 +54,7 @@ export default function PoliciesPage() {
           <Section id="what-these-are" heading="What these classes are">
             <p>{disclosures.services}</p>
             <p>
-              Boclaire teaches movement, mindfulness, and time outdoors. She does not diagnose
+              Boclaire teaches movement, mindfulness, and time in nature. She does not diagnose
               conditions, prescribe anything, or provide therapy or medical care. Nothing on this
               site is a substitute for talking to your doctor, and nothing here should be used to
               delay doing that.

@@ -103,7 +103,7 @@ export default async function PillarPage({ params }: { params: Promise<{ slug: s
                       <span className="mt-2 font-display text-h4 font-semibold text-ink transition-colors group-hover:text-plum">
                         {c.name}
                       </span>
-                      <span className="mt-3 text-small text-ink-muted">{c.summary}</span>
+                      <span className="mt-3 text-body text-ink-muted">{c.summary}</span>
                     </span>
                   </Link>
                 </li>

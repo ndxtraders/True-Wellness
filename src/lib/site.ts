@@ -34,7 +34,7 @@ export const isLive = true
 
 export const site = {
   name: 'True Wellness Movement',
-  tagline: 'Movement, mindfulness and time outside for children, families and Elders.',
+  tagline: 'Movement, mindfulness and time in nature for children, families and Elders.',
   locality: 'Jamestown',
   region: 'CA',
   regionName: 'California',

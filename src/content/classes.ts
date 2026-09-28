@@ -117,7 +117,7 @@ export const classes: ClassOffering[] = [
     audienceLabel: 'Children',
     pillars: ['whole-person-thinking'],
     source: 'boclaire-flyer',
-    tagline: 'A playful outdoor experience for children',
+    tagline: 'A playful nature experience for children',
     summary:
       'Children explore nature through touch, smell, sound, movement, and hands-on garden time.',
     status: 'in-development',
@@ -125,7 +125,7 @@ export const classes: ClassOffering[] = [
       { label: 'Planned location', value: 'Outdoor wellness center and herbal garden in Jamestown' },
     ],
     body: [
-      'Children learn through movement, play, and their senses. In this outdoor experience, they explore plants, herbs, sounds, textures, and movement. They are invited to slow down, notice what is around them, and connect with nature at their own pace.',
+      'Children learn through movement, play, and their senses. In this nature experience, they explore plants, herbs, sounds, textures, and movement. They are invited to slow down, notice what is around them, and connect with nature at their own pace.',
       'Nature-Based Sensory Experience is being developed for our outdoor wellness center and herbal garden in Jamestown.',
     ],
     sections: [
@@ -265,7 +265,7 @@ export const classes: ClassOffering[] = [
       {
         heading: 'What happens',
         bullets: [
-          'A guided outdoor walk',
+          'A guided nature walk',
           'Nature exploration',
           'Movement and play',
           'Time together in nature',
@@ -367,9 +367,9 @@ export const classes: ClassOffering[] = [
     status: 'by-request',
     primaryAction: 'contact',
     summary:
-      "A welcoming outdoor space for teen girls to gather, read, listen, share, and live out God's Word together.",
+      "A welcoming space in nature for teen girls to gather, read, listen, share, and live out God's Word together.",
     body: [
-      "Teen Girls Bible Circle gives teen girls a welcoming outdoor place to read the Bible, listen, share, and talk about living out God's Word together.",
+      "Teen Girls Bible Circle gives teen girls a welcoming place in nature to read the Bible, listen, share, and talk about living out God's Word together.",
     ],
     sections: [
       {
@@ -377,7 +377,7 @@ export const classes: ClassOffering[] = [
         bullets: [
           'Bible reading',
           'Listening and sharing',
-          'Outdoor gathering',
+          'Gathering in nature',
           'Conversation about living faith',
           'Time together',
         ],
@@ -537,7 +537,7 @@ export const classes: ClassOffering[] = [
         bullets: [
           'Somatic movement, and coordination exercises',
           'Mindfulness, breathwork, and body awareness',
-          'Outdoor play, garden time, and wellness walks',
+          'Play in nature, garden time, and wellness walks',
           'Art, music, storytelling, and child-led projects',
           'Foods, traditions, and ways of life from around the world',
           "Learning activities suited to your child's age",

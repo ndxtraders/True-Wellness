@@ -149,7 +149,7 @@ export default function HomePage() {
                     <span className="font-display text-h4 font-semibold text-ink transition-colors group-hover:text-plum">
                       {label}
                     </span>
-                    <span className="mt-3 text-small text-ink-muted">{note}</span>
+                    <span className="mt-3 text-body text-ink-muted">{note}</span>
                   </span>
                 </Link>
               </li>

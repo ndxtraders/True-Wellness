@@ -38,7 +38,7 @@ export const pillars: Pillar[] = [
     summary: 'Gentle movement with attention to how your body feels.',
     definition: [
       'Somatic movement brings your attention to what you feel while you move. You may notice your breath, balance, tension, ease, or the way different parts of your body move together.',
-      'Walking is one example. Your arms, legs, and upper body move together with each step. The practice is to move slowly enough to notice.',
+      'Walking is one example. Your body moves together with each step. The practice is to move slowly enough to notice.',
       'Children may explore this through yoga, walking, play, and simple movement games. They are encouraged to move with curiosity and at their own pace.',
     ],
     inPractice: [
@@ -63,7 +63,7 @@ export const pillars: Pillar[] = [
     ],
     inPractice: [
       'Brief breathwork practices',
-      'Slow walks with attention',
+      'Slow walks with intention',
       'A pause before responding',
       'Paying attention while eating or moving',
       'Prayer when it is part of a faith-based class',

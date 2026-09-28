@@ -111,8 +111,9 @@ export default function HomePage() {
                 Our children are spending too much time sitting indoors in front of screens.
               </p>
               <p className="mt-5 text-body-lg text-ink-muted">
-                Children need room to move, play, and explore. We give them that space outdoors,
-                where they can listen to their bodies, connect with nature, and simply be children.
+                The best environment for children to grow, learn, and feel their best is in
+                nature. We are creating a place where children can move better, explore, connect
+                with nature, and thrive under the sun.
               </p>
             </div>
             <Image

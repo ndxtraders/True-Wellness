@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { disclosures, integrations, site } from '@/lib/site'
+import { disclosures, integrations } from '@/lib/site'
 import { Sprig } from '@/components/art/illustrations'
 
 export const metadata: Metadata = {
@@ -43,18 +43,13 @@ export default function ChildrensCenterPage() {
             priority
           />
         </figure>
-        <figcaption className="mx-auto max-w-6xl px-5 py-6 text-caption text-ink-muted">
-          The garden the center is being built around. Placeholder image while the space is under
-          construction.
-        </figcaption>
       </section>
 
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-5 py-(--spacing-section)">
           <h1 className="max-w-3xl text-display text-ink">The Children&rsquo;s Wellness Center</h1>
           <p className="mt-5 max-w-xl text-body-lg text-ink-muted">
-            An outdoor wellness space and herb garden, being built in {site.locality},{' '}
-            {site.county}.
+            An outdoor wellness space and herb garden in Jamestown CA
           </p>
           <div className="mt-8 max-w-2xl space-y-5 text-body-lg text-ink-muted">
             <p>

@@ -137,16 +137,18 @@ function ClassCard({ c }: { c: ClassOffering }) {
             </p>
           )}
 
-          {c.primaryAction === 'contact' ? (
-            <Link
-              href="/contact"
-              className="inline-block rounded-pill bg-plum px-5 py-2.5 text-small font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
-            >
-              Contact Boclaire
-            </Link>
-          ) : (
-            <WaitlistButton name={c.name} compact />
-          )}
+          <div>
+            {c.primaryAction === 'contact' ? (
+              <Link
+                href="/contact"
+                className="inline-block rounded-pill bg-plum px-5 py-2.5 text-small font-semibold text-bg transition-opacity duration-200 hover:opacity-90"
+              >
+                Contact Boclaire
+              </Link>
+            ) : (
+              <WaitlistButton name={c.name} compact />
+            )}
+          </div>
           <Link
             href={`/classes/${c.slug}`}
             className="mt-4 inline-block text-small font-medium text-plum underline decoration-amber decoration-2 underline-offset-4"

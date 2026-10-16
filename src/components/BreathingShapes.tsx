@@ -128,7 +128,7 @@ export default function BreathingShapes() {
       <section aria-labelledby="pace-heading" className="rounded-(--radius-card) border border-line bg-surface p-5 sm:p-7">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <h2 id="pace-heading" className="text-h4">Find your pace</h2>
+            <h2 id="pace-heading" className="text-h4">Set your pace</h2>
             <p id="pace-help" className="mt-1 text-small text-ink-muted">Higher values give each step more time.</p>
           </div>
           <div role="group" aria-label="Pace presets" className="flex flex-wrap gap-2">

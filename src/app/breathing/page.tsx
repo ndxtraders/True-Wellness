@@ -24,7 +24,7 @@ export default function BreathingPage() {
         <h2 id="comfort-heading" className="text-h4">Listen to your body</h2>
         <p className="mt-3 text-small text-ink-muted">
           You don’t need to force a deep breath or a hold. If a pattern feels uncomfortable, stop and
-          return to your usual breathing. The three circle patterns have no holds.
+          return to your usual breathing.
         </p>
       </aside>
     </div>

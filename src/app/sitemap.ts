@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/',
     '/classes',
     '/approach',
+    '/breathing',
     '/childrens-center',
     '/childrens-center/sponsor',
     '/about',

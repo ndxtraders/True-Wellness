@@ -26,6 +26,7 @@ export function SiteFooter() {
               {[
                 { href: '/classes', label: 'Classes' },
                 { href: '/approach', label: 'Our Approach' },
+                { href: '/breathing', label: 'Breathing Exercises' },
                 { href: '/childrens-center', label: "Children's Center" },
                 { href: '/about', label: 'About Boclaire' },
                 { href: '/contact', label: 'Contact' },

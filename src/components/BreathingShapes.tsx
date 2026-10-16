@@ -129,7 +129,7 @@ export default function BreathingShapes() {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 id="pace-heading" className="text-h4">Set your pace</h2>
-            <p id="pace-help" className="mt-1 text-small text-ink-muted">Higher values give each step more time.</p>
+            <p id="pace-help" className="mt-1 text-small text-ink-muted">Use the buttons or control bar to set the time for each step.</p>
           </div>
           <div role="group" aria-label="Pace presets" className="flex flex-wrap gap-2">
             {[{ value: 1, label: 'Regular' }, { value: 1.5, label: 'Slower' }, { value: 2, label: 'Extra slow' }].map((preset) => (
